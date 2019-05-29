@@ -1,0 +1,22 @@
+<!--pages/member/cash/cash.wxml-->
+<view>
+  <view  style="height:76rpx;" >
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  </view>
+  <view class="cash-h">
+    <view class="cash-h-cnt">
+      <text class="cash-h-txt1">现金余额</text>
+      <text class="cash-h-txt2" bindtap='gotobudget'>收支明细</text>
+    </view>
+    <view class="cash-h-num">{{money}}</view>
+  </view>
+  <button bindtap='gotowithdraw'>提现</button>
+  <view wx:if="{{bank==0}}" class="cash-bind" bindtap='gotobinding'>
+    <view class="cash-left">
+      <image class="cash-bind-icon" src="http://api.iqianclub.com/upload/program/images/card_icon.png"></image>
+      <text class="cash-bind-txt">绑定银行卡</text>
+    </view>
+    <image class="cash-bind-right" src="http://api.iqianclub.com/upload/program/images/right_arrow_icon.png"></image>
+  </view>
+</view>

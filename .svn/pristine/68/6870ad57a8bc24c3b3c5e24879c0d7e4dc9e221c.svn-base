@@ -1,0 +1,34 @@
+<!--pages/member/order/order.wxml-->
+<view>
+<block wx:for="{{orders}}" wx:for-item="item">
+  <view class="order">
+    <view class="order-title">
+      <text class="order-title-number">订单编号：{{item.E_OrderSn}}</text>
+      <text class="order-title-wait" wx:if="{{item.E_PayState==1}}">等待付款</text>
+      <text class="order-title-wait" wx:elif="{{item.E_PayState==2}}">支付成功</text>
+    </view>
+    <view class="order-cnt">
+      <view class="order-cnt-h">
+        <image class="order-cnt-h-img" src="{{item.E_HeaderImg}}"></image>
+        <view class="order-cnt-cnt">
+          <view class="order-cnt-txt">
+            <text class="order-cnt-name">{{item.E_ProjectName}}</text>
+            <text class="order-cnt-name">￥{{item.E_Money}}</text>
+          </view>
+          <view class="order-cnt-txt">
+            <text class="order-cnt-cate">{{item.E_PlanName}}</text>
+            <text class="order-cnt-cate">{{item.E_BuyNum}}份</text>
+          </view>
+        </view>
+      </view>
+      <view class="order-add">
+        合计：{{item.E_Money}}
+      </view>
+      <view class="order-footer">
+        <text class="order-footer-times">下单时间：{{item.E_Paytime}}</text>
+        <button wx:if="{{item.E_PayState!=2}}">立即支付</button>
+      </view>
+    </view>
+  </view>
+  </block>
+</view>

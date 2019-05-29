@@ -1,0 +1,36 @@
+<!--pages/login/index/registe/data/success/success.wxml-->
+<view class="success-body">
+  <!-- 头部信息 -->
+  <view class="reg-h">
+    <view class="reg-line1"></view>
+    <view class="reg-line1"></view>
+    <view class="reg-img">
+      <view class="reg-img-cnt">
+        <image src="/images/small_check_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">填写手机号</text>
+      </view>
+      <view class="reg-img-cnt">
+        <image src="/images/small_check_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">填写资料</text>
+      </view>
+      <view class="reg-img-cnt">
+        <image src="/images/small_check_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">注册成功</text>
+      </view>
+    </view>
+  </view>
+  <!-- 注册成功图标 -->
+  <view class="success-icon">
+    <image src='/images/member_photo.png' class="success-icon-img"></image>
+    <text class="success-icon-txt">恭喜您注册成功</text>
+    <text class="success-icon-txt">成为第<text class="success-icon-txt1">xxx</text>位会员</text>
+  </view>
+  <!-- 按钮 -->
+  <view class="success-btn">
+  <button class="btn1">立即参与计划</button>
+  <button class="btn2">会员中心</button>
+  </view>
+
+
+
+</view>

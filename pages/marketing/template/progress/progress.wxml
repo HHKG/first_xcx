@@ -1,0 +1,13 @@
+<!--头部  -->
+<template name="progress">
+  <view class="form-title">
+    <view class="form-title-layout">
+      <text>本周剩余免费会籍名额<text class="form-percent" decode="{{true}}" space="{{true}}" >&nbsp;32%</text></text>
+      <view class="form-prompt">
+        <view class="form-progress-num">68%</view>
+        <view class="form-sanjiao"></view>
+      </view>
+      <progress percent="68" backgroundColor="#1B4E51" stroke-width="8" activeColor="#F5CE87" class="form-progress"></progress>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,110 @@
+/* pages/member/update/update.wxss */
+@import "/pages/member/index.wxss";
+page{
+  background-color:#FAFAFA;
+}
+.update-title {
+  height: 88rpx;
+  background-color: #30706c;
+  display: flex;
+  align-items: center;
+}
+.placeholder{
+  color:#fff;
+}
+button[disabled]{
+background-color:#F29C6A;
+}
+
+.update-title-img {
+  width: 52rpx;
+  height: 52rpx;
+  margin:0 12rpx 0 30rpx;
+}
+
+.update-title-txt {
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  
+}
+.update-recharge{
+  height:334rpx;
+  background-color:#3A8782;
+  padding-top:69rpx;
+}
+.update-recharge-txt{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color:rgba(255,255,255,0.6);
+  margin-left:30rpx;
+}
+.update-recharge-input{
+  margin-top:30rpx;
+  margin-left:30rpx;
+  display: flex;
+  height:150rpx;
+  align-items: center;
+  color:#fff;
+  font-size:108rpx;
+  line-height:150rpx;
+}
+input{
+  height:150rpx;
+}
+.pay-pay-txt {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+  margin-left: 20rpx;
+}
+
+.pay-pay-cnt {
+  display: flex;
+  align-items: center;
+}
+.radio-cnt{
+  margin-top:20rpx;
+  height:48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-method-cnt {
+  background-color: #fff;
+  padding: 0rpx 30rpx;
+}
+
+.pay-method {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0rpx;
+}
+
+.pay-icon {
+  width: 42rpx;
+  height: 42rpx;
+}
+radio{
+  transform: scale(0.7);
+}
+.pay-cnt-title {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 40rpx;
+  margin: 10rpx 30rpx;
+}
+button{
+  margin-top:253rpx;
+  width:690rpx;
+  height:100rpx;
+  background-color:#f68751;
+  color: #fff;
+  font-size:36rpx;
+  line-height:100rpx;
+}
+button[disabled]{
+background-color:#f1bda3!important;
+color: #fff!important;
+}

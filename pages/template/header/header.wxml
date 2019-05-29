@@ -1,0 +1,21 @@
+<template name="header">
+  <view wx:if="{{pattern==1}}" style="height:76rpx;">
+    <view class="member-h-nav nav-position">
+      <view class="member-nav-left">
+        <image src="http://api.iqianclub.com/upload/program/images/warn.png" class="member-warn"></image>
+        <text class="member-nav-txt">模拟模式  </text>
+      </view>
+      <image bindtap='exitpattern' src="http://api.iqianclub.com/upload/program/images/close_moshi.png" class="member-warn"></image>
+    </view>
+    <!-- <view class="moni-mask" hidden="{{moni_hidden==1?true:false}}" bindtap='canselpop'></view>
+    <view class="moni-pop" hidden="{{moni_hidden==1?true:false}}">
+      <view class="moni-h">提示</view>
+      <view class="moni-cnt">即将退出模拟模式</view>
+      <view class="moni-footer">
+        <text class="moni-cansel" bindtap='canselpop'>取消</text>
+        <text class="moni-ensure" bindtap='exitpattern'>确认</text>
+      </view>
+    </view> -->
+  </view>
+
+</template>

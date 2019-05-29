@@ -1,0 +1,31 @@
+<!--pages/member/order/order.wxml-->
+<view>
+  <view class="order">
+    <view class="order-title">
+      <text class="order-title-number">订单编号：11977240</text>
+      <text class="order-title-wait">等待付款</text>
+    </view>
+    <view class="order-cnt">
+      <view class="order-cnt-h">
+        <image class="order-cnt-h-img" src="http://api.iqianclub.com/upload/program//images/img.png"></image>
+        <view class="order-cnt-cnt">
+          <view class="order-cnt-txt">
+            <text class="order-cnt-name">四闲山房别墅</text>
+            <text class="order-cnt-name">￥10000.00</text>
+          </view>
+          <view class="order-cnt-txt">
+            <text class="order-cnt-cate">权益方案一</text>
+            <text class="order-cnt-cate">1份</text>
+          </view>
+        </view>
+      </view>
+      <view class="order-add">
+        合计：10000.00
+      </view>
+      <view class="order-footer">
+        <text class="order-footer-times">下单时间：2018-10-10 15:00</text>
+        <button>立即支付</button>
+      </view>
+    </view>
+  </view>
+</view>

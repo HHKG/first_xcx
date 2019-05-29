@@ -1,0 +1,234 @@
+<view class="holiday-body">
+  <!-- header -->
+  <view class="holiday-h">
+    <text class=" title active">度假地</text>
+    <text class="line"></text>
+    <text class=" title">主题</text>
+  </view>
+  <!-- 度假地 -->
+  <view class="holiday">
+    <!-- banner -->
+    <view class="holiday-banner">
+      <image src='/images/service_banner.png' class="holiday-banner-img"></image>
+    </view>
+    <!-- 地区房源 -->
+    <view class="area">
+      <!-- 地区名字 -->
+      <view class="area-name">
+        <view class="area-name-cnt area-name-cnt-active">热门</view>
+        <view class="area-name-cnt">国内</view>
+        <view class="area-name-cnt">泰国</view>
+        <view class="area-name-cnt">日本</view>
+        <view class="area-name-cnt">韩国</view>
+        <view class="area-name-cnt">新加坡</view>
+        <view class="area-name-cnt">马来西亚</view>
+        <view class="area-name-cnt">朝鲜</view>
+      </view>
+      <!-- 地区房源 -->
+      <view class="area-cnt">
+        <view class="area-cnt-name">
+          <image src='/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <text class="area-cnt-txt1"></text>
+            <text class="area-cnt-txt2">赣州</text>
+            <text class="area-cnt-txt3">21个房源</text>
+          </view>
+        </view>
+
+        <view class="area-cnt-name">
+          <image src='/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <text class="area-cnt-txt1"></text>
+            <text class="area-cnt-txt2">苏梅岛</text>
+            <!-- <text class="area-cnt-txt3">21个房源</text> -->
+          </view>
+        </view>
+
+        <view class="area-cnt-name">
+          <image src='/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <text class="area-cnt-txt1"></text>
+            <text class="area-cnt-txt2">普吉岛</text>
+            <!-- <text class="area-cnt-txt3">21个房源</text> -->
+          </view>
+        </view>
+
+        <view class="area-cnt-name">
+          <image src='/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <text class="area-cnt-txt1"></text>
+            <text class="area-cnt-txt2">从化</text>
+            <text class="area-cnt-txt3">98个房源</text>
+          </view>
+        </view>
+
+
+        <view class="area-cnt-name">
+          <image src='/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <text class="area-cnt-txt1"></text>
+            <text class="area-cnt-txt2">佛山</text>
+            <text class="area-cnt-txt3">10个房源</text>
+          </view>
+        </view>
+
+        <view class="area-cnt-name">
+          <image src='/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <text class="area-cnt-txt1"></text>
+            <text class="area-cnt-txt2">惠州</text>
+            <text class="area-cnt-txt3">10个房源</text>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <text class="area-cnt-txt1"></text>
+            <text class="area-cnt-txt2">深圳</text>
+            <text class="area-cnt-txt3">5个房源</text>
+          </view>
+        </view>
+
+        <view class="area-cnt-name">
+          <image src='/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <text class="area-cnt-txt1"></text>
+            <text class="area-cnt-txt2">更多度假地敬请期待</text>
+            <text class="area-cnt-txt3">10个房源</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- banner -->
+    <view class="holiday-banner">
+      <image src='/images/service_banner.png' class="holiday-banner-img"></image>
+    </view>
+    <!--参与计划  -->
+    <view class="holiday-plan">
+      <image src='/images/small_check_icon.png' class="holiday-plan-img1"></image>
+      <text>参与分享计划</text>
+      <text>越早参与越<text>划算</text></text>
+      <image src='/images/small_check_icon.png' class="holiday-plan-img1"></image>
+      <text>每年通用返住房券、稳定消费返现</text>
+      <text>持续<text>28</text>年</text>
+      <text>住房券抵扣别墅、酒店费用</text>
+      <text>每月分利润（现金），可<text>提现</text>消费</text>
+      <image src='/images/small_check_icon.png' class="holiday-plan-img1"></image>
+      <text>使用住房券可全球免费订房</text>
+      <text>陆续开放更多度假地</text>
+    </view>
+    <!-- 四宫格 -->
+    <view class="gong-ge">
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="/images/small_check_icon.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">专属管家</text>
+        </view>
+        <view class="holiday-ensure-f">专属管家服务，为您的度假提供全程贴心服务。</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="/images/small_check_icon.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">尊享特权</text>
+        </view>
+        <view class="holiday-ensure-f">订房优先、订房折扣、延迟退房、购物优惠及免费住房券</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="/images/small_check_icon.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">个性化</text>
+        </view>
+        <view class="holiday-ensure-f">更大、更私密空间， 能够满足您不同场景下的个性化需求。</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="/images/small_check_icon.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">品质</text>
+        </view>
+        <view class="holiday-ensure-f">尊享奢华住宿。体验专人定期现场检查，保证无与伦比的住宿品质。</view>
+      </view>
+    </view>
+    <!-- 精彩评价 -->
+    <view class="evaluate">
+      <view class="evaluate-h">精彩评价</view>
+      <view class="holiday-swiper">
+        <swiper class="holiday-swiper-item" bindchange="changeDot" indicator-color="#e0e0e0" indicator-active-color="#fff" circular="true" current="0" data-dotActive='dotActive' style="height:600rpx">
+          <swiper-item class="evaluate-cnt">
+            <image src="/images/profile_photo.png" alt="用户头像" class="evaluate-h-img"></image>
+            <text class="evaluate-nickname">李大大</text>
+            <text class="evaluate-txt">公众号用户留言</text>
+            <view class="evaluate-address">
+              <image src="/images/local_icon.png" alt="地标" class="evaluate-address-img"></image>
+              <text class="evaluate-address-txt">四线山房别墅 | 国内 · 赣州</text>
+            </view>
+            <view class="evaluate-words">
+              <image src="/images/comma_icon.png" class="evaluate-words-img"></image>
+              <text class="evaluate-words-txt">
+                    特别舒适的一次度假. 别墅面积巨大，视野特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。管家服务也很贴心，有管家买菜做饭都很方便。也可以叫管家做饭，是收费的。整体体验不错。
+                  </text>
+            </view>
+          </swiper-item>
+          <swiper-item class="evaluate-cnt">
+            <image src="/images/profile_photo.png" alt="用户头像" class="evaluate-h-img"></image>
+            <text class="evaluate-nickname">李大大</text>
+            <text class="evaluate-txt">公众号用户留言</text>
+            <view class="evaluate-address">
+              <image src="/images/local_icon.png" alt="地标" class="evaluate-address-img"></image>
+              <text class="evaluate-address-txt">四线山房别墅 | 国内 · 赣州</text>
+            </view>
+            <view class="evaluate-words">
+              <image src="/images/comma_icon.png" class="evaluate-words-img"></image>
+              <text class="evaluate-words-txt">
+                    特别舒适的一次度假. 别墅面积巨大，视野特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。管家服务也很贴心，有管家买菜做饭都很方便。也可以叫管家做饭，是收费的。整体体验不错。
+                  </text>
+            </view>
+          </swiper-item>
+          <swiper-item class="evaluate-cnt">
+            <image src="/images/profile_photo.png" alt="用户头像" class="evaluate-h-img"></image>
+            <text class="evaluate-nickname">李大大</text>
+            <text class="evaluate-txt">公众号用户留言</text>
+            <view class="evaluate-address">
+              <image src="/images/local_icon.png" alt="地标" class="evaluate-address-img"></image>
+              <text class="evaluate-address-txt">四线山房别墅 | 国内 · 赣州</text>
+            </view>
+            <view class="evaluate-words">
+              <image src="/images/comma_icon.png" class="evaluate-words-img"></image>
+              <text class="evaluate-words-txt">
+                    特别舒适的一次度假. 别墅面积巨大，视野特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。管家服务也很贴心，有管家买菜做饭都很方便。也可以叫管家做饭，是收费的。整体体验不错。
+                  </text>
+            </view>
+          </swiper-item>
+          <swiper-item class="evaluate-cnt">
+            <image src="/images/profile_photo.png" alt="用户头像" class="evaluate-h-img"></image>
+            <text class="evaluate-nickname">李大大</text>
+            <text class="evaluate-txt">公众号用户留言</text>
+            <view class="evaluate-address">
+              <image src="/images/local_icon.png" alt="地标" class="evaluate-address-img"></image>
+              <text class="evaluate-address-txt">四线山房别墅 | 国内 · 赣州</text>
+            </view>
+            <view class="evaluate-words">
+              <image src="/images/comma_icon.png" class="evaluate-words-img"></image>
+              <text class="evaluate-words-txt">
+                    特别舒适的一次度假. 别墅面积巨大，视野特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。管家服务也很贴心，有管家买菜做饭都很方便。也可以叫管家做饭，是收费的。整体体验不错。
+                  </text>
+            </view>
+          </swiper-item>
+        </swiper>
+        <view class="holiday-dots">
+          <view class="holiday-dot {{className0}}"></view>
+          <view class="holiday-dot {{className1}}"></view>
+          <view class="holiday-dot {{className2}}"></view>
+          <view class="holiday-dot {{className3}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 主题 -->
+  <view class="theme">
+
+  </view>
+
+</view>

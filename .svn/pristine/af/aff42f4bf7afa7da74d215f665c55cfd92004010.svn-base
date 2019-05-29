@@ -1,0 +1,138 @@
+/* pages/login/index/registe/data/data.wxss */
+@import "/pages/project/calculate/calculate.wxss";
+@import "/pages/member/index.wxss";
+page{
+  background-color:#fff;
+}
+.data-body{
+ width:92%;
+  margin: 0 auto;
+}
+/* 引用regsite页面的样式 */
+.reg-h{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top:83rpx;
+}
+.reg-h::after{
+ border:1px solid #333;
+}
+.reg-line{
+  width:288.5rpx;
+  border-bottom: 3rpx solid #B3B3B3;
+}
+.reg-line1{
+  width:288.5rpx;
+  border-bottom: 3rpx solid #FF8150;
+}
+.reg-img{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  left: 20rpx;
+  top: -26rpx;
+  width:650rpx;
+}
+.reg-img1{
+  width:50rpx;
+  height:50rpx;
+}
+.reg-img-cnt{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reg-img-cnt-txt{
+  margin-top:10rpx;
+  font-size: 24rpx;
+  color:#333;
+}
+/* 结束 */
+.select{
+ margin-top:144rpx;
+}
+.select-txt{
+  font-size:32rpx;
+  line-height: 45rpx;
+  color:#333;
+height: 45rpx;
+}
+.data-select{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ background-color:#F7F7F7;
+  height:88rpx;
+  width:626rpx;
+  border-radius: 8rpx;
+  padding:0 34rpx;
+}
+.data-position{
+  position: absolute;
+  top:133rpx;
+  left: 0;
+  z-index: 1;
+}
+.data-select-position{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ background-color:#F7F7F7;
+  height:88rpx;
+  width:626rpx;
+  padding:0 34rpx;
+  color:#666;
+  font-size: 32rpx;
+}
+.data-select-txt{
+  color:#666;
+  font-size: 32rpx;
+}
+.data-down-img{
+  width:28rpx;
+  height:16rpx;
+}
+.select-cnt{
+  margin-top:56rpx;
+   position: relative;
+  }
+  .data-agreement{
+    margin-top:43rpx;
+    color:#333;
+    font-size: 24rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .data-agreement-cnt{
+    display: flex;
+    align-items: center;
+  }
+   .data-agreement-btn{
+     margin-top:86rpx;
+   }
+   .data-agreement-txt{
+     font-weight: bold;
+   }
+ radio .wx-radio-input{
+    width:35rpx;
+    height:35rpx;
+    background:#F7F7F7; 
+  }
+  radio .wx-radio-input.wx-radio-input-checked{
+    background:#3A8782!important;
+    border:1rpx solid #3A8782!important;
+  }
+  button{
+    width:690rpx;
+    height:90rpx;
+    background:#FF8150;
+    color:#fff;
+    line-height: 90rpx;
+  }
+  button[disabled]{
+  background-color:#fab696!important;
+  color:#fff!important;
+  }

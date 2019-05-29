@@ -1,0 +1,90 @@
+<!--pages/index/project/index.wxml-->
+<image src="http://api.iqianclub.com/upload/program/images/swimming_pool_photo.png" class="project-img"></image>
+<view class="index-share-cnt project-cnt">
+  <text class="index-share-title">四闲山房 | 加入虔心荟，让免费度假成为可能！首期体验会籍，限量1000名！</text>
+  <view class="index-planDetail">
+    <view class="index-planDetail-cnt">
+      <text class="num">1<text class="num-txt">万</text></text>
+      <text class="num-txt">参与费</text>
+    </view>
+    <view class="index-planDetail-cnt">
+      <text class="num">30<text class="num-txt">年</text></text>
+      <text class="num-txt">返现期限</text>
+    </view>
+    <view class="index-planDetail-cnt">
+      <text class="num">8<text class="num-txt">%</text></text>
+      <text class="num-txt">预估每年返利</text>
+    </view>
+    <view class="index-planDetail-cnt">
+      <text class="num">10<text class="num-txt">%</text></text>
+      <text class="num-txt">每年返住房券</text>
+    </view>
+  </view>
+  <!-- 参与计划参数说明 -->
+  <view class="index-planDetail-explain">
+    <view class="index-sanjiao">
+      <view class="index-small-sanjiao"></view>
+    </view>
+    隐匿竹海，静谧清幽，体验四闲之乐。位于江西龙南“虔心小镇”内，依山而建，林中别墅。纯生态度假，纯田园风光，返璞归真，给您最纯粹的享受。
+  </view>
+  <!-- 项目介绍 -->
+  <view class="index-project">
+    <view class="index-project-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/small_icon1.png" class="index-project-icon"></image>
+      <text class="index-project-txt">项目规模：23栋独立别墅，30间客房 </text>
+    </view>
+    <view class="index-project-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/small_icon2.png" class="index-project-icon"></image>
+      <text class="index-project-txt">项目优势：客源稳定，入住率高  </text>
+    </view>
+    <view class="index-project-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/small_icon3.png" class="index-project-icon"></image>
+      <text class="index-project-txt">景区特色：万亩有机茶园，万棵红豆杉伴生环绕 </text>
+    </view>
+    <view class="index-project-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/small_icon4.png" class="index-project-icon"></image>
+      <text class="index-project-txt">别墅风格：茶旅文化，古风浓郁 </text>
+    </view>
+    <view class="index-project-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/small_icon5.png" class="index-project-icon"></image>
+      <text class="index-project-txt">别墅景观：半山望茶园，竹海星空 </text>
+    </view>
+    <view class="index-project-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/small_icon6.png" class="index-project-icon"></image>
+      <text class="index-project-txt">别墅配套：山间茶吧，山泉无边泳池，360︒景观台 </text>
+    </view>
+  </view>
+  <!-- 计划参与进度 -->
+  <view class="index-progress">
+    <view class="index-planDetail-cnt">
+      <text class="progress-num">380</text>
+      <text class="progress-txt">已购人数</text>
+    </view>
+    <view class="index-planDetail-cnt">
+      <text class="progress-num">620</text>
+      <text class="progress-txt">仅剩名额</text>
+    </view>
+    <view class="index-planDetail-cnt">
+      <text class="progress-num">19<text class="progress-num-txt">天</text></text>
+      <text class="progress-txt">剩余时间</text>
+    </view>
+  </view>
+  <!-- 进度条 -->
+  <progress percent="40" stroke-width="6" activeColor="#E1BB5B" />
+</view>
+<!-- 详情介绍 -->
+<view class="project-detail">
+  <view>
+    概况
+  </view>
+  <view>
+    关键信息
+  </view>
+  <view>
+    返利方案
+  </view>
+</view>
+<!-- 概况 -->
+<view>
+
+</view>

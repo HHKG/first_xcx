@@ -1,0 +1,358 @@
+// pages/login/index/registe/data/data.js
+var app = getApp();
+//console.log(app)
+var utilMd5 = require('../../../utils/md5.js');
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    hiddenOne: true,
+    hiddenTwo: true,
+    hiddenThree: true,
+    checked: false,
+    mobile: '',
+    mobilecode: '',
+    back: '',
+    year: [{
+      'year': '1',
+      'cash': '6000',
+      'coupom': '12000',
+      'sum': '18000'
+    },
+    {
+      'year': '5',
+      'cash': '30000',
+      'coupom': '60000',
+      'sum': '90000'
+    },
+    {
+      'year': '10',
+      'cash': '60000',
+      'coupom': '120000',
+      'sum': '180000'
+    },
+    {
+      'year': '15',
+      'cash': '90000',
+      'coupom': '180000',
+      'sum': '270000'
+    },
+    {
+      'year': '30',
+      'cash': '180000',
+      'coupom': '360000',
+      'sum': '540000'
+    }
+    ],
+    pop: [{
+      'id': '1',
+      'title': '1. 您近一年有过几次度假？',
+      'num': '2次以内',
+      'money1': '2次以内',
+      'money2': '2到5次',
+      'money3': '5次以上'
+    }, {
+      'id': '2',
+        'title': '2. 您近一年度假费用支出多少？',
+        'num': '1000以内',
+        'money1': '1000以内',
+        'money2': '1000到10000',
+        'money3': '10000以上'
+    }, {
+      'id': '3',
+        'title': '3. 您是否有加入过其它的度假俱乐部？',
+      'num': '无',
+        'money1': '无',
+        'money2': '有',
+        'money3': ''
+    }],
+    hidden: 3,
+    li: 0,
+    rebate: '6%',
+    fixedScale: '12%',
+    planCash: '10',
+    hide: true,
+    cartoon: 10,
+    animation: '',
+    toPop: '',
+    question1: '您近一年有过几次度假？',
+    question2: '您近一年度假费用支出多少？',
+    question3: '您是否有加入过其它的度假俱乐部？',
+    answer1: '2次以内',
+    answer2: '10000以下',
+    answer3: '无',
+    disabled:true
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log(wx.getStorageSync('incode'));
+    console.log(options);
+    var that = this;
+    var mobile = options.mobile;
+    var mobilecode = options.mobilecode;
+    var back = options.back;
+    //console.log(back);
+    if (mobile == undefined || mobilecode == undefined) {
+      wx.showToast({
+        icon:'none',
+        title: '非法操作',
+      })
+      wx.redirectTo({
+        url: '/pages/index/index',
+      })
+    }
+    that.setData({
+      mobile: mobile,
+      mobilecode: mobilecode,
+      back: decodeURIComponent(back)
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+  ,
+  /**
+   * 1:打开下拉框
+   */
+  openOne: function (e) {
+    this.setData({
+      hiddenOne: !this.data.hiddenOne
+    })
+  }
+  ,
+  /**
+ * 2:打开下拉框
+ */
+  openTwo: function (e) {
+    this.setData({
+      hiddenTwo: !this.data.hiddenTwo
+    })
+  }
+  ,
+  /**
+ * 3:打开下拉框
+ */
+  openThree: function (e) {
+    this.setData({
+      hiddenThree: !this.data.hiddenThree
+    })
+  }
+  ,
+  /**
+   * 勾选协议
+   */
+  change: function (e) {
+    if (this.data.checked==true){
+      this.setData({
+        checked: !this.data.checked,
+        disabled:true
+      })
+    }else{
+      this.setData({
+        checked: !this.data.checked,
+        disabled: false
+      })
+    }
+    
+  },
+  /**
+   * 获取用户信息并提交
+   */
+  bindGetUserInfo(e) {
+    var that = this;
+    var question = that.data.question1 + ':' + that.data.answer1 + ',' + that.data.question2 + ':' + that.data.answer2 + ',' + that.data.question3 + ':' + that.data.answer1;
+    var agree = that.data.checked;
+    if (agree == true) {
+      agree = 1;
+    } else {
+      wx.showToast({
+        icon:'none',
+        title: '请勾选注册协议',
+      })
+      return;
+    }
+    var type = 3;
+    var mobilecode = that.data.mobilecode;
+    var mobile = that.data.mobile;
+    var atricle = 'register'
+    var incode=wx.getStorageSync('incode')
+  
+    console.log(decodeURIComponent(that.data.back));
+    var time = Date.parse(new Date()) / 1000;
+    var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+    if (e.detail.errMsg == 'getUserInfo:ok') {
+      wx.login({
+        success(lres) {
+          if (lres.code) {
+            var code = encodeURI(lres.code);
+            var encryptedData = encodeURI(e.detail.encryptedData);
+            var iv = encodeURI(e.detail.iv);
+            var action = 'information'
+            var str = action + agree + atricle + mobilecode + encryptedData + incode + iv + mobile + question + randomstr + time + type + code;
+            console.log(str);
+            var lsign = utilMd5.hexMD5(str)
+            var datas = { atricle: atricle, mobile: mobile, question: question, agree: agree, type: type, code: mobilecode, from: app.from, action: action, time: time, wxcode: code, encryptedData: encryptedData , iv: iv, invite:incode, sign: lsign };
+            // console.log(datas);return;
+            wx.request({
+              url: app.host + action,
+              method: 'post',
+              dataType: 'json',
+              data: datas,
+              success(result) {
+                console.log(result);
+                if (result.data.code == 1) {
+                  wx.setStorageSync('token', result.data.token);
+                  if (that.data.back != undefined) {
+                    wx.reLaunch({
+                      url: that.data.back,
+                    })
+                  } else {
+                    wx.navigateTo({
+                      url: 'success/success?count=' + result.data.count,
+                    })
+                  }
+                }
+              }
+            })
+          }
+        }
+      })
+    }
+  },
+  /**
+   * 展示列表
+   */
+  showList: function (e) {
+    var id = e.currentTarget.dataset.id;
+    this.setData({
+      hidden: id - 1
+    })
+  },
+  /**
+   * 选择列表
+   */
+  select: function (e) {
+    console.log(e);
+    var id = e.currentTarget.dataset.id;
+    var val = e.currentTarget.dataset.val;
+    var index = e.currentTarget.dataset.index;
+    console.log(index);
+    if (val == '1万') {
+      this.data.pop[2].num = '10%';
+    }
+    if (val == '5万') {
+      this.data.pop[2].num = '11%';
+    }
+    if (val == '10万') {
+      this.data.pop[2].num = '12%';
+    }
+    if (val == '20万') {
+      this.data.pop[2].num = '13%';
+    }
+    // 修改pop数组里面的数据
+    this.data.pop[index].num = val;
+    var fixedScale = this.data.pop[2].num;
+    var rebate = this.data.pop[1].num;
+    var planCash = parseInt(this.data.pop[0].num);
+    var yearRebate = planCash * 10000 * parseInt(rebate) / 100;
+    var yearCoupom = planCash * 10000 * parseInt(fixedScale) / 100;
+    var yearSum = yearRebate + yearCoupom;
+    // 修改year[]数组的数据
+    for (var i = 0; i < this.data.year.length; i++) {
+      var a = this.data.year[i].cash,
+        b = this.data.year[i].coupom,
+        c = this.data.year[i].year;
+      a = yearRebate * c;
+      b = yearCoupom * c;
+
+      var test = function () {
+        console.log('123');
+      }
+      console.log(a, b, test);
+    }
+    test();
+    this.setData({
+      li: id,
+      pop: this.data.pop,
+      hidden: 3,
+      rebate: rebate,
+      fixedScale: fixedScale,
+      planCash: planCash
+    })
+  },
+
+  /**
+   * 开始计算/开始动画
+   */
+  calculate: function () {
+    this.setData({
+      hide: true
+    })
+  },
+  /**
+   * 会员注册协议
+   */
+  gotopop:function(){
+    wx.navigateTo({
+      url: '/pages/login/pop/index',
+    })
+  }
+  , 
+  /**
+   * 控制确认按钮是否高亮
+   */
+  controlbtn:function(){
+    // if()
+  }
+})

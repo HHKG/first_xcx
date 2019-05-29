@@ -1,0 +1,36 @@
+<!--pages/member/myInvite/myInvite.wxml-->
+<view>
+  <!-- 有邀请数据 -->
+  <view hidden='{{hidden}}'>
+    <view class="invite-h">
+      共
+      <text class="invite-num">18</text>位
+    </view>
+    <view class="invite-cnt">
+      <view class="invite-cnt-left">
+        <image src='/images/photo5.png' class="touxiang"></image>
+        <text class="invite-cnt-txt">安培</text>
+      </view>
+      <view class="invite-cnt-right">已参与计划</view>
+    </view>
+    <view class="invite-cnt">
+      <view class="invite-cnt-left">
+        <image src='/images/photo4.png' class="touxiang"></image>
+        <text class="invite-cnt-txt">handson</text>
+      </view>
+      <view class="invite-unjoin">未参与计划</view>
+    </view>
+  </view>
+  
+<!-- 没有邀请数据 -->
+  <view>
+    <view class="invite-none" >
+      <image src="/images/zhanweitu.png" class="invite-none-img"></image>
+      <text class="invite-none-txt">暂无好友参与计划，继续加油哦~</text>
+    </view>
+  </view>
+   <view class="invite-btn">
+      立即邀请好友领500元住房券
+    </view>
+</view>
+

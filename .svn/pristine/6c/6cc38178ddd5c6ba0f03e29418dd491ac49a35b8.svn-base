@@ -1,0 +1,6 @@
+<!--pages/member/certificate/certificate.wxml-->
+<view>
+  <view class="cer-cnt" style="height:{{height}}rpx">
+    <image src="{{zhengshu}}" class="cer-img" bindtap="lookImage"></image>
+  </view>
+</view>

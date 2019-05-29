@@ -1,0 +1,194 @@
+// pages/index/index.js
+var app = getApp();
+//console.log(app)
+var utilMd5 = require('../../utils/md5.js');
+Page({
+ 
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    bannerimg: [
+     
+    ],
+    mshowimg:[],
+    className0:"dotActive",
+    className1: "",
+    className2: "",
+    className3: ""
+  },
+  getPhoneNumber(e) {
+    var time = Date.parse(new Date()) / 1000;
+    var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+     wx.login({
+      success(lres){
+        console.log(lres);
+        if(lres.code){
+          var lsign = utilMd5.hexMD5('appletmobile' + lres.code + e.detail.encryptedData + e.detail.iv + randomstr + time)
+                wx.request({
+                  url: app.host + 'appletmobile',
+                  method: 'post',
+                  dataType: 'json',
+                  data: { from: app.from, action: 'appletmobile', time: time, code: lres.code, encryptedData: e.detail.encryptedData,  iv: e.detail.iv, sign: lsign },
+                  success(data) {
+                 //   console.log(data);
+                    if(data.data.code==1){
+                      if(data.data.new==-1){
+                       // console.log(data.data.member);
+                        wx.setStorageSync('member', data.data.member);
+                        wx.setStorageSync('token', data.data.token);
+                      }else{
+                        console.log(data.data);
+                        wx.setStorageSync('mobile', data.data.mobile);
+                        wx.navigateTo({
+                          url: '../login/autho',
+                        })
+                      }
+                    }
+                  }
+                })
+        
+        }
+      }
+    })
+    console.log(e.detail.errMsg)
+    console.log(e.detail.iv)
+    console.log(e.detail.encryptedData)
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that=this;
+    var time = Date.parse(new Date())/1000;
+    var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+//  wx.getStorage({
+//    key: 'token',
+//    success: function(res) {
+//      console.log(res);
+//    },
+//  })
+    // wx.login({
+    //   success(lres){
+    //     if(lres.code){
+    //       wx.getUserInfo({
+    //         withCredentials: true,
+    //         success(res) {
+    //           if (res.errMsg == 'getUserInfo:ok') {
+    //             wx.setStorage({
+    //               key: 'member',
+    //               data: res.rawData
+    //             })
+    //             var lsign = utilMd5.hexMD5('appletlogin' + lres.code + res.encryptedData + res.iv + randomstr+ res.signature  + time)
+    //             wx.request({
+    //               url: app.host + 'appletlogin',
+    //               method: 'post',
+    //               dataType: 'json',
+    //               data: { from: app.from, action:'appletlogin', time:time,code: lres.code,encryptedData: res.encryptedData, signature: res.signature, iv: res.iv, sign: lsign },
+    //               success(data) {
+    //                 console.log(data);
+    //               }
+    //             })
+    //           }
+    //           console.log(res);
+    //         },
+    //         fail(res) {
+    //           console.log(res);
+    //         }
+    //       })  
+    //     }
+    //   }
+    // })
+           
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  // onShareAppMessage: function () {
+
+  // }
+  // ,
+  /**
+   * 轮播图滑动触发的事件
+   */
+  changeDot: function (event) {
+    var dotActive = event.currentTarget.dataset.dotactive;
+    var current = event.detail.current;
+    if (current == 0) {
+      this.setData({
+        className0: dotActive,
+        className1: "",
+        className2: "",
+        className3: ""
+      })
+    }
+    if (current == 1) {
+      this.setData({
+        className0: "",
+        className1: dotActive,
+        className2: "",
+        className3: ""
+      })
+    }
+    if (current == 2) {
+      this.setData({
+        className0: "",
+        className1: "",
+        className2: dotActive,
+        className3: ""
+      })
+    }
+    if (current == 3) {
+      this.setData({
+        className0: "",
+        className1: "",
+        className2: "",
+        className3: dotActive
+      })
+    }
+  }
+})

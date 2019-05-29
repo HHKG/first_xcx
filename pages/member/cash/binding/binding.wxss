@@ -1,0 +1,2 @@
+/* pages/member/cash/binding/binding.wxss */
+@import "/pages/member/cash/authentication/authentication.wxss";

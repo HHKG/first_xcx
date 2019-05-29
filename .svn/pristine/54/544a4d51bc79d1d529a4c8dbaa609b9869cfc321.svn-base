@@ -1,0 +1,139 @@
+/* pages/member/rebate/rebate.wxss */
+@import "/pages/member/index.wxss";
+
+.rebate-h {
+  margin: 40rpx auto 0;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #f06b4b;
+  width: 500rpx;
+  border-radius: 10rpx;
+}
+
+.rebate-h-txt {
+  width: 250rpx;
+  height: 60rpx;
+  font-size: 32rpx;
+  color: #666;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.rebateActive {
+  color: #fff;
+  background-color: #f06b4b;
+}
+
+.rebate-cnt {
+  margin: 34rpx auto 0;
+  width: 650rpx;
+  height: 200rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 2rpx 8rpx 0rpx rgba(0, 0, 0, 0.2);
+  border-radius: 4rpx;
+  padding: 30rpx 20rpx;
+}
+
+.rebate-cnt-title {
+  display: flex;
+  justify-content: space-between;
+  height: 59rpx;
+  align-items: center;
+}
+
+.rebate-cnt-status {
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #f08a2b;
+  line-height: 33rpx;
+  display: flex;
+  align-items: center;
+}
+
+.rebate-cnt-num {
+  font-size: 42rpx;
+  font-weight: 600;
+  color: #333;
+  height: 59rpx;
+  line-height: 59rpx;
+}
+
+.rebate-cnt-txt {
+  font-size: 20rpx;
+  color: rgba(240, 107, 75, 1);
+  line-height: 28rpx;
+  border: 1rpx solid #f06b4b;
+  padding: 5rpx 10rpx;
+  border-radius: 41rpx;
+  margin-left: 10rpx;
+}
+
+.rebate-cnt-name {
+  height: 45rpx;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 45rpx;
+  white-space: nowrap;
+  margin-top: 10rpx;
+}
+
+.rebate-case-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rebate-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 33rpx;
+}
+
+.rebate-detail-txt {
+  margin-top: 10rpx;
+  width: 50%;
+  height: 33rpx;
+  font-size: 24rpx;
+  line-height: 33rpx;
+}
+
+.rebate-detail-num {
+  color: #333;
+}
+
+.day {
+  margin-top: 20rpx;
+}
+
+.rebate-none {
+  margin-top: 435rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rebate-none-img {
+  width: 170rpx;
+  height: 150rpx;
+}
+
+.rebate-none-txt {
+  margin-top: 10rpx;
+  height: 30rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 30rpx;
+}
+
+button {
+  margin-top: 121rpx;
+  width: 420rpx;
+  height: 90rpx;
+  background: #F0753A;
+  border-radius: 12rpx;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 90rpx;
+}

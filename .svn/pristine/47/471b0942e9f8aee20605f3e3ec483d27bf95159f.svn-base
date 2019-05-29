@@ -1,0 +1,9 @@
+<view class="index-body">
+    <view hidden='{{imitate==0?false:false}}' style="height:76rpx;" >
+    <import src="/pages/template/header/header" />
+    <template is="header"></template>
+  </view>
+  <view class="index-btn">
+ <button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+</view>

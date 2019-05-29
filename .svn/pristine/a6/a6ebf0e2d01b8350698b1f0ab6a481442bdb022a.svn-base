@@ -1,0 +1,51 @@
+<!--pages/index/project/detail/pay/success/success.wxml-->
+<view>
+
+
+<view class="success">
+  <import src="/pages/template/header/header" />
+  <template is="header" data='{{pattern}}'></template>
+  <view class="success-h">
+    <image src="http://api.iqianclub.com/upload/program/images/dingdanwancheng_photo.png" class="success-img"></image>
+    <text class="success-h-txt">订单支付完成</text>
+  </view>
+  <view class="success-cnt">
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">参与计划：</text>
+      <text>{{E_ProjectName}}{{E_Title}}</text>
+    </view>
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">支付金额：</text>
+      <text>{{E_OrderPrice}}</text>
+    </view>
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">支付方式：</text>
+      <text>{{paytype}}</text>
+    </view>
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">返现账单日：</text>
+      <text wx:if="{{pattern==1}}">{{E_BillDay}}</text>
+      <text wx:if="{{pattern==0}}">{{E_BillDay}}</text>
+    </view>
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">住房券发放日：</text>
+      <text>{{E_CouponTime}}</text>
+    </view>
+  </view>
+  <view class="success-bottom" wx:if="{{pattern}}" >
+    <image src="http://api.iqianclub.com/upload/program/images/jinggao.png" class="success-tips-img"></image>
+    <view class="success-tips-txt">提示：模拟模式下，分享计划的返现与返住房券周期均作缩短调整，以便您快速体验虔心荟俱乐部相关权益与服务。</view>
+</view>
+  <view class="success-btns">
+    <!-- <button class="btn1" bindtap='myorder'>查看订单</button> -->
+    <button class="btn2" bindtap='member'>查看我的计划</button>
+  </view>
+</view>
+
+<!-- 首单弹窗 -->
+<view class="success-mask" bindtap='closepop' style="display:{{close}}"></view>
+<view class="shoudan-pop"  style="display:{{close}}">
+<image class="shoudan-pop-img" src="http://api.iqianclub.com/upload/program/images/shoudan_tanchuan.png"></image>
+<image bindtap='closepop' class="shoudan-close-img" src="http://api.iqianclub.com/upload/program/images/member_close_icon.png"></image>
+</view>
+</view>

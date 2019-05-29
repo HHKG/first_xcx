@@ -1,0 +1,6 @@
+<view class="index-body">
+  
+  <view class="index-btn">
+ <button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+</view>

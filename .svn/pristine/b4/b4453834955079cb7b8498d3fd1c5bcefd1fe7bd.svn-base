@@ -1,0 +1,563 @@
+<view class="holiday-body">
+    <import src="/pages/template/header/header" />
+    <template is="header"></template>
+  <!-- header -->
+  <view class="holiday-h">
+    <text class=" title {{id==0?'active':''}}" data-id='0' bindtap='changeTab'>度假地</text>
+    <text class="line"></text>
+    <text class=" title {{id==1?'active':''}}" data-id='1' bindtap='changeTab'>主题</text>
+  </view>
+  <!-- 度假地 -->
+  <view class="holiday" hidden='{{id==0?false:true}}'>
+    <!-- banner -->
+    <view class="holiday-banner">
+      <image bindtap='gotoFree' src='http://api.iqianclub.com/upload/program/images/hotel_banner.png' class="holiday-banner-img"></image>
+    </view>
+    <!-- 地区房源 -->
+    <view class="area">
+      <!-- 地区名字 -->
+      <view class="area-name">
+        <view class="area-name-cnt {{area==2?'area-name-cnt-active':''}}" data-area='2' bindtap='changeTab'>热门</view>
+        <view class="area-name-cnt {{area==3?'area-name-cnt-active':''}}" data-area='3' bindtap='changeTab'>国内</view>
+        <view class="area-name-cnt {{area==4?'area-name-cnt-active':''}}" data-area='4' bindtap='changeTab'>泰国</view>
+        <view class="area-name-cnt {{area==8?'area-name-cnt-active':''}}" data-area='8' bindtap='changeTab'>马来西亚</view>
+        <view class="area-name-cnt {{area==5?'area-name-cnt-active':''}}" data-area='5' bindtap='changeTab'>日本</view>
+        <view class="area-name-cnt {{area==6?'area-name-cnt-active':''}}" data-area='6' bindtap='changeTab'>越南</view>
+        <view class="area-name-cnt {{area==7?'area-name-cnt-active':''}}" data-area='7' bindtap='changeTab'>新加坡</view>
+        <view class="area-name-cnt {{area==9?'area-name-cnt-active':''}}" data-area='9' bindtap='changeTab'>美国</view>
+      </view>
+      <!-- 地区房源 -->
+      <view class="area-cnt" hidden='{{area==2? false:true}}'>
+        <view class="area-cnt-name" data-id="0" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/place1.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">1个房源</text>
+            </view>
+            <view class="area-cnt-txt2">赣州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name" data-id="2" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/place5.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">3个房源</text>
+            </view>
+            <view class="area-cnt-txt2">佛山</view>
+          </view>
+        </view>
+        <view class="area-cnt-name" data-id="1" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/guangzhou.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">1个房源</text>
+            </view>
+            <view class="area-cnt-txt2">广州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name" data-id="3" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/place6.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">1个房源</text>
+            </view>
+            <view class="area-cnt-txt2">惠州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place2.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">苏梅岛</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place3.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">普吉岛</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/dongjing.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">东京</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place8.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">
+              <view>更多度假地</view>
+              <view>敬请期待</view>
+            </view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+      </view>
+      <view class="area-cnt" hidden='{{area==3? false:true}}'>
+        <view class="area-cnt-name" data-id="0" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/place1.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">1个房源</text>
+            </view>
+            <view class="area-cnt-txt2">赣州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name" data-id="2" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/place5.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">3个房源</text>
+            </view>
+            <view class="area-cnt-txt2">佛山</view>
+          </view>
+        </view>
+        <view class="area-cnt-name" data-id="1" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/guangzhou.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">1个房源</text>
+            </view>
+            <view class="area-cnt-txt2">广州</view>
+          </view>
+        </view>
+
+        <view class="area-cnt-name" data-id="3" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/place6.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">1个房源</text>
+            </view>
+            <view class="area-cnt-txt2">惠州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name" data-id="3" bindtap='toRoomList'>
+          <image src='http://api.iqianclub.com/upload/program/images/shenzhen.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">深圳</view>
+          </view>
+           <view class="area-cnt-mask"></view>
+        </view>
+      </view>
+      <view class="area-cnt" hidden='{{area==4? false:true}}'>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place2.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">苏梅岛</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place3.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">普吉岛</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+      </view>
+      <view class="area-cnt" hidden='{{area==5? false:true}}'>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/dongjing.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">东京</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/hengbin.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">横滨</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/shenhu.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">神户</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+      </view>
+       <view class="area-cnt" hidden='{{area==6? false:true}}'>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/jilongpo.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">胡志明市</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/jiangan.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">岘港</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/henei.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">河内</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+      </view>
+      <view class="area-cnt" hidden='{{area==7? false:true}}'>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/jilongpo.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">新加坡</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+      </view>
+      <view class="area-cnt" hidden='{{area==9? false:true}}'>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/jilongpo.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">夏威夷</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/jilongpo.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">洛杉矶</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/jilongpo.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">拉斯维加斯</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+      </view>
+      <view class="area-cnt" hidden='{{area==8? false:true}}'>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/jilongpo.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">吉隆坡</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/bincheng.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">待开放</text>
+            </view>
+            <view class="area-cnt-txt2">槟城</view>
+          </view>
+          <view class="area-cnt-mask"></view>
+        </view>
+      </view>
+    </view>
+    <!-- banner -->
+    <view class="holiday-banner">
+      <image src='http://api.iqianclub.com/upload/program/images/service_banner.png' class="holiday-banner-img"></image>
+    </view>
+    <!--参与计划  -->
+    <view class="holiday-plan">
+      <image src='http://api.iqianclub.com/upload/program/images/free_holiday_title.png' class="holiday-plan-img1"></image>
+      <image src='http://api.iqianclub.com/upload/program/images/free_holiday_flow.png' class="holiday-plan-img2"></image>
+      <image src='http://api.iqianclub.com/upload/program/images/free_holiday_flow2.png' class="holiday-plan-img3"></image>
+      <image src='http://api.iqianclub.com/upload/program/images/free_holiday_map.png' class="holiday-plan-img4"></image>
+      <view class="holiday-share" bindtap='pop'>什么是分享计划？
+        <image class="holiday-link" src='http://api.iqianclub.com/upload/program/images/link_icon_gray.png'></image>
+      </view>
+    </view>
+    <!-- 弹窗 -->
+    <view class="free-mask" hidden='{{hidden}}' bindtap='pop'></view>
+    <view class="free-pop" hidden='{{hidden}}'>
+      <view class="free-pop-h">什么是分享计划</view>
+      <view class="free-pop-txt"> 虔心分享计划是虔心荟特别策划的会员专属权益，即通过甄选全球优质别墅/酒店，与之建立联盟合作关系，赋予会员独一无二的消费特权。 会员可通过参与计划成为别墅/酒店合伙人，与别墅/酒店分利润，最大限度地实现会籍保值、升值、长赢。 </view>
+      <view class="free-pop-txt">目的就是让您用最少的支出，收获最多的快乐与财富！</view>
+      <view class="ensure" bindtap='pop'>确定</view>
+    </view>
+    <!-- 四宫格 -->
+    <view class="gong-ge">
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="http://api.iqianclub.com/upload/program/images/card_icon1.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">专属管家</text>
+        </view>
+        <view class="holiday-ensure-f">专属管家服务，为您的度假提供全程贴心服务。</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="http://api.iqianclub.com/upload/program/images/card_icon2.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">尊享特权</text>
+        </view>
+        <view class="holiday-ensure-f">订房优先、订房折扣、延迟退房、购物优惠及免费住房。</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="http://api.iqianclub.com/upload/program/images/card_icon3.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">个性化</text>
+        </view>
+        <view class="holiday-ensure-f">更大、更私密空间， 能够满足您不同场景下的个性化需求。</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="http://api.iqianclub.com/upload/program/images/card_icon4.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">品质</text>
+        </view>
+        <view class="holiday-ensure-f">尊享奢华住宿。体验专人定期检查，保证无与伦比的品质。</view>
+      </view>
+    </view>
+    <!-- 精彩评价 -->
+    <view class="evaluate">
+      <view class="evaluate-h">精彩评价</view>
+      <view class="holiday-swiper">
+        <swiper bindchange="changeDot" indicator-color="#e0e0e0" indicator-active-color="#fff" circular="true" current="0" data-dotActive='dotActive' autoplay='true' style="height:665rpx;padding:10rpx 0;">
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="http://api.iqianclub.com/upload/program/images/profile_photo1.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">李大大</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="http://api.iqianclub.com/upload/program/images/local_icon1.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">四闲山房别墅 | 国内，赣州</text>
+              </view>
+              <view class="evaluate-words">
+                <image src="http://api.iqianclub.com/upload/program/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                氧离子充足，和家人度假、放松心情的绝佳之处，既返朴归真又高档别致的别墅。此次度假，体验虔心荟会员特权及专属管家服务，实现了免费度假，省心省力又省钱，大赞哈！
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="http://api.iqianclub.com/upload/program/images/profile_photo2.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">爱生活</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="http://api.iqianclub.com/upload/program/images/local_icon1.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt"> 珊瑚湾海边度假别墅群 | 泰国，苏梅岛</text>
+              </view>
+              <view class="evaluate-words">
+                <image src="http://api.iqianclub.com/upload/program/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+参与虔心荟的分享计划，用住房券、计划返现实现第一次真正的免费度假。特别舒适的一次度假. 别墅面积巨大，是也特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="http://api.iqianclub.com/upload/program/images/profile_photo3.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">一笑而过</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="http://api.iqianclub.com/upload/program/images/local_icon1.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">圣托利温泉庄园别墅 | 国内，广州</text>
+              </view>
+              <view class="evaluate-words">
+                <image src="http://api.iqianclub.com/upload/program/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                   很棒、很安静、很私密。
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="http://api.iqianclub.com/upload/program/images/profile_photo4.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">草莓姐姐</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="http://api.iqianclub.com/upload/program/images/local_icon1.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">卡普拉山庄园度假别墅 | 泰国，苏梅岛 </text>
+              </view>
+              <view class="evaluate-words">
+                <image src="http://api.iqianclub.com/upload/program/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                感谢管家分享私人定制服务的入住体验，早餐满满一大桌，出门就是洁白的沙滩，号称是普吉最好的沙滩区域 ，蓝天配泳池， 蓝的可以哈哈哈。最后，感谢管家很热心帮忙。                  
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="http://api.iqianclub.com/upload/program/images/profile_photo5.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">周先生</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="http://api.iqianclub.com/upload/program/images/local_icon1.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">四闲山房别墅 | 国内，赣州</text>
+              </view>
+              <view class="evaluate-words">
+                <image src="http://api.iqianclub.com/upload/program/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                加入虔心荟度假俱乐部一段时间了，再一次使用住房券免费订房。别墅很漂亮，每天泡在别墅里也是不错的选择，值得一提的是，别墅管家做的饭出乎意料的好吃。管家的服务很赞，很贴心。
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="http://api.iqianclub.com/upload/program/images/profile_photo6.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">年轻人</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="http://api.iqianclub.com/upload/program/images/local_icon1.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">小箱根温泉山庄别墅 | 国内，惠州 </text>
+              </view>
+              <view class="evaluate-words">
+                <image src="http://api.iqianclub.com/upload/program/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                   别墅位置稍微偏了一些，门口的小路还在修缮中，但是美景无敌～静谧的私家海滩完全无人打扰，无边际泳池随时可以放松身心。很荣幸成为会员，订房有很大折扣，很划算哈，下次出行一定会再找虔心荟度假俱乐部。
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+        <view class="holiday-dots">
+          <view class="holiday-dot {{current==0?'dotActive':''}}"></view>
+          <view class="holiday-dot {{current==1?'dotActive':''}}"></view>
+          <view class="holiday-dot {{current==2?'dotActive':''}}"></view>
+          <view class="holiday-dot {{current==3?'dotActive':''}}"></view>
+          <view class="holiday-dot {{current==4?'dotActive':''}}"></view>
+          <view class="holiday-dot {{current==5?'dotActive':''}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 主题 -->
+  <view class="theme" hidden='{{id==1?false:true}}'>
+    <view class="theme-cnt" data-id="4" bindtap='toRoomList'>
+      <image src='http://api.iqianclub.com/upload/program/images/theme4.png' class="theme-cnt-img"></image>
+      <view class="area-cnt-txt">
+        <view class="area-cnt-txt1">
+          <text class="area-cnt-txt3">5个房源</text>
+        </view>
+        <view class="area-cnt-txt2">
+          <text>温泉</text>
+          <text>Hot spring</text>
+        </view>
+      </view>
+    </view>
+    <view class="theme-cnt" data-id="5" bindtap='toRoomList'>
+      <image src='http://api.iqianclub.com/upload/program/images/theme3.png' class="theme-cnt-img"></image>
+      <view class="area-cnt-txt">
+        <view class="area-cnt-txt1">
+          <text class="area-cnt-txt3">6个房源</text>
+        </view>
+        <view class="area-cnt-txt2">
+          <text>家庭</text>
+          <text>Family</text>
+        </view>
+      </view>
+    </view>
+    <view class="theme-cnt" data-id="6" bindtap='toRoomList'>
+      <image src='http://api.iqianclub.com/upload/program/images/theme1.png' class="theme-cnt-img"></image>
+      <view class="area-cnt-txt">
+        <view class="area-cnt-txt1">
+          <text class="area-cnt-txt3">1个房源</text>
+        </view>
+        <view class="area-cnt-txt2">
+          <text>生态观光</text>
+          <text>Ecological tourism</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="theme-cnt">
+      <image src='http://api.iqianclub.com/upload/program/images/theme2.png' class="theme-cnt-img"></image>
+      <view class="area-cnt-txt">
+        <view class="area-cnt-txt1">
+          <text class="area-cnt-txt3">待开放</text>
+        </view>
+        <view class="area-cnt-txt2">
+          <text>海岛线</text>
+          <text>Island line</text>
+        </view>
+      </view>
+      <view class="theme-cnt-mask"></view>
+    </view>
+
+
+  </view>
+  <view class="footer">
+    <view class="footer-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/logo.png?2121" class="footer-img"></image>
+      <text class="footer-title">虔心荟度假俱乐部</text>
+    </view>
+    <view class="footer-address">
+      地址：中国·广州 珠江新城合景国际金融广场
+    </view>
+    <view class="footer-address">
+      顾问热线：
+      <text class="footer-phone" bindtap='makeCall'>{{phonenum}}</text>
+    </view>
+    <view class="version">
+          v{{version}}
+      </view>
+  </view>
+  <!-- 悬浮按钮 -->
+  <view class="holiday-suspend-btn   {{btn==1?'animation-hide':'animation-show'}} {{id==0?'':'btn-hide'}}" bindtap='gotoFree'>
+    <image class="holiday-xuanfu-img" src="http://api.iqianclub.com/upload/program/images/free_icon.png?2121"></image>
+  </view>
+</view>

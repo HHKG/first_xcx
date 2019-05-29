@@ -1,0 +1,97 @@
+/* pages/member/order/order.wxss */
+
+.order {
+  width: 690rpx;
+  height: 410rpx;
+  box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(0, 0, 0, 0.2);
+  border-radius: 4rpx;
+  background-color: #fff;
+  margin: 30rpx 30rpx 0rpx 30rpx;
+}
+
+.order-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 15rpx 30rpx;
+}
+
+.order-title-number {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 40rpx;
+}
+
+.order-title-wait {
+  font-size: 28rpx;
+  color: #f88e5c;
+  line-height: 40rpx;
+}
+
+.order-cnt {
+  padding: 30rpx;
+}
+
+.order-cnt-cnt {
+}
+
+.order-cnt-h-img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 4rpx;
+}
+
+.order-cnt-txt {
+  display: flex;
+  justify-content: space-between;
+  width: 470rpx;
+  margin-left:30rpx;
+}
+
+.order-cnt-h {
+  display: flex;
+}
+.order-cnt-name{
+margin-top:10rpx;
+font-size:28rpx;
+color:#333;
+line-height:40rpx;
+}
+.order-cnt-cate{
+font-size:28rpx;
+margin-top:10rpx;
+color:#999;
+line-height:40rpx;
+}
+
+button {
+  width: 242rpx;
+  height: 92rpx;
+  background-color: #f88e5c;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 92rpx;
+  margin-left:76rpx;
+}
+
+.order-add {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+
+}
+
+.order-footer {
+  display: flex;
+  align-items: center;
+  margin-top:16rpx;
+}
+
+.order-footer-times {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 33rpx;
+   white-space: nowrap;
+}

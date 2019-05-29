@@ -1,0 +1,57 @@
+/* pages/member/cash/authentication/authentication.wxss */
+
+page {
+  background-color: #fafafa;
+}
+
+.aut-title {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 40rpx;
+  padding:30rpx;
+}
+.aut-h{
+  background-color:#fff;
+}
+.aut-cnt{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30rpx;
+}
+.aut-cnt-txt{
+font-size:28rpx;
+color:#333;
+line-height:40rpx;
+}
+.aut-cnt-input{
+font-size:28rpx;
+color:#999;
+line-height:40rpx;
+text-align: end;
+}
+.aut-line{
+  position: absolute;
+  right:30rpx;
+  left:30rpx;
+  bottom:0;
+  content: "";
+  display: inline-block;
+  border-bottom:1rpx solid #e0e0e0;
+}
+button{
+  width: 690rpx;
+  height: 90rpx;
+  background: linear-gradient(360deg, rgba(240, 117, 58, 1) 0%, rgba(254, 159, 113, 1) 100%);
+  box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(240, 117, 58, 1);
+  border-radius: 12rpx;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 90rpx;
+  margin-top: 61rpx;
+}
+button[disabled]{
+background-color:#f1bda3!important;
+color: #fff!important;
+}

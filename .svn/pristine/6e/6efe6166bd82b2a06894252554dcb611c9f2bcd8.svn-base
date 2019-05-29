@@ -1,0 +1,162 @@
+<!--pages/index/award/award.wxml-->
+<view>
+  <view class="award-h">
+    <image src="http://api.iqianclub.com/upload/program/images/bg.png" class="award-bg"></image>
+    <view class="award-h-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/invitation_title.png" class="award-invitation-img"></image>
+      <view class="award-coupom">
+        <view class="award-line">
+          <image src="http://api.iqianclub.com/upload/program/images/hhh.png" class="award-ticket"></image>
+          <view class="award-area-txt">全球住房通用券 免费入住 赣州 | 广州 | 佛山 | 惠州</view>
+          <view class="award-more-txt">了解更多度假地 >></view>
+        </view>
+      </view>
+      <view class="award-num">
+        <view class="award-num-txt">0</view>
+        <view class="award-num-txt">1</view>
+        <view class="award-num-txt">3</view>
+        <view class="award-num-txt">2</view>
+        <view class="award-num-txt">8</view>
+      </view>
+      <view class="award-action">
+        活动累计参与人数
+      </view>
+      <view class="award-action-time">
+        （活动时间：2019.5.1-2019.6.15）
+      </view>
+      <view class="award-coupom-btn">
+        立即邀请好友拿住房券
+      </view>
+      <view class="award-flow">
+        <view class="share">
+          <image src="http://api.iqianclub.com/upload/program/images/share_icon.png" class="share-icon"></image>
+          <text class="share-txt">分享活动给好友</text>
+        </view>
+        <view class="share-line"></view>
+        <view class="share">
+          <image src="http://api.iqianclub.com/upload/program/images/join_plan_icon.png" class="share-icon"></image>
+          <text class="share-txt">好友参与分享计划</text>
+        </view>
+        <view class="share-right-line"></view>
+        <view class="share">
+          <image src="http://api.iqianclub.com/upload/program/images/housing_tiket_icon.png" class="share-icon"></image>
+          <text class="share-txt">住房券到账</text>
+        </view>
+      </view>
+      <view class="invite-list">
+        <view class="invite-list-h">
+          <text class="invite-ranking-txt">邀请排行榜<text class="invite-ranking-tips">(仅显示前10名)</text></text>
+          <text class="my-invite">我的邀请 ></text>
+        </view>
+        <view class="invite-ranking-list">
+          <image src="http://api.iqianclub.com/upload/program/images/first_prize.png" class="first-prize"></image>
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo1.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">王恩聪</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <image src="http://api.iqianclub.com/upload/program/images/second_prize.png" class="first-prize"></image>
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo2.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">陈海鸥</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <image src="http://api.iqianclub.com/upload/program/images/third_prize.png" class="first-prize"></image>
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo3.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">谭子文</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <!-- <image src="/images/first_prize.png" class="first-prize"></image> -->
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo4.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">郑秋</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <!-- <image src="/images/first_prize.png" class="first-prize"></image> -->
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo5.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">安培</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <!-- <image src="/images/first_prize.png" class="first-prize"></image> -->
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo1.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">鱿鱼</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <!-- <image src="/images/first_prize.png" class="first-prize"></image> -->
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo1.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">迷途小书童</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <!-- <image src="/images/first_prize.png" class="first-prize"></image> -->
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo1.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">KG</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <!-- <image src="/images/first_prize.png" class="first-prize"></image> -->
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo1.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">baes</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+        <view class="invite-ranking-list">
+          <!-- <image src="/images/first_prize.png" class="first-prize"></image> -->
+          <view class="award-person">
+            <image src="http://api.iqianclub.com/upload/program/images/photo1.png" class="touxiang"></image>
+            <view class="award-person-txt">
+              <text class="award-nsmr-txt">米兔</text>
+              <text class="award-friend-txt">共邀请18位好友</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="award-footer">
+        <image src="http://api.iqianclub.com/upload/program/images/activity_rule_title.png" class="activity-icon"></image>
+        <view class="award-footer-txt">
+          <view class="award-activity-txt">1.活动期间，每邀请一位好友参与虔心荟分享计划，您即可得<text>￥500</text>元住房券（可累计，奖励无上限）。</view>
+          <view class="award-activity-txt">2. 本活动最终解释权归虔心荟所有，如有疑问，请咨询客服：400-990-8830。 </view>
+          <view class="award-activity-txt">3.我的全球通用住房券可在<text>会员中心</text>查看</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

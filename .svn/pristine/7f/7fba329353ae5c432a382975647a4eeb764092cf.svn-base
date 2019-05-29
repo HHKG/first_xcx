@@ -1,0 +1,211 @@
+// pages/index/index.js
+var app = getApp();
+//console.log(app)
+var utilMd5 = require('../../utils/md5.js');
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    projects:[],
+    others: [],
+    bannerimg: [
+
+    ],
+    mshowimg: [],
+    className0: "dotActive",
+    className1: "",
+    className2: "",
+    className3: ""
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    // if (options.Invitation != '') {
+    //   this.setData({
+    //     Invitation: options.Invitation
+    //   })
+    // }
+    var that = this;
+    var time = Date.parse(new Date()) / 1000;
+    var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+    var limit = 1;
+    var order = "E_Create_time";
+    var action ='project'
+    var sign = utilMd5.hexMD5(action + limit + order + app.pattern + randomstr + time);
+    wx.request({
+      url: app.host+action,
+      method:'get',
+      dataType:'json',
+      data: { pattern: app.pattern, from: app.from, time: time, action: action, limit: limit, order: order, sign: sign},
+      success(datas){
+        console.log(datas.data.otherprojects);
+        if(datas.data.code==1){
+         console.log(datas.data.projects);
+          that.setData({
+            projects: datas.data.projects,
+            others: datas.data.otherprojects
+          })
+        }
+       
+      }
+    })
+    var bsign = utilMd5.hexMD5('getSlideItems' + randomstr + time + '1');
+    wx.request({
+      url: app.host + 'getSlideItems',
+      method: 'GET',
+      dataType: 'json',
+      data: { from: app.from, type: 1, time: time, action: 'getSlideItems', sign: bsign },
+      success: function (res) {
+        // console.log(res);
+        that.setData({
+          bannerimg:
+            res.data.slides
+        })
+      }
+    })
+    var msign = utilMd5.hexMD5('getSlideItems' + randomstr + time + '2');
+    wx.request({
+      url: app.host + 'getSlideItems',
+      method: 'GET',
+      dataType: 'json',
+      data: { from: app.from, type: 2, time: time, action: 'getSlideItems', sign: msign },
+      success: function (res) {
+      //  console.log(res);
+        that.setData({
+          mshowimg:
+            res.data.slides
+        })
+      }
+    })
+    var again=1;
+    var waction ='getwxinfo';
+    var sn ='PJ201904150007';
+    var wsign = utilMd5.hexMD5(action + again + randomstr + sn + time);
+    wx.request({
+      url: app.host +'getwxinfo',
+      data: { from: app.from, time: time, again: again, sn: sn, action: action, sign: wsign },
+      method: 'POST',
+      header: { token:'d6b4af4885094dd3699f3c6fee1ad5260f1338eb386632010674955e676195e7'},
+      dataType: 'json',
+      success: function (data) {
+        var info = data.data.info;
+        info.success = function (res) { console.log(res) };
+        info.fail = function (res) { console.log(res) };
+        // info.complete = function (res) { console.log(res) };
+        console.log(info);
+            if(data.data.code==1){
+              wx.requestPayment(
+                info
+                
+              )
+            }
+      },
+    })
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+  ,
+  /**
+   * 轮播图滑动触发的事件
+   */
+  changeDot: function (event) {
+    var dotActive = event.currentTarget.dataset.dotactive;
+    var current = event.detail.current;
+    if (current == 0) {
+      this.setData({
+        className0: dotActive,
+        className1: "",
+        className2: "",
+        className3: ""
+      })
+    }
+    if (current == 1) {
+      this.setData({
+        className0: "",
+        className1: dotActive,
+        className2: "",
+        className3: ""
+      })
+    }
+    if (current == 2) {
+      this.setData({
+        className0: "",
+        className1: "",
+        className2: dotActive,
+        className3: ""
+      })
+    }
+    if (current == 3) {
+      this.setData({
+        className0: "",
+        className1: "",
+        className2: "",
+        className3: dotActive
+      })
+    }
+  }
+  ,
+  /**
+   * 跳转到计划详情
+   */
+  toProject:function(e){
+    
+    var code = e.target.dataset.code;
+    // console.log(code); return;
+    wx.navigateTo({
+      url: '../index/project/project?project=' + code,
+    })
+  }
+})

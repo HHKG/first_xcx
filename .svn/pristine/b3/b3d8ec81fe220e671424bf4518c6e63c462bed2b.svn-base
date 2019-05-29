@@ -1,0 +1,10 @@
+<!--pages/member/certificate/certificate.wxml-->
+<view>
+  <view hidden='{{imitate==0?false:false}}' style="height:76rpx;" >
+    <import src="/pages/template/header/header" />
+    <template is="header"></template>
+  </view>
+  <view class="cer-cnt">
+    <image src="{{zhengshu}}" class="cer-img" bindtap="lookImage"></image>
+  </view>
+</view>

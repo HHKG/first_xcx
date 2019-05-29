@@ -1,0 +1,12 @@
+/* pages/member/certificate/certificate.wxss */
+.cer-img {
+  margin-top:30rpx;
+  width: 690rpx;
+  height:92%;
+}
+.cer-cnt{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

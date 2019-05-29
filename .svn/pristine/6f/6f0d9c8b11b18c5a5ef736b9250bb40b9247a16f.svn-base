@@ -1,0 +1,183 @@
+<!--pages/member/index.wxml-->
+<view>
+  <view class="member-h">
+    <view class="member-card-img-position">
+      <image class="member-card-img" src="http://api.iqianclub.com/upload/program/images/card.png"></image>
+      <image class="member-jioabiao-img" src="http://api.iqianclub.com/upload/program/images/jiaobiao.png"></image>
+      <view class="member-card-cnt">
+        <view class="member-card-h">
+          <image src="http://api.iqianclub.com/upload/program/images/touxiang.png" class="member-touxiang"></image>
+          <view class="member-card-txt">
+            <text class="member-name">王思聪</text>
+            <text class="member-phone">15800000036</text>
+          </view>
+        </view>
+        <view class="member-card-val">
+          <view class="member-qian-val">
+            <text class="qian-val-num">54465</text>
+            <text class="qian-val-txt">虔心值</text>
+          </view>
+          <view class="card-num">
+            0100 8888
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="member-grade">
+    <image src="http://api.iqianclub.com/upload/program/images/baiyin_member.png" class="member-grade-img"></image>
+    <view class="member-recharge">
+      <text class="member-grade-txt">充值(升级会员)</text>
+      <image class="member-right-img" src="http://api.iqianclub.com/upload/program/images/right_arrow.png"></image>
+    </view>
+  </view>
+  <!-- 三宫格 -->
+  <view class="member-gongge">
+    <view class="member-gongge-cnt">
+      <image class="member-order-img" src="http://api.iqianclub.com/upload/program/images/yellow_icon4.png"></image>
+      <text class="member-gongge-txt">参与新计划</text>
+    </view>
+    <view class="member-gongge-cnt">
+      <image class="member-order-img" src="http://api.iqianclub.com/upload/program/images/yellow_icon2.png"></image>
+      <text class="member-gongge-txt">会员权益</text>
+    </view>
+    <view class="member-gongge-cnt">
+      <image class="member-order-img" src="http://api.iqianclub.com/upload/program/images/yellow_icon3.png"></image>
+      <text class="member-gongge-txt">我的订单</text>
+    </view>
+  </view>
+  <!-- banner -->
+  <image class="member-banner" src="http://api.iqianclub.com/upload/program/images/middle_banner_brown.png"></image>
+  <view class="member-account">
+    <view class="member-account-cnt">
+      <text class="member-account-num">100000.00</text>
+      <text class="member-account-txt">累计充值(元)</text>
+    </view>
+    <view class="member-account-cnt">
+      <text class="member-account-num">100000.00</text>
+      <text class="member-account-txt">余额(元)</text>
+    </view>
+    <view class="member-account-cnt">
+      <text class="member-account-num">100000.00</text>
+      <text class="member-account-txt">消费金(元)</text>
+    </view>
+    <view class="member-account-cnt">
+      <image class="member-account-img" src="http://api.iqianclub.com/upload/program/images/account_icon.png?4-14"></image>
+      <text class="member-account-txt">我的账户</text>
+    </view>
+  </view>
+  <!-- 我的消费返现收入 -->
+  <view class="member-detail">
+    <view class="member-detail-cnt">
+      <image class="member-line-img" src="http://api.iqianclub.com/upload/program/images/orange_line.png"></image>
+      <image class="member-icon-img" src="http://api.iqianclub.com/upload/program/images/title_icon2.png"></image>
+      <text class="member-detail-txt">我的消费返现收入</text>
+    </view>
+    <view class="member-rebate">
+      <view class="member-account-cnt">
+        <text class="member-rebate-num">0.00</text>
+        <text class="member-account-txt">本月返现(元)</text>
+      </view>
+      <view class="member-account-cnt">
+        <text class="member-rebate-num">0.00</text>
+        <text class="member-account-txt">下月预估收益(元)</text>
+      </view>
+      <view class="member-account-cnt">
+        <text class="member-rebate-num">0.00</text>
+        <text class="member-account-txt">待结算返现(元)</text>
+      </view>
+    </view>
+    <view class="member-add-rebate">
+      <text class="member-rebate-txt">累计返现(元)：</text>
+      <text class="member-rebate-num">12800.00</text>
+    </view>
+  </view>
+  <!-- 我已参与的计划 -->
+  <view class="member-detail">
+    <view class="member-planed">
+      <view class="member-detail-cnt">
+        <image class="member-line-img" src="http://api.iqianclub.com/upload/program/images/orange_line.png"></image>
+        <image class="member-icon-img" src="http://api.iqianclub.com/upload/program/images/title_icon2.png"></image>
+        <text class="member-detail-txt">我已参与的计划</text>
+      </view>
+      <image class="member-right-img" src="http://api.iqianclub.com/upload/program/images/right_arrow.png"></image>
+    </view>
+    <view class="member-plan-cnt">
+      <image class="member-plan-img" src="http://api.iqianclub.com/upload/program/images/img.png"></image>
+      <view class="member-plan-txt">
+        <text class="member-plan-name">四闲山房别墅·权益方案一</text>
+        <text class="member-plan-money">参与金额：￥10000.00</text>
+        <text class="member-plan-day">参与日期：2019/03/05</text>
+      </view>
+    </view>
+  </view>
+  <!-- 我的住房券 -->
+  <view class="member-detail">
+    <view class="member-planed">
+      <view class="member-detail-cnt">
+        <image class="member-line-img" src="http://api.iqianclub.com/upload/program/images/orange_line.png"></image>
+        <image class="member-icon-img" src="http://api.iqianclub.com/upload/program/images/title_icon2.png"></image>
+        <text class="member-detail-txt">我的住房券</text>
+      </view>
+      <image class="member-right-img" src="http://api.iqianclub.com/upload/program/images/right_arrow.png"></image>
+    </view>
+    <view class="member-coupom">
+      <image class="member-coupom-img" src="/images/ticket_bg.png"></image>
+      <view class="member-coupom-cnt">
+        <view class="member-coupom-left">
+          <image class="member-coupom-cnt-img" src="http://api.iqianclub.com/upload/program/images/img.png"></image>
+          <text class="member-coupom-cnt-txt">四闲山房别墅</text>
+        </view>
+        <view class="member-coupom-right">
+          <text class="member-coupom-num">￥10000.00</text>
+          <text class="member-coupom-day">有效期：2019.10.10-2020.10.10</text>
+          <text class="member-coupom-code">券码：2019101010</text>
+        </view>
+      </view>
+      <view class="member-coupom-range">
+        全球通用住房券
+      </view>
+    </view>
+  </view>
+  <!-- 会员权益 -->
+  <view class="member-detail">
+    <view class="member-planed">
+      <view class="member-detail-cnt">
+        <image class="member-line-img" src="http://api.iqianclub.com/upload/program/images/orange_line.png"></image>
+        <image class="member-icon-img" src="http://api.iqianclub.com/upload/program/images/title_icon2.png"></image>
+        <text class="member-detail-txt">我的住房券</text>
+      </view>
+      <image class="member-right-img" src="http://api.iqianclub.com/upload/program/images/right_arrow.png"></image>
+    </view>
+    <view class="member-rights">
+      <view class="member-rights-cnt">
+        <image class="member-rights-img" src="http://api.iqianclub.com/upload/program/images/quanyi1.png"></image>
+        <text class="member-rights-txt">购买虔心分享计划权益</text>
+      </view>
+      <view class="member-rights-cnt">
+        <image class="member-rights-img" src="http://api.iqianclub.com/upload/program/images/quanyi2.png"></image>
+        <text class="member-rights-txt">订房折扣</text>
+      </view>
+      <view class="member-rights-cnt">
+        <image class="member-rights-img" src="http://api.iqianclub.com/upload/program/images/quanyi3.png"></image>
+        <text class="member-rights-txt">商城购物折扣</text>
+      </view>
+      <view class="member-rights-cnt">
+        <image class="member-rights-img" src="http://api.iqianclub.com/upload/program/images/quanyi4.png"></image>
+        <text class="member-rights-txt">订房优先</text>
+      </view>
+      <view class="member-rights-cnt">
+        <image class="member-rights-img" src="http://api.iqianclub.com/upload/program/images/quanyi5.png"></image>
+        <text class="member-rights-txt">现金消费返虔币</text>
+      </view>
+      <view class="member-rights-cnt">
+        <image class="member-rights-img" src="http://api.iqianclub.com/upload/program/images/quanyi6.png"></image>
+        <text class="member-rights-txt">会员大礼包</text>
+      </view>
+      <view class="member-rights-cnt">
+        <image class="member-rights-img" src="http://api.iqianclub.com/upload/program/images/quanyi7.png"></image>
+        <text class="member-rights-txt">权益持续更新</text>
+      </view>
+    </view>
+  </view>
+</view>

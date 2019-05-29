@@ -1,0 +1,53 @@
+<!--pages/member/index.wxml-->
+<view>
+  <view class="member-h">
+    <view class="member-card-img-position">
+      <image class="member-card-img" src="http://api.iqianclub.com/upload/program/images/card.png"></image>
+      <image class="member-jioabiao-img" src="http://api.iqianclub.com/upload/program/images/jiaobiao.png"></image>
+      <view class="member-card-cnt">
+        <view class="member-card-h">
+          <image src="http://api.iqianclub.com/upload/program/images/touxiang.png" class="member-touxiang"></image>
+          <view class="member-card-txt">
+            <text class="member-name">王思聪</text>
+            <text class="member-phone">15800000036</text>
+          </view>
+        </view>
+        <view class="member-card-val">
+          <view class="member-qian-val">
+            <text class="qian-val-num">54465</text>
+            <text class="qian-val-txt">虔心值</text>
+          </view>
+          <view class="card-num">
+            0100 8888
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="member-grade">
+    <image src="http://api.iqianclub.com/upload/program/images/baiyin_member.png" class="member-grade-img"></image>
+    <view class="member-recharge">
+      <text class="member-grade-txt">充值(升级会员)</text>
+      <image class="member-right-img" src="http://api.iqianclub.com/upload/program/images/right_arrow.png"></image>
+    </view>
+  </view>
+  <!-- 三宫格 -->
+  <view class="member-gongge">
+    <view class="member-gongge-cnt">
+      <image class="member-plan-img" src="http://api.iqianclub.com/upload/program/images/yellow_icon4.png"></image>
+      <text class="member-gongge-txt">参与新计划</text>
+    </view>
+     <view class="member-gongge-cnt">
+      <image class="member-plan-img" src="http://api.iqianclub.com/upload/program/images/yellow_icon2.png"></image>
+      <text class="member-gongge-txt">会员权益</text>
+    </view>
+     <view class="member-gongge-cnt">
+      <image class="member-plan-img" src="http://api.iqianclub.com/upload/program/images/yellow_icon3.png"></image>
+      <text class="member-gongge-txt">我的订单</text>
+    </view>
+  </view>
+  <!-- banner -->
+  <image class="member-banner" src="http://api.iqianclub.com/upload/program/images/middle_banner_brown.png"></image>
+
+
+</view>

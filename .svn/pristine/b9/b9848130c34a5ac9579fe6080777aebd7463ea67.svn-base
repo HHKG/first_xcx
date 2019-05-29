@@ -1,0 +1,59 @@
+<!--pages/club/index.wxml-->
+<view>
+    <import src="/pages/template/header/header" />
+    <template is="header"  data='{{pattern}}'></template>
+  <image src="http://api.iqianclub.com/upload/program/images/club_banner.png" class="club-img"></image>
+  <!-- 虔心荟俱乐部简介 -->
+  <view class="club-cnt">
+    <view class="club-title">
+      <image src="http://api.iqianclub.com/upload/program/images/club_title1.png" class="club-title-img"></image>
+      <view class="club-title-cnt">
+        <view class="club-view">
+          <image src="/images/club_photo10.png" class="club-view-img"></image>
+          <image src="http://api.iqianclub.com/upload/program/images/photo20.png" class="club-view-img"></image>
+          <image src="http://api.iqianclub.com/upload/program/images/photo30.png" class="club-view-img"></image>
+          <image src="http://api.iqianclub.com/upload/program/images/photo40.png" class="club-view-img"></image>
+        </view>
+        <view class="club-view-txt">虔心荟度假俱乐部，成立初衷是将追求自由人生的人荟聚在一起，秉持“分享美好生活”的愿景理念，与热爱生活的您，共同探索美好广阔世界。</view>
+        <image src="http://api.iqianclub.com/upload/program/images/club_photo3.png" class="club-photo"></image>
+        <view class="club-view-txt">通过独创设计的会籍长赢消费返利机制和积分奖励计划，赋予您独一无二的会员特权，真正实现免费度假。为您在亚洲及世界度假目的地提供专属体验，让您不再被生活束缚，实现自由人生。</view>
+        <image src="http://api.iqianclub.com/upload/program/images/club_photo4.png" class="club-photo"></image>
+        <view class="club-view-txt">通过独创设计的会籍长赢消费返利机制和积分奖励计划，赋予您独一无二的会员特权，真正实现免费度假。为您在亚洲及世界度假目的地提供专属体验，让您不再被生活束缚，实现自由人生。</view>
+      </view>
+    </view>
+    <image src="http://api.iqianclub.com/upload/program/images/club_gainiantu.png" class="club-freedom"></image>
+    <!-- 虔心荟满足您的需求 -->
+    <view class="club-title2">
+      <image src="http://api.iqianclub.com/upload/program/images/club_title2.png" class="club-title2-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_demand_5.png" class="club-title2-cnt-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_demand_4.png" class="club-title2-cnt-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_demand_3.png" class="club-title2-cnt-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_demand_2.png" class="club-title2-cnt-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_demand_1.png" class="club-title2-cnt-img"></image>
+    </view>
+    <!-- 加入虔心荟 -->
+    <view class="club-title2">
+      <image src="http://api.iqianclub.com/upload/program/images/club_title3.png" class="club-title3-img"></image>
+      <view class="club-title3-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/club_process_photo.png" class="club-title3-img1"></image>
+        <image src="http://api.iqianclub.com/upload/program/images/club_huanguan_line .png" class="club-title3-img2"></image>
+        <image src="http://api.iqianclub.com/upload/program/images/club_key_word_icon.png" class="club-title3-img3"></image>
+      </view>
+    </view>
+    <!-- 总部信息 -->
+    <view class="footer">
+      <view class="footer-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/logo.png?1221" class="footer-img"></image>
+        <text class="footer-title">虔心荟度假俱乐部</text>
+      </view>
+      <view class="footer-address">
+        地址：中国·广州 珠江新城合景国际金融广场
+      </view>
+      <view class="footer-address">
+        顾问热线：
+        <text class="footer-phone" bindtap='callQian'>{{phonenum}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

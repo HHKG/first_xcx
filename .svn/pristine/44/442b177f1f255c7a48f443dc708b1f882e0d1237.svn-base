@@ -1,0 +1,84 @@
+<!--pages/login/index/registe/data/data.wxml-->
+<view class="data-body">
+  <!-- 头部信息 -->
+  <view class="reg-h">
+    <view class="reg-line1"></view>
+    <view class="reg-line"></view>
+    <view class="reg-img">
+      <view class="reg-img-cnt">
+        <image src="/images/small_check_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">填写手机号</text>
+      </view>
+      <view class="reg-img-cnt">
+        <image src="/images/small_check_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">填写资料</text>
+      </view>
+      <view class="reg-img-cnt">
+        <image src="/images/small_check_gray_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">注册成功</text>
+      </view>
+    </view>
+  </view>
+  <!-- 下拉选择框 -->
+  <view class="select">
+    <!-- 1 -->
+    <view class="select-cnt">
+      <view>
+        <text class="select-txt">1. 您近一年有过几次度假？</text>
+        <view class="data-select">
+          <text class="data-select-txt">2次以内</text>
+          <image bindtap="openOne" src="/images/drop_down_icon.png" class="data-down-img"></image>
+        </view>
+      </view>
+      <!-- 选择项 -->
+      <view class="data-position" hidden="{{hiddenOne}}">
+        <view class="data-select-position">2次以下</view>
+        <view class="data-select-position">3-5次</view>
+        <view class="data-select-position">5次以上</view>
+      </view>
+    </view>
+
+    <!-- 2 -->
+    <view class="select-cnt">
+      <view>
+        <text class="select-txt">2. 您近一年度假费用支出多少？</text>
+        <view class="data-select">
+          <text class="data-select-txt">10000以下</text>
+          <image bindtap="openTwo" src="/images/drop_down_icon.png" class="data-down-img"></image>
+        </view>
+      </view>
+      <!-- 选择项 -->
+      <view class="data-position" hidden="{{hiddenTwo}}">
+        <view class="data-select-position">10000以下</view>
+        <view class="data-select-position">10000-50000</view>
+        <view class="data-select-position">50000以上</view>
+      </view>
+    </view>
+
+    <!-- 3 -->
+    <view class="select-cnt">
+      <view>
+        <text class="select-txt">3. 您是否有加入过其它的度假俱乐部？</text>
+        <view class="data-select">
+          <text class="data-select-txt">无</text>
+          <image bindtap="openThree" src="/images/drop_down_icon.png" class="data-down-img"></image>
+        </view>
+      </view>
+      <!-- 选择项 -->
+      <view class="data-position" hidden="{{hiddenThree}}">
+        <view class="data-select-position">无</view>
+        <view class="data-select-position">有</view>
+      </view>
+    </view>
+  </view>
+  <!-- 协议模块 -->
+  <view class="data-agreement">
+    <view class="data-agreement-cnt">
+      <radio value="{{egree}}" bindtap="change" checked='{{checked}}'/>
+      <text>我已阅读并且同意<text class="data-agreement-txt">《会员注册协议》</text></text>
+    </view>
+    <view class="data-agreement-btn">
+      <button open-type="getUserInfo"  bindgetuserinfo='bindGetUserInfo'>确认</button>
+    </view>
+  </view>
+</view>

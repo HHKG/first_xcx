@@ -1,0 +1,7 @@
+
+<view class='share'>
+  <canvas canvas-id="shareCanvas" style="width:300px;height:380px"></canvas>
+</view>
+<view class='btn-box'>
+  <button bindtap='downloadImg'>分享到朋友圈</button>
+</view>

@@ -1,0 +1,75 @@
+{
+  "pages": [
+    "pages/holiday/roomList/hotalDetail/hotalDetail",
+    "pages/holiday/roomList/roomList",
+    "pages/holiday/index",
+    "pages/index/project/project",
+    "pages/index/index",
+    "pages/index/project/calculate/calculate",
+    "pages/member/rebate/rebate",
+    "pages/member/order/order",
+    "pages/member/myPlan/myPlan",
+    "pages/member/cash/binding/binding",
+    "pages/member/cash/authentication/withdraw/withdraw",
+    "pages/member/cash/authentication/authentication",
+    "pages/member/consumerGold/consumerGold",
+    "pages/member/cash/cash",
+    "pages/member/update/paySuccess/paySuccess",
+    "pages/member/update/update",
+    "pages/member/index",
+    "pages/index/project/detail/pay/success/success",
+    "pages/index/project/detail/detail",
+    "pages/index/project/detail/pay/pay",
+    "pages/share/index",
+    "pages/club/index",
+   
+    "pages/plan/index",
+    "pages/login/autho",
+    "pages/login/data/data",
+    "pages/login/data/success/success",
+    "pages/login/index/index",
+    "pages/login/index/registe/data/success/success",
+    "pages/login/registe/registe",
+    "pages/marketing/join_marketing/join_marketing",
+    "pages/marketing/join_marketing/form/form",
+    "pages/marketing/template/progress/progress",
+    "pages/logs/logs",
+    "pages/outer/outer"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "虔心荟度假俱乐部",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#496966",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/shouye_icon.png",
+        "selectedIconPath": "/images/shouye_icon_seleted.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/holiday/index",
+        "iconPath": "/images/dujiadi_icon.png",
+        "selectedIconPath": "/images/dujiadi_selected_icon.png",
+        "text": "度假地"
+      },
+      {
+        "pagePath": "pages/club/index",
+        "iconPath": "/images/julebu_icon.png",
+        "selectedIconPath": "/images/julebu_icon_seleted.png",
+        "text": "俱乐部"
+      },
+      {
+        "pagePath": "pages/member/index",
+        "iconPath": "/images/huiyuan_icon.png",
+        "selectedIconPath": "/images/huiyuan_icon_seleted.png",
+        "text": "会员中心"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

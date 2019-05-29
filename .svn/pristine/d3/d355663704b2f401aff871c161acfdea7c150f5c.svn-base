@@ -1,0 +1,18 @@
+<!--pages/member/cash/authentication/authentication.wxml-->
+<view>
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  <view class="aut-title">我们将会通过第三方认证您的身份信息</view>
+  <view class="aut-h">
+    <view class="aut-cnt">
+      <text class="aut-cnt-txt">姓名</text>
+      <input class="aut-cnt-input" type="text" value="" placeholder='请输入您的姓名' bindinput='nameinput'></input>
+      <view class="aut-line"></view>
+    </view>
+    <view class="aut-cnt">
+      <text class="aut-cnt-txt">身份证号</text>
+      <input class="aut-cnt-input" type="idcard" value="" placeholder-class='placeholder' placeholder='请输入您的身份证号码' bindinput='cardinput'></input>
+    </view>
+  </view>
+  <button bindtap='Land' disabled='{{disabled}}'>下一步</button>
+</view>

@@ -1,0 +1,2 @@
+/* pages/holiday/roomListFour/roomListFour.wxss */
+@import "/pages/holiday/roomList/roomList.wxss";

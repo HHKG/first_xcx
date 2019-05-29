@@ -1,0 +1,80 @@
+<!--pages/member/order/order.wxml-->
+<!-- 有订单数据时显示 -->
+<view>
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  <!-- 等待支付 -->
+  <block wx:for="{{orders}}" wx:for-item="item">
+    <view class="order">
+      <view class="order-title">
+        <text class="order-title-number">订单编号：{{item.E_OrderSn}}</text>
+        <text class="order-title-wait" wx:if="{{item.E_PayState==1}}">等待付款</text>
+        <text class="order-title-wait" wx:elif="{{item.E_PayState==2}}">支付成功</text>
+      </view>
+      <view class="order-cnt">
+        <view class="order-cnt-h">
+          <image class="order-cnt-h-img" src="{{item.E_HeaderImg}}"></image>
+          <view class="order-cnt-cnt">
+            <view class="order-cnt-txt">
+              <text class="order-cnt-name">{{item.E_ProjectName}}</text>
+              <text class="order-cnt-name">￥{{item.E_Money}}</text>
+            </view>
+            <view class="order-cnt-txt">
+              <text class="order-cnt-cate">{{item.E_PlanName}}</text>
+              <text class="order-cnt-cate">{{item.E_BuyNum}}份</text>
+            </view>
+          </view>
+        </view>
+        <view class="order-add">
+          合计：{{item.E_Price}}
+        </view>
+        <view class="order-footer">
+          <text class="order-footer-times">下单时间：{{item.E_Paytime}}</text>
+          <button wx:if="{{item.E_PayState!=2}}" data-price='{{item.E_Price}}' data-sn='{{item.E_OrderSn}}' bindtap='closePay'>立即支付</button>
+        </view>
+      </view>
+    </view>
+    <!-- 蒙版 -->
+    <view class="order-mask" bindtap="closePay" hidden='{{hidden}}'></view>
+    <!-- 弹窗 -->
+    <view class="order-pop" hidden='{{hidden}}'>
+      <view class="pay-cnt">
+        <view class="pay-cnt-title order-pay-way">
+          <text>支付方式</text>
+          <image bindtap="closePay" src="http://api.iqianclub.com/upload/program/images/close_icon.png" class="order-closeIcon"></image>
+        </view>
+        <view class="pay-method-cnt order-pay-cnt">
+          <radio-group bindchange="checkboxChange">
+    <label wx:for="{{checkpaytypes}}" wx:key=""> 
+        <view class="pay-method pay-line">
+          <view class="pay-pay-cnt">
+            <image src="{{item.img}}" class="pay-icon"></image>
+            <text class="pay-pay-txt">{{item.name}}</text>
+          </view>
+          <radio color='#f68751' value="{{item.value}}" checked="{{item.checked}}"></radio>
+        </view>
+</label>
+      </radio-group>
+        </view>
+      </view>
+      <!-- 底部 -->
+      <view class="order-pay-nav">
+        <view class="pay-total">
+          <text class="pay-total-txt">合计金额：</text>
+          <text class="pay-total-num">￥{{price}}</text>
+        </view>
+        <view class="pay-btn" bindtap='payoder'>
+          确认支付
+        </view>
+      </view>
+    </view>
+   
+  </block>
+   <!-- 没有订单时显示 -->
+
+    <view wx:if="{{orders==''}}" class="order-none" >
+      <image class="order-none-icon" src="http://api.iqianclub.com/upload/program/images/dingdan_photo.png"></image>
+      <text class="order-none-txt">暂无相关记录</text>
+      <button class="order-none-btn" bindtap='gotoproject'>立即参与分享计划</button>
+    </view>
+</view>

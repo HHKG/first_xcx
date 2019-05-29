@@ -1,0 +1,71 @@
+<!--pages/member/myPlan/myPlan.wxml-->
+<view>
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+<block wx:for="{{plan}}" wx:for-item='item'>
+  <view class="mplan">
+    <view class="mplan-title">{{item.E_ProjectName}}·{{item.E_PlanName}}</view>
+    <view class="mplan-cnt">
+      <view class="mlpan-rebate-detail">
+        <image class="mplan-case-img" src="http://api.iqianclub.com/upload/program/images/img.png"></image>
+        <view class="mplan-rebate-cnt">
+          <text class="mplan-rebate-num">{{item.scale}}%<text class="mplan-year" wx:if="{{pattern==0}}">每年</text><text class="mplan-year" wx:if="{{pattern==1}}">每天</text></text>
+          <text class="mplan-rebate-txt">预估返现</text>
+        </view>
+        <view class="mplan-rebate-cnt">
+          <text class="mplan-rebate-num">{{item.couponscale}}%<text class="mplan-year" wx:if="{{pattern==0}}">每年</text><text class="mplan-year" wx:if="{{pattern==1}}">每天</text></text>
+          <text class="mplan-rebate-txt">返住房券</text>
+        </view>
+        <view class="mplan-rebate-cnt">
+          <text class="mplan-rebate-num">{{item.E_Cycle}}<text class="mplan-year" wx:if="{{pattern==0}}">年</text><text class="mplan-year" wx:if="{{pattern==1}}">天</text></text>
+          <text class="mplan-rebate-txt">返现期限</text>
+        </view>
+      </view>
+      <view class="mplan-join">
+        <view class="mplan-join-cnt">
+          <text class="mplan-join-txt">参与费：<text class="mplan-join-num">{{item.E_OrderPrice}}元</text></text>
+          <text class="mplan-join-txt">参与份数：<text class="mplan-join-num">{{item.E_BuyNum}}份</text></text>
+        </view>
+        <view class="mplan-join-cnt">
+          <text class="mplan-join-txt">参与金额：<text class="mplan-join-num">{{item.E_Price}}元</text></text>
+          <text class="mplan-join-txt">参与日期：<text class="mplan-join-num">{{item.jointime}}</text></text>
+        </view>
+      </view>
+      <view class="mlpan-rebate">
+        返现：
+        <view class="mlpan-rebate-cnt day">
+          <text class="mlpan-rebate-day">账单日</text>
+          <text class="mlpan-rebate-data">{{item.E_BillDay}}</text>
+        </view>
+        <view class="mlpan-next-time">{{item.nextbilldate}}</view>
+        <view class="mlpan-rebate-cnt">
+          <text class="mlpan-rebate-day">结算周期 </text>
+          <text class="mlpan-rebate-data">{{item.E_SettlementCycle}}</text>
+        </view>
+      </view>
+      <view class="mlpan-rebate">
+        返住房券：
+        <view class="mlpan-rebate-cnt day">
+          <text class="mlpan-rebate-day">账单日</text>
+          <text class="mlpan-rebate-data">{{item.coupontime}}</text>
+        </view>
+        <view class="mlpan-next-time">{{item.nexcoupontime}}</view>
+        <view class="mlpan-rebate-cnt">
+          <text class="mlpan-rebate-day">结算周期 </text>
+          <text class="mlpan-rebate-data">{{item.E_CouponCycle}}</text>
+        </view>
+        <view class="mplan-btn">
+          <!-- <button>下载协议</button> -->
+          <button bindtap='gotorate'>查看返利</button>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  </block>
+  <!-- 没有参与计划 -->
+   <view class="rebate-none" hidden='{{hidden}}'>
+       <image class="plan-coupom-none" src="http://api.iqianclub.com/upload/program/images/member_plan_icon.png"></image>
+      <view class="member-coupom-none-txt plan-coupom-text">暂无计划<text class="mem-join-now" bindtap='gotoproject'>立即参与分享计划>></text></view>
+    </view>
+</view>

@@ -1,0 +1,44 @@
+<view class="detail-body">
+  <view class="detail-cnt">
+    <view class="detail-h">加入返利计划流程</view>
+    <view class="detail-title">
+      <text class="detail-txt">选择方案</text>
+      <image src="http://api.iqianclub.com/upload/program/images/right_arrow_icon.png" class="arrow-icon"></image>
+      <text class="detail-txt">支付费用</text>
+      <image src="http://api.iqianclub.com/upload/program/images/right_arrow_icon.png" class="arrow-icon"></image>
+      <text class="detail-txt">签订合同</text>
+      <image src="http://api.iqianclub.com/upload/program/images/right_arrow_icon.png" class="arrow-icon"></image>
+      <text class="detail-txt">坐享返利</text>
+    </view>
+  </view>
+  <block wx:for='{{plans}}' wx:for-item="item">
+  <view id="rebate" class="key-news detail-case" data-rebateH="{{rebateTop}} ">
+    <view class="key-news-title">{{item.E_ProjectName}}·{{item.E_Title}}</view>
+    <view>
+      <view class="index-planDetail rebate-case-data">
+        <view class="index-planDetail-cnt">
+          <text class="num">{{item.money}}<text class="num-txt">万</text></text>
+          <text class="num-txt">参与费</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">{{item.E_Cycle}}<text class="num-txt">年</text></text>
+          <text class="num-txt">返现期限</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">{{item.E_Scale}}<text class="num-txt">%</text></text>
+          <text class="num-txt">预估每年返利</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">{{item.E_Coupon}}<text class="num-txt">%</text></text>
+          <text class="num-txt">每年返住房券</text>
+        </view>
+      </view>
+      <text class="rebate-case-txt">{{item.E_Introduction}}</text>
+      <view class="rebate-case-btn">
+        <text class="rebate-case-gays">{{item.Purchased}}人加入/剩余{{item.Surplus}}人</text>
+        <button data-code='{{item.E_Code}}' bindtap='setorder'>立即加入</button>
+      </view>
+    </view>
+  </view>
+  </block>
+</view>

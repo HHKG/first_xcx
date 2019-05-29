@@ -1,0 +1,229 @@
+// pages/index/award/award.js
+var app = getApp();
+var utilMd5 = require('../../../utils/md5.js');
+var util = require('../../../utils/util.js');
+var time = Date.parse(new Date()) / 1000;
+var pattern = 0;
+var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    pattern: app.globalData.pattern,
+    E_Img:'',
+    title:'',
+    E_Explain: '',
+    start: '',
+    end: '',
+    incode:'',
+    sharename: '',
+    shareimg: '',
+    shareurl: '',
+    join: [],
+    ranking:'',
+    phonenum:'400-990-8830'
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this;
+    if (options) {
+      wx.setStorageSync('incode', options.incode)
+    }
+    var token = wx.getStorageSync('token');
+    var back = encodeURIComponent('/' + that.route);
+    that.setData({
+      token: token,
+      pattern: app.globalData.pattern,
+      back: back
+    })
+    if (token == undefined || token == '') {
+      token = util.checklogin(back);
+    } else {
+      var maction = 'activity';
+      var msign = utilMd5.hexMD5(maction + '1' + pattern + randomstr + time);
+      wx.request({
+        method: 'GET',
+        url: app.host + maction,
+        dataType: 'json',
+        header: {
+          token: token
+        },
+        data: {
+          pattern: pattern,
+          activity: 1,
+          from: app.from,
+          time: time,
+          action: maction,
+          sign: msign
+        },
+        success: function (data) {
+          if (data.data.code == 9201) {
+            util.checklogin(that.data.back);
+            //that.onLoad();
+          }
+          if (data.data.code == '1') {
+            var join = data.data.activity.join;
+            that.setData({
+              E_Img: data.data.activity.E_Img,
+              title: data.data.activity.E_Name,
+              E_Explain: data.data.activity.E_Explain,
+              start: data.data.activity.start,
+              end: data.data.activity.end,
+              incode: data.data.incode,
+              join: join.split(''),
+              sharename: data.data.activity.sharename,
+              shareimg: data.data.activity.shareimg,
+              shareurl: data.data.activity.share,
+              ranking: data.data.ranking
+            })
+
+          }
+        }
+      })
+    }
+  }
+,
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+    getCurrentPages()[getCurrentPages().length - 1].onLoad()
+    if (wx.getStorageSync('token')) {
+      var raction = 'record';
+      var road = 'award'
+      var rsign = utilMd5.hexMD5(raction + randomstr + road + time);
+      wx.request({
+        url: app.host + raction,
+        method: 'post',
+        dataType: 'json',
+        header: { token: wx.getStorageSync('token') },
+        data: { from: app.from, time: time, road: road, action: raction, sign: rsign },
+        success: function (res) {
+        }
+      })
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function (options) {
+    var saction = 'updateactivity';
+    var ssign = utilMd5.hexMD5(saction + 1 + randomstr + time);
+    wx.request({
+      method: 'POST',
+      url: app.host + saction,
+      dataType: 'json',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        from: app.from,
+        activity: 1,
+        time: time,
+        action: saction,
+        sign: ssign
+      },
+      success: function (data) {
+        if (data.data.code == '1') {
+          setTimeout(function(){
+            getCurrentPages()[getCurrentPages().length - 1].onLoad()
+          },3000)
+          
+        }
+      }
+    })
+    return {
+      title: this.data.sharename,
+      path: this.data.shareurl + '&incode=' + wx.getStorageSync('myincode'),
+      imageUrl: this.data.shareimg,
+    };
+  },
+  exitpattern: function () {
+    util.exitpattern();
+  },
+  /**
+   * 跳转到我的邀请页面
+   */
+  gotomyInvite:function(){
+    wx.navigateTo({
+      url: '/pages/member/myInvite/myInvite',
+    })
+  }
+  ,
+  /**
+   * 跳转到度假地页面
+   */
+  toholiday:function(){
+    wx.switchTab({
+      url: '/pages/holiday/index',
+    })
+  }
+  ,
+  /**
+   * 打电话
+   */
+  makecall:function(){
+    var that = this;
+    //显示“呼叫”、“添加联系人”弹窗
+    wx.showActionSheet({
+      itemList: ['呼叫', '添加联系人'],
+      success: function (res) {
+        if (res.tapIndex == 0) {//直接呼叫
+          wx.makePhoneCall({
+            phoneNumber: that.data.phonenum,
+          })
+        } else if (res.tapIndex == 1) {//添加联系人
+          wx.addPhoneContact({
+            firstName: '虔心荟',
+            mobilePhoneNumber: that.data.phonenum,
+            success: function (res_addphone) {
+              console.log("电话添加联系人返回：", res_addphone)
+            }
+          })
+        }
+      }
+    })
+  }
+})

@@ -1,0 +1,36 @@
+<view>
+  <view  wx:if='{{pattern==1}}' style="height:76rpx;" >
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  </view>
+  <image src="/images/simulate_bg.png" class="imitate-h-img"></image>
+  <view class="imitate-cnt">
+    <text class="imitate-cnt-title">快速体验<text class="imitate-cnt-blod">免费度假还能赚</text>的美好生活</text>
+    <view class="imitate-flow">
+      <image src="/images/flow_title.png" class="imitate-flow-title"></image>
+      <view class="imitate-flow-cnt">
+        <view class="imitate-flow-block">
+          <image src="/images/simulate_icon.png" class="into-img"></image>
+          <text class="into-txt">进入模拟模式</text>
+        </view>
+        <view class="imitate-flow-block">
+          <image src="/images/money_icon.png" class="into-img"></image>
+          <text class="into-txt">领5万模拟消费金</text>
+        </view>
+        <view class="imitate-flow-block">
+          <image src="/images/simulate_icon.png" class="into-img"></image>
+          <text class="into-txt">使用消费金参与计划</text>
+        </view>
+        <view class="imitate-flow-leftLine"></view>
+        <view class="imitate-flow-rightLine"></view>
+      </view>
+    </view>
+    <view class="imitate-tips">
+    说明：模拟模式下，仅供会员快速体验虔心荟度假俱乐部相关权益与服务，所有相关账户余额、分享计划收益、会员权益等均不予兑现。
+    </view>
+  </view>
+  <view class="imitate-nav">
+   <text class="imitate-nav-left">邀请好友一起体验</text>
+   <text class="imitate-nav-right" data-imitate="1" bindtap='loginImitate'>进入模拟模式</text>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/member/consumerGold/consumerGold.wxml-->
+<!-- 收支明细数据时 -->
+<view>
+  <ul>
+    <li class="con-cnt">
+      <view class="con-cnt-txt1">
+        <text class="con-cnt-balance">返现结算（系统自动）</text>
+        <text class="con-cnt-time">2019-01-11 22:05:58</text>
+      </view>
+      <text class="con-cnt-add">+20000.00</text>
+    </li>
+    <li class="con-cnt">
+      <view class="con-cnt-txt1">
+        <text class="con-cnt-balance">返现结算（系统自动）</text>
+        <text class="con-cnt-time">2019-01-11 22:05:58</text>
+      </view>
+      <text class="con-cnt-cut">-20000.00</text>
+    </li>
+    <li class="con-cnt">
+      <view class="con-cnt-txt1">
+        <text class="con-cnt-balance">返现结算（系统自动）</text>
+        <text class="con-cnt-time">2019-01-11 22:05:58</text>
+      </view>
+      <text class="con-cnt-cut">-10000.00</text>
+    </li>
+  </ul>
+</view>
+<!-- 没有收支明细数据时 -->
+<view class="con-none" hidden='{{hidden}}'>
+  <image class="con-none-icon" src="http://api.iqianclub.com/upload/program/images/jinekongbaiye_photo.png"></image>
+  <text class="con-none-txt">暂无相关记录</text>
+</view>

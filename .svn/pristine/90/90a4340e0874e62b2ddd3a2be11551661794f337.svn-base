@@ -1,0 +1,147 @@
+/* pages/member/myPlan/myPlan.wxss */
+@import "/pages/member/index.wxss";
+@import "/pages/member/rebate/rebate.wxss";
+.mplan {
+  margin: 28rpx auto 0rpx;
+  width: 690rpx;
+  background: #fff;
+  box-shadow: 0rpx 2rpx 8rpx 0rpx rgba(0, 0, 0, 0.2);
+  border-radius: 4rpx;
+}
+
+.mplan-title {
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+  padding: 15rpx 30rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.mplan-case-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+
+.mlpan-rebate-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120rpx;
+}
+
+.mplan-rebate-cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.mplan-rebate-num {
+  font-size: 46rpx;
+  color: #333;
+  line-height: 53rpx;
+}
+
+.mplan-rebate-txt {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 33rpx;
+}
+
+.mplan-year {
+  font-size: 29rpx;
+  color: #333;
+  line-height: 41rpx;
+  display: inline-block;
+}
+
+/* .mplan-rebate-txt-line {
+  border-left: 1px solid #e0e0e0;
+} */
+
+.mplan-cnt {
+  padding: 30rpx;
+}
+
+.mplan-join {
+  margin-top: 20rpx;
+}
+
+.mplan-join-cnt {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mplan-join-txt {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 33rpx;
+  width: 50%;
+}
+
+.mplan-join-num {
+  color: #333;
+}
+
+.mlpan-rebate {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  border-top: 1rpx solid #e0e0e0;
+  font-size: 28rpx;
+  color: #4d4d4d;
+  line-height: 40rpx;
+  padding: 16rpx 0rpx 0 0rpx;
+}
+
+.mlpan-rebate-day {
+  width:96rpx;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 33rpx;
+}
+.mlpan-rebate-data{
+  margin-left:52rpx;
+font-size:24rpx;
+color:#333;
+line-height:33rpx;
+}
+.mlpan-rebate-cnt{
+  margin-top:14rpx;
+  display: flex;
+  align-items: center;
+}
+.day{
+  margin-top:22rpx;
+}
+button{
+  background-color:#fff!important;
+  color:#EF613F;
+  font-size: 28rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  width:194rpx;
+  margin:0rpx 0rpx 0rpx 30rpx;
+  border:1rpx solid #EF613F;
+  border-radius: 10rpx;
+}
+.mplan-btn{
+  display: flex;justify-content: flex-end;
+  margin-top:31rpx;
+}
+.mlpan-next-time{
+  margin-left:148rpx;
+  font-size:24rpx;
+  color:#999;
+  line-height: 33rpx;
+}
+.plan-coupom-none{
+  width:180rpx;
+  height:164rpx;
+}
+.plan-coupom-text{
+  font-size: 32rpx;
+}

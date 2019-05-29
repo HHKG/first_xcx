@@ -1,0 +1,39 @@
+<!--pages/member/update/paySuccess/paySuccess.wxml-->
+<!--pages/index/project/detail/pay/success/success.wxml-->
+<view class="success">
+  <view class="success-h">
+    <image src="http://api.iqianclub.com/upload/program/images/gold_member_icon.png" class="paySuccess-img"></image>
+    <text class="success-h-txt">充值成功</text>
+  </view>
+  <view class="success-cnt">
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">支付金额：</text>
+      <text>￥{{money}}</text>
+    </view>
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">支付方式：</text>
+      <text>微信小程序支付</text>
+    </view>
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">当前余额:</text>
+      <text>￥{{lastmoney}}</text>
+    </view>
+    <view class="success-cnt-layout">
+      <text class="success-plan-txt">当前等级:</text>
+      <text>{{grade}}</text>
+    </view>
+  </view>
+  <view class="success-btns">
+    <!-- <button class="btn1" bindtap='gotoorder'>查看订单</button> -->
+    <button class="btn2" bindtap='gotomember'>会员中心</button>
+  </view>
+</view>
+<!-- <view class="success-bottom">
+  <view class="success-tips">
+    <image src="http://api.iqianclub.com/upload/program/images/small_check_gray_icon.png" class="success-tips-img"></image>
+    <text class="success-tips-txt">温馨提示：</text>
+  </view>
+  <view class="success-tips-cnt-txt">
+    虔心荟不会以订单异常，系统升级为由要求您点击任何网址链接进行退款操作。
+  </view>
+</view> -->

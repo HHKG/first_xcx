@@ -1,0 +1,102 @@
+<!--pages/yyy/yyy.wxml-->
+<!--立即申请按钮  -->
+<import src="/pages/template/header/header" />
+<template is="header"></template>
+<!-- <view class="m-apply-btn" data-marketing="marketing"  bindtap="intoFrom">
+  <image src="http://api.iqianclub.com/upload/program/apply_btn.png" class="m-apply-btn-img"></image>
+</view> -->
+<!-- 客服 -->
+<!-- <contact-button 
+  type="default-light" 
+  size="20"
+  session-from="weapp"
+ class="contact">
+</contact-button> -->
+<!-- banner轮播 -->
+<view style="height:{{height}}px;" data-marketing="marketing">
+  <swiper vertical="false">
+    <!-- 第一个滑块 -->
+    <swiper-item>
+      <image src='/new-img/market_bg.jpg' class="img-join">
+        <view class="img-layout" style="height:{{height}}px;">
+         <view style="width:100%;">
+          <image src="/new-img/market_title1.png" class="title-img"></image>
+         </view>
+          <image src="/new-img/market_flow_photo.png" class="flow_photo"></image>
+          <view class="market-input-layout">
+            <view class="market-input">
+              <image src="/new-img/market_phone_icon.png" class="market-phone"></image>
+              <input type='number' maxlength="11" placeholder-class='placeholder' bindinput='getPhoneNum' name='phone_num' value='' value="{{phoneNum}}" placeholder='请输入手机号'></input>
+            </view>
+            <view class="market-input market-position">
+              <image src="/new-img/market_code_icon.png" class="market-phone"></image>
+              <input id="phone" placeholder-class='placeholder' type='number' name='code' bindinput='inputCode' data-codeValue='{{codeNum}}' data-phoneValue='{{phoneNum}}' value='' code-value='{{codeNum}}' maxlength="4" placeholder='请输入验证码'></input>
+              <!-- 获取验证码按钮 -->
+              <button class="get-code" bindtap="getCode" disabled='{{get_disabled}}' data-pnoneNum="{{phoneNum}}">{{time}}</button>
+            </view>
+          </view>
+          <button class="register-button" open-type="getUserInfo" bindgetuserinfo='bindGetUserInfo'>立即注册</button>
+          <view class="market-key-register">
+          <text class="market-key-txt"></text>
+          <text>微信一键注册</text>
+          <text class="market-key-txt"></text>
+          </view>
+          <image class="market-wxchat" src='/new-img/market_wechat_icon.png'></image>
+          <image src='/new-img/market_progress_bar.png' class="market-progress"></image>
+        </view>
+      </image>
+    </swiper-item>
+    <!-- 第二个滑块 -->
+    <swiper-item>
+      <image src="/new-img/market_bg.jpg" class="img-join">
+        <view class="img-layout-two" style="height:{{height}}px;">
+          <image src="http://api.iqianclub.com/upload/program/title2.png" class="title2-img"></image>
+          <image src="http://api.iqianclub.com/upload/program/welfare_photo.png" class="welfare_photo"></image>
+          <image src="http://api.iqianclub.com/upload/program/plane_photo.png" class="plane_photo"></image>
+          <!-- <image src="http://api.iqianclub.com/upload/program/upglide_icon.png" class="upglide"></image> -->
+        </view>
+      </image>
+    </swiper-item>
+    <!-- 第三个滑块 -->
+    <swiper-item>
+      <image src="/new-img/market_bg.jpg" class="img-join">
+        <view class="img-layout-two" style="height:{{height}}px;">
+          <image src="http://api.iqianclub.com/upload/program/title3.png" class="title3-img"></image>
+          <view>
+          <image src="http://api.iqianclub.com/upload/program/map.png?3-19" class="map"></image>
+          <view class="market-holiday">更多度假地正在开放，敬请期待</view>
+          </view>
+          <!-- <image src="http://api.iqianclub.com/upload/program/upglide_icon.png" class="title3-upglide"></image> -->
+        </view>
+      </image>
+    </swiper-item>
+    <!-- 第四个滑块 -->
+    <swiper-item>
+      <image src="/new-img/market_bg.jpg" class="img-join">
+        <view class="img-layout-two" style="height:{{height}}px;">
+          <image src="http://api.iqianclub.com/upload/program/title4.png" class="title4-img"></image>
+          <image src="http://api.iqianclub.com/upload/program/money_process.png" class="money_process"></image>
+          <image src="http://api.iqianclub.com/upload/program/boat_photo.png" class="boat_photo"></image>
+          <!-- <image src="http://api.iqianclub.com/upload/program/upglide_icon.png" class="title3-upglide"></image> -->
+        </view>
+      </image>
+    </swiper-item>
+    <!-- 第五个滑块 -->
+    <swiper-item>
+      <image src="/new-img/market_bg.jpg" class="img-join">
+        <view class="apply-btn" style="height:{{height}}px;">
+          <image src="http://api.iqianclub.com/upload/program/title5.png" class="title5-img"></image>
+          <image class="market-scene" src='/new-img/market_scene_photo.png'></image>
+          <!-- <image src="http://api.iqianclub.com/upload/program/card.png?2555212125121" class="card-img"></image>
+          <image src="http://api.iqianclub.com/upload/program/apply_across_btn.png" class="apply-btn-img"></image> -->
+          <!-- <view class="m-progress">
+            <import src="../../marketing/template/progress/progress" />
+            <template is="progress" />
+          </view> -->
+          <image src="http://api.iqianclub.com/upload/program/remark.png?1-1" class="remark"></image>
+        </view>
+        <!--进度条  -->
+      </image>
+    </swiper-item>
+  </swiper>
+</view>

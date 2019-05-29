@@ -1,0 +1,58 @@
+<view class="coupom-body">
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  <view class="member-coupom">
+    <image class="member-coupom-img" src="http://api.iqianclub.com/upload/program/images/ticket_bg.png"></image>
+    <view class="member-coupom-cnt">
+      <view class="member-coupom-left">
+        <image class="member-coupom-cnt-img" src="http://api.iqianclub.com/upload/program/images/img.png"></image>
+        <text class="member-coupom-cnt-txt">四闲山房</text>
+      </view>
+      <view class="member-coupom-right">
+        <text class="member-coupom-num">￥1000.00</text>
+        <text class="member-coupom-day">有效期：2019.10.10-2020.20.20</text>
+        <text class="member-coupom-code">券码：54654654654</text>
+      </view>
+    </view>
+    <view class="member-coupom-range">
+      全球通用住房券
+    </view>
+  </view>
+
+  <view class="member-coupom">
+    <image class="member-coupom-img" src="http://api.iqianclub.com/upload/program/images/ticket_bg.png"></image>
+    <view class="member-coupom-cnt">
+      <view class="member-coupom-left">
+        <image class="member-coupom-cnt-img" src="http://api.iqianclub.com/upload/program/images/img.png"></image>
+        <text class="member-coupom-cnt-txt">四闲山房</text>
+      </view>
+      <view class="member-coupom-right">
+        <text class="member-coupom-num">￥1000.00</text>
+        <text class="member-coupom-day">有效期：2019.10.10-2020.20.20</text>
+        <text class="member-coupom-code">券码：54654654654</text>
+      </view>
+    </view>
+    <view class="member-coupom-range">
+      全球通用住房券
+    </view>
+  </view>
+<!-- 过期优惠券 -->
+  <view class="member-coupom">
+    <image class="member-coupom-img" src="http://api.iqianclub.com/upload/program/images/ticket_failure_bg.png"></image>
+    <view class="member-coupom-cnt">
+      <view class="member-coupom-left">
+        <image class="member-coupom-cnt-img" src="http://api.iqianclub.com/upload/program/images/photo_failure.png"></image>
+        <text class="member-coupom-cnt-txt">四闲山房</text>
+      </view>
+      <view class="member-coupom-right">
+        <text class="member-coupom-num">￥1000.00</text>
+        <text class="member-coupom-day">有效期：2019.10.10-2020.20.20</text>
+        <text class="member-coupom-code">券码：54654654654</text>
+      </view>
+    </view>
+    <view class="member-failure">
+      全球通用住房券
+    </view>
+    <image class="member-failure-img" src="http://api.iqianclub.com/upload/program/images/expired_icon.png"></image>
+  </view>
+</view>

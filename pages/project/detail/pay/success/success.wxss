@@ -1,0 +1,149 @@
+/* pages/index/project/detail/pay/success/success.wxss */
+@import "/pages/member/index.wxss";
+
+page {
+  background-color: #fafafa;
+}
+
+.success-img {
+  width: 318rpx;
+  height: 156rpx;
+}
+
+.success-h {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success {
+  background-color: #fff;
+  padding-bottom: 60rpx;
+}
+
+.success-h-txt {
+  margin-top: 16rpx;
+  font-size: 36rpx;
+  color: #333;
+  line-height: 50rpx;
+}
+
+.success-cnt {
+  margin-top: 60rpx;
+  padding: 0rpx 70rpx;
+  font-size: 26rpx;
+  line-height: 37rpx;
+}
+
+.success-cnt-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.success-plan-txt {
+  color: #666;
+}
+
+.success-plan-case {
+  color: #333;
+}
+
+.success-btns {
+  display: flex;
+  justify-content: center;
+  margin: 89rpx 30rpx 0rpx 30rpx;
+}
+
+button {
+  width: 690rpx;
+  height: 90rpx;
+  margin: 0;
+  padding: 0;
+  font-size: 36rpx;
+  line-height: 90rpx;
+}
+
+.btn1 {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12rpx;
+  border: 2rpx solid #f68751;
+  color: #f68751;
+}
+
+.btn2 {
+  background-color: #f68751;
+  color: #fff;
+}
+
+.success-tips-img {
+  margin-top:8rpx;
+  margin-right:10rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.success-tips-txt {
+  width: 90%;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 40rpx;
+  height: 40rpx;
+}
+
+.success-tips-cnt-txt {
+  margin-top: 17rpx;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 50rpx;
+}
+
+.success-bottom {
+  width:600rpx;
+  height:140rpx;
+  display: flex;
+  justify-content: center;
+  background-color: #fed8d9;
+  /* border: 0.1px solid #f68751; */
+  overflow: hidden;
+  margin: 60rpx auto 60rpx;
+  padding:20rpx 20rpx 0rpx 20rpx;
+}
+
+.success-tips {
+  /* display: flex;
+  align-items: center; */
+}
+
+.success-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 4;
+}
+
+.shoudan-pop {
+  position: fixed;
+  top: 300rpx;
+  left: 100rpx;
+  width: 555rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+.shoudan-pop-img {
+  width: 555rpx;
+  height: 406rpx;
+}
+
+.shoudan-close-img {
+  margin-top: 80rpx;
+  width: 48rpx;
+  height: 48rpx;
+}

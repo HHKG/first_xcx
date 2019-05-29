@@ -1,0 +1,285 @@
+var app=getApp();
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    pattern: app.globalData.pattern,
+    year: [{
+        'year': '1',
+        'cash': '800',
+        'coupom': '800',
+        'sum': '1600'
+      },
+      {
+        'year': '5',
+        'cash': '4000',
+        'coupom': '4000',
+        'sum': '8000'
+      },
+      {
+        'year': '10',
+        'cash': '8000',
+        'coupom': '8000',
+        'sum': '16000'
+      },
+      {
+        'year': '15',
+        'cash': '12000',
+        'coupom': '12000',
+        'sum': '24000'
+      },
+      {
+        'year': '28',
+        'cash': '24000',
+        'coupom': '24000',
+        'sum': '48000'
+      }
+    ],
+    pop: [{
+      'id': '1',
+      'title': '您想参与计划金额',
+      'num': '10万',
+      'money1': '1万',
+      'money2': '5万',
+      'money3': '10万',
+      'money4': '20万'
+    }, {
+      'id': '2',
+      'title': '预估每年返现比例',
+      'num': '6%',
+      'money1': '6%',
+      'money2': '8%',
+      'money3': '10%',
+      'money4': '12%'
+    }, {
+      'id': '3',
+      'title': '固定每年返券比例',
+      'num': '12%',
+    }],
+    hidden: 3,
+    li: 2,
+    rebate: '6%',
+    fixedScale: '12%',
+    planCash: '10',
+    hide: true,
+    cartoon: ''
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    wx.hideShareMenu()
+    this.setData({
+      pattern: app.globalData.pattern,
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+    this.animation = wx.createAnimation();
+    this.calculate();
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+    getCurrentPages()[getCurrentPages().length - 1].onLoad()
+    if (wx.getStorageSync('token')) {
+
+      var raction = 'record';
+      var road = 'calcluate'
+      var rsign = utilMd5.hexMD5(raction + randomstr + road + time);
+      wx.request({
+        url: app.host + raction,
+        method: 'post',
+        dataType: 'json',
+        header: { token: wx.getStorageSync('token') },
+        data: { from: app.from, time: time, road: road, action: raction, sign: rsign },
+        success: function (res) {
+        }
+      })
+    }
+    // if (wx.getStorageSync('token')) {
+    //   var raction = 'record';
+    //   var road = 'calculate'
+    //   var rsign = utilMd5.hexMD5(raction + randomstr + road + time);
+    //   wx.request({
+    //     url: app.host + raction,
+    //     method: 'post',
+    //     dataType: 'json',
+    //     header: { token: wx.getStorageSync('token') },
+    //     data: { from: app.from, time: time, road: road, action: raction, sign: rsign },
+    //     success: function (res) {
+    //     }
+    //   })
+    // }
+ 
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
+  },
+  /**
+   * 展示列表
+   */
+  showList: function(e) {
+    var id = e.currentTarget.dataset.id;
+    console.log(id);
+    if (id == 3) {
+      return;
+    }
+    this.setData({
+      hidden: id - 1
+    })
+  },
+  /**
+   * 选择列表
+   */
+  select: function (e) {
+    var id = e.currentTarget.dataset.id;
+    var val = e.currentTarget.dataset.val;
+    var index = e.currentTarget.dataset.index;
+    this.data.pop[index].num = val;
+    if (val == '1万') {
+      this.data.pop[2].num = '10%';
+    }
+    if (val == '5万') {
+      this.data.pop[2].num = '11%';
+    }
+    if (val == '10万') {
+      this.data.pop[2].num = '12%';
+    }
+    if (val == '20万') {
+      this.data.pop[2].num = '13%';
+    }
+    var fixedScale = this.data.pop[2].num;
+    var rebate = this.data.pop[1].num;
+    // 拿到计划金额进行运算
+    var planCash = parseInt(this.data.pop[0].num);
+    var yearRebate = planCash * 10000 * parseInt(rebate) / 100;
+    var yearCoupom = planCash * 10000 * parseInt(fixedScale) / 100;
+    var yearSum = yearRebate + yearCoupom;
+    // 定义三个数组来获取计算结果
+    var aarr = [];
+    var barr = [];
+    var darr = [];
+    // 计算每个数组对应的值
+    for (var i = 0; i < this.data.year.length; i++) {
+      var a = this.data.year[i].cash,
+        b = this.data.year[i].coupom,
+        c = this.data.year[i].year,
+        d = this.data.year[i].sum;
+      a = yearRebate * c;
+      b = yearCoupom * c;
+      d = Number(a) + Number(b);
+      aarr.push(a);
+      barr.push(b);
+      darr.push(d);
+    }
+    // 修改数组里的数据
+    for (var j = 0; j < this.data.year.length; j++) {
+      this.data.year[j].cash = aarr[j];
+      this.data.year[j].coupom = barr[j];
+      this.data.year[j].sum = darr[j];
+    }
+    this.setData({
+      li: id,
+      pop: this.data.pop,
+      year: this.data.year,
+      hidden: 3,
+      rebate: rebate,
+      fixedScale: fixedScale,
+      planCash: planCash
+    })
+  }
+  ,
+  /**
+   * 开始计算/开始动画
+   */
+  calculate: function() {
+    var that = this;
+    var systemInfo = wx.getSystemInfoSync();
+    for (var i = 0; i < 6; i++) {
+      (function (i) {
+        setTimeout(function () {
+          that.animation.translate(-750 / 750 * systemInfo.windowWidth, 0).step();
+          if (i == 5) {
+            that.pageScrollToBottom();
+          }
+          that.setData({
+            animation: that.animation.export(),
+            cartoon: i
+          })
+        }, i * 1000)
+      })(i)
+    }
+    // var className='cartoon';
+    this.setData({
+      hide: true
+      // toPop:''
+      // cartoon: className
+    })
+  },
+  /**
+   * 弹出弹窗
+   */
+  showPop: function() {
+    var systemInfo = wx.getSystemInfoSync();
+    var that=this;
+    that.animation.translate(1500/ 750 * systemInfo.windowWidth, 0).step();
+    this.setData({
+      hide: false,
+      animation: that.animation.export()
+    })
+  },
+  /**
+ * 页面滚动到底部
+ */
+  pageScrollToBottom: function () {
+    wx.createSelectorQuery().select('.cal-page').boundingClientRect(function (rect) {
+      wx.pageScrollTo({
+        scrollTop: rect.bottom
+      })
+    }).exec()
+  },
+  exitpattern: function () {
+    util.exitpattern();
+  }
+})

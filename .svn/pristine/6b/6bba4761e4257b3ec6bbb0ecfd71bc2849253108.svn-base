@@ -1,0 +1,6 @@
+/* pages/member/update/paySuccess/paySuccess.wxss */
+@import "/pages/project/detail/pay/success/success.wxss";
+.paySuccess-img{
+  width:140rpx;
+  height:140rpx;
+}

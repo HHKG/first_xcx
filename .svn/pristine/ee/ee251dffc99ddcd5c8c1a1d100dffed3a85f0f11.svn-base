@@ -1,0 +1,372 @@
+<view class="holiday-body">
+  <!-- header -->
+  <view class="holiday-h">
+    <text class=" title {{id==0?'active':''}}" data-id='0' bindtap='changeTab'>度假地</text>
+    <text class="line"></text>
+    <text class=" title {{id==1?'active':''}}" data-id='1' bindtap='changeTab'>主题</text>
+  </view>
+  <!-- 度假地 -->
+  <view class="holiday" hidden='{{id==0?false:true}}'>
+    <!-- banner -->
+    <view class="holiday-banner">
+      <image src='http://api.iqianclub.com/upload/program/images/service_banner.png' class="holiday-banner-img"></image>
+    </view>
+    <!-- 地区房源 -->
+    <view class="area">
+      <!-- 地区名字 -->
+      <view class="area-name">
+        <view class="area-name-cnt {{area==2?'area-name-cnt-active':''}}" data-area='2' bindtap='changeTab'>热门</view>
+        <view class="area-name-cnt {{area==3?'area-name-cnt-active':''}}" data-area='3' bindtap='changeTab'>国内</view>
+        <view class="area-name-cnt {{area==4?'area-name-cnt-active':''}}" data-area='4' bindtap='changeTab'>泰国</view>
+        <view class="area-name-cnt {{area==5?'area-name-cnt-active':''}}" data-area='5' bindtap='changeTab'>日本</view>
+        <view class="area-name-cnt {{area==6?'area-name-cnt-active':''}}" data-area='6' bindtap='changeTab'>韩国</view>
+        <view class="area-name-cnt {{area==7?'area-name-cnt-active':''}}" data-area='7' bindtap='changeTab'>新加坡</view>
+        <view class="area-name-cnt {{area==8?'area-name-cnt-active':''}}" data-area='8' bindtap='changeTab'>马来西亚</view>
+        <view class="area-name-cnt {{area==9?'area-name-cnt-active':''}}" data-area='9' bindtap='changeTab'>朝鲜</view>
+      </view>
+      <!-- 地区房源 -->
+      <view class="area-cnt" hidden='{{area==2? false:true}}'>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place1.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">赣州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place2.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">苏梅岛</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place3.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">普吉岛</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place4.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">从化</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place5.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">10个房源</text>
+            </view>
+            <view class="area-cnt-txt2">佛山</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place6.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">10个房源</text>
+            </view>
+            <view class="area-cnt-txt2">惠州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">5个房源</text>
+            </view>
+            <view class="area-cnt-txt2">深圳</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place8.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">
+              <view>更多度假地</view>
+              <view>敬请期待</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="area-cnt" hidden='{{area==3? false:true}}'>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place1.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">赣州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place4.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">从化</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place5.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">10个房源</text>
+            </view>
+            <view class="area-cnt-txt2">佛山</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place6.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">10个房源</text>
+            </view>
+            <view class="area-cnt-txt2">惠州</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place7.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">5个房源</text>
+            </view>
+            <view class="area-cnt-txt2">深圳</view>
+          </view>
+        </view>
+      </view>
+      <view class="area-cnt" hidden='{{area==4? false:true}}'>
+              <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place2.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">苏梅岛</view>
+          </view>
+        </view>
+        <view class="area-cnt-name">
+          <image src='http://api.iqianclub.com/upload/program/images/place3.png' class="area-cnt-img"></image>
+          <view class="area-cnt-txt">
+            <view class="area-cnt-txt1">
+              <text class="area-cnt-txt3">21个房源</text>
+            </view>
+            <view class="area-cnt-txt2">普吉岛</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- banner -->
+    <view class="holiday-banner">
+      <image src='http://api.iqianclub.com/upload/program/images/service_banner.png' class="holiday-banner-img"></image>
+    </view>
+    <!--参与计划  -->
+    <view class="holiday-plan">
+      <image src='/images/free_holiday_title.png' class="holiday-plan-img1"></image>
+      <image src='/images/free_holiday_flow.png' class="holiday-plan-img2"></image>
+      <image src='/images/free_holiday_flow2.png' class="holiday-plan-img3"></image>
+      <image src='/images/free_holiday_map.png' class="holiday-plan-img4"></image>
+      <view class="holiday-share">什么是分享计划？
+        <image class="holiday-link" src='/images/link_icon_gray.png'></image>
+      </view>
+    </view>
+    <!-- 四宫格 -->
+    <view class="gong-ge">
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="/images/card_icon1.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">专属管家</text>
+        </view>
+        <view class="holiday-ensure-f">专属管家服务，为您的度假提供全程贴心服务。</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="/images/card_icon2.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">尊享特权</text>
+        </view>
+        <view class="holiday-ensure-f">订房优先、订房折扣、延迟退房、购物优惠及免费住房券</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="/images/card_icon3.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">个性化</text>
+        </view>
+        <view class="holiday-ensure-f">更大、更私密空间， 能够满足您不同场景下的个性化需求。</view>
+      </view>
+
+      <view class="holiday-ensure">
+        <view class="holiday-ensure-h">
+          <image src="/images/card_icon4.png" class="holiday-ensure-h-img">></image>
+          <text class="holiday-ensure-h-txt">品质</text>
+        </view>
+        <view class="holiday-ensure-f">尊享奢华住宿。体验专人定期现场检查，保证无与伦比的住宿品质。</view>
+      </view>
+    </view>
+    <!-- 精彩评价 -->
+    <view class="evaluate">
+      <view class="evaluate-h">精彩评价</view>
+      <view class="holiday-swiper">
+        <swiper bindchange="changeDot" indicator-color="#e0e0e0" indicator-active-color="#fff" circular="true" current="0" data-dotActive='dotActive' autoplay='true' style="height:556rpx;padding:10rpx 0;">
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="/images/profile_photo.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">李大大</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="/images/local_icon.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">四线山房别墅 | 国内 · 赣州</text>
+              </view>
+              <view class="evaluate-words">
+                <image src="/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                    特别舒适的一次度假. 别墅面积巨大，视野特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。管家服务也很贴心，有管家买菜做饭都很方便。也可以叫管家做饭，是收费的。整体体验不错。
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="/images/profile_photo.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">李大大</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="/images/local_icon.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">四线山房别墅 | 国内 · 赣州</text>
+              </view>
+              <view class="evaluate-words">
+                <image src="/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                    特别舒适的一次度假. 别墅面积巨大，视野特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。管家服务也很贴心，有管家买菜做饭都很方便。也可以叫管家做饭，是收费的。整体体验不错。
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="/images/profile_photo.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">李大大</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="/images/local_icon.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">四线山房别墅 | 国内 · 赣州</text>
+              </view>
+              <view class="evaluate-words">
+                <image src="/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                    特别舒适的一次度假. 别墅面积巨大，视野特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。管家服务也很贴心，有管家买菜做饭都很方便。也可以叫管家做饭，是收费的。整体体验不错。
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class="evaluate-cnt">
+              <image src="/images/profile_photo.png" alt="用户头像" class="evaluate-h-img"></image>
+              <text class="evaluate-nickname">李大大</text>
+              <text class="evaluate-txt">公众号用户留言</text>
+              <view class="evaluate-address">
+                <image src="/images/local_icon.png" alt="地标" class="evaluate-address-img"></image>
+                <text class="evaluate-address-txt">四线山房别墅 | 国内 · 赣州</text>
+              </view>
+              <view class="evaluate-words">
+                <image src="/images/comma_icon.png" class="evaluate-words-img"></image>
+                <text class="evaluate-words-txt">
+                    特别舒适的一次度假. 别墅面积巨大，视野特别的好，面对大海。很大的绿色草地院子，然后一直延伸到沙滩。管家服务也很贴心，有管家买菜做饭都很方便。也可以叫管家做饭，是收费的。整体体验不错。
+                  </text>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+        <view class="holiday-dots">
+          <view class="holiday-dot {{current==0?'dotActive':''}}"></view>
+          <view class="holiday-dot {{current==1?'dotActive':''}}"></view>
+          <view class="holiday-dot {{current==2?'dotActive':''}}"></view>
+          <view class="holiday-dot {{current==3?'dotActive':''}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 主题 -->
+  <view class="theme" hidden='{{id==1?false:true}}'>
+    <view class="theme-cnt">
+      <image src='http://api.iqianclub.com/upload/program/images/theme1.png' class="theme-cnt-img"></image>
+      <view class="area-cnt-txt">
+        <view class="area-cnt-txt1">
+          <text class="area-cnt-txt3">21个房源</text>
+        </view>
+        <view class="area-cnt-txt2">
+          <text>海岛线</text>
+          <text>Island line</text>
+        </view>
+      </view>
+    </view>
+    <view class="theme-cnt">
+      <image src='http://api.iqianclub.com/upload/program/images/theme2.png' class="theme-cnt-img"></image>
+      <view class="area-cnt-txt">
+        <view class="area-cnt-txt1">
+          <text class="area-cnt-txt3">21个房源</text>
+        </view>
+        <view class="area-cnt-txt2">
+          <text>家庭</text>
+          <text>Family</text>
+        </view>
+      </view>
+    </view>
+    <view class="theme-cnt">
+      <image src='http://api.iqianclub.com/upload/program/images/theme3.png' class="theme-cnt-img"></image>
+      <view class="area-cnt-txt">
+        <view class="area-cnt-txt1">
+          <text class="area-cnt-txt3">21个房源</text>
+        </view>
+        <view class="area-cnt-txt2">
+          <text>生态观光</text>
+          <text>Ecological tourism</text>
+        </view>
+      </view>
+    </view>
+    <view class="theme-cnt">
+      <image src='http://api.iqianclub.com/upload/program/images/theme4.png' class="theme-cnt-img"></image>
+      <view class="area-cnt-txt">
+        <view class="area-cnt-txt1">
+          <text class="area-cnt-txt3">21个房源</text>
+        </view>
+        <view class="area-cnt-txt2">
+          <text>温泉</text>
+          <text>Hot spring</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/LOGO.png" class="footer-img"></image>
+      <text class="footer-title">虔心荟度假俱乐部</text>
+    </view>
+    <view class="footer-address">
+      地址：中国·广州 珠江新城合景国际金融广场
+    </view>
+    <view class="footer-address">
+      管家热线：
+      <text class="footer-phone" bindtap='callQian'>{{phonenum}}</text>
+    </view>
+  </view>
+   <!-- 悬浮按钮 -->
+        <view class="holiday-suspend-btn {{btn==1?'animation-hide':'animation-show'}}">
+          <image class="holiday-xuanfu-img" src="/images/free_icon.png"></image>
+        </view>
+</view>

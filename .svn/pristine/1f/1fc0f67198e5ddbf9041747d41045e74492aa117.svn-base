@@ -1,0 +1,7 @@
+<view class="index-body">
+    <import src="/pages/template/header/header" />
+    <template is="header"></template>
+  <view class="index-btn">
+ <button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+</view>

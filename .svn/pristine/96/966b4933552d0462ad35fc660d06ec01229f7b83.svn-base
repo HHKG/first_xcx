@@ -1,0 +1,113 @@
+// pages/login/index/registe/data/data.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    hiddenOne:true,
+    hiddenTwo:true,
+    hiddenThree:true,
+    checked:false
+    // array:[]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    // var array = [{ 'id': '1', 'title': '1. 您近一年有过几次度假？', 'select1': '2次以内', 'select2': '3-5次', 'select3': '5次以上', 'hidden':'hidden1'},
+    //   { 'id': '2', 'title': '2. 您近一年度假费用支出多少？', 'select1': '1000以内', 'select2': '1000-10000', 'select3': '10000以上', 'hidden':'hidden2'},
+    //   { 'id': '3', 'title': '3. 您是否有加入过其它的度假俱乐部？', 'select1': '无', 'select2': '有', 'hidden': 'hidden3'}
+    // ]
+    // this.setData({
+    //   array:array
+    // })
+    // console.log(array);
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+  ,
+  /**
+   * 1:打开下拉框
+   */
+  openOne:function(e){
+    this.setData({
+      hiddenOne: !this.data.hiddenOne
+    })
+  }
+  ,
+  /**
+ * 2:打开下拉框
+ */
+  openTwo: function (e) {
+    this.setData({
+      hiddenTwo: !this.data.hiddenTwo
+    })
+  }
+  ,
+  /**
+ * 3:打开下拉框
+ */
+  openThree: function (e) {
+    this.setData({
+      hiddenThree: !this.data.hiddenThree
+    })
+  }
+  ,
+  /**
+   * 勾选协议
+   */
+  change:function(){
+   this.setData({
+     checked:!this.data.checked
+   })
+  }
+})

@@ -1,0 +1,187 @@
+/* pages/index/project/detail/pay/pay.wxss */
+
+page {
+  background-color: #fafafa;
+}
+
+.pay-cnt {
+  margin-top: 20rpx;
+}
+
+.pay-cnt-title {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 40rpx;
+  margin: 10rpx 30rpx;
+}
+
+.pay-cnt-cnt {
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+}
+
+.pay-max {
+  display: flex;
+  justify-content: space-between;
+  height: 50rpx;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.pay-num {
+  font-size: 36rpx;
+  color: #f68751;
+  line-height: 50rpx;
+}
+
+.pay-num-txt {
+  font-size: 36rpx;
+  color: #666 !important;
+  line-height: 50rpx;
+}
+
+.pay-sum {
+  font-size: 28rpx;
+  color: #4d4d4d;
+  line-height: 40rpx;
+}
+
+.pay-name {
+  font-size: 32rpx;
+  color: #666;
+  line-height: 45rpx;
+  margin-bottom: 10rpx;
+}
+
+.pay-name-category {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  padding-bottom: 30rpx;
+}
+
+.pay-select {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+}
+
+.pay-change-num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pay-change {
+  display: flex;
+}
+
+.input-txt {
+  width: 62rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #4d4d4d;
+}
+
+button {
+  width: 62rpx;
+  height: 53rpx;
+  line-height: 48rpx;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.should-pay {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pay-method-cnt {
+  background-color: #fff;
+  padding: 0rpx 30rpx;
+}
+
+.pay-method {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0rpx;
+}
+
+.pay-icon {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.pay-line {
+  border-top: 1rpx solid #e0e0e0;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.pay-pay-txt {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+  margin-left: 20rpx;
+}
+
+.pay-pay-cnt {
+  display: flex;
+  align-items: center;
+}
+.radio-cnt{
+  margin-top:20rpx;
+  height:48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radio-txt{
+font-size:24rpx;
+color:#666;
+}
+.agreement{
+ color:#333;
+}
+radio{
+  transform: scale(0.7);
+   margin-right:-15rpx;
+}
+.pay-nav{
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:120rpx;
+  background-color:#fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pay-total{
+  margin-left:30rpx;
+}
+.pay-btn{
+  width:300rpx;
+  height:120rpx;
+  background-color:#f68751;
+  color:#fff;
+  line-height:120rpx;
+  text-align: center;
+  border-top:1rpx solid #CCCCCC;
+}
+.pay-total-txt{
+font-size:28rpx;
+color:#333;
+line-height:40rpx;
+}
+.pay-total-num{
+  font-size:28rpx;
+  color:#F68751;
+  line-height:40rpx;
+}

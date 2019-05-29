@@ -1,0 +1,5 @@
+/* pages/login/pop/index.wxss */
+page{
+  margin:30rpx auto;
+  width:690rpx;
+}

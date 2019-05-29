@@ -1,0 +1,60 @@
+<!--pages/member/myPlan/myPlan.wxml-->
+<view>
+  <view class="mplan">
+    <view class="mplan-title">四闲山房·权益方案一</view>
+    <view class="mplan-cnt">
+      <view class="mlpan-rebate-detail">
+        <image class="mplan-case-img" src="http://api.iqianclub.com/upload/program/images/img.png"></image>
+        <view class="mplan-rebate-cnt">
+          <text class="mplan-rebate-num">8%</text>
+          <text class="mplan-rebate-txt">预估每年返现</text>
+        </view>
+        <view class="mplan-rebate-cnt">
+          <text class="mplan-rebate-num">10%</text>
+          <text class="mplan-rebate-txt">每年返住房券</text>
+        </view>
+        <view class="mplan-rebate-cnt mplan-rebate-txt-line">
+          <text class="mplan-rebate-num">30<text class="mplan-year">年</text></text>
+          <text class="mplan-rebate-txt">返现期限</text>
+        </view>
+      </view>
+      <view class="mplan-join">
+        <view class="mplan-join-cnt">
+          <text class="mplan-join-txt">参与费：<text class="mplan-join-num">10000.00元</text></text>
+          <text class="mplan-join-txt">参与份数：<text class="mplan-join-num">1份</text></text>
+        </view>
+        <view class="mplan-join-cnt">
+          <text class="mplan-join-txt">参与金额：<text class="mplan-join-num">10000.00元</text></text>
+          <text class="mplan-join-txt">参与日期：<text class="mplan-join-num">2019/03/05</text></text>
+        </view>
+      </view>
+      <view class="mlpan-rebate">
+        返现：
+        <view class="mlpan-rebate-cnt day">
+          <text class="mlpan-rebate-day">账单日</text>
+          <text class="mlpan-rebate-data">每月6日</text>
+        </view>
+        <view class="mlpan-rebate-cnt">
+          <text class="mlpan-rebate-day">结算周期 </text>
+          <text class="mlpan-rebate-data">3个月</text>
+        </view>
+      </view>
+      <view class="mlpan-rebate">
+        返住房券：
+        <view class="mlpan-rebate-cnt day">
+          <text class="mlpan-rebate-day">账单日</text>
+          <text class="mlpan-rebate-data">每年3月6日</text>
+        </view>
+        <view class="mlpan-rebate-cnt">
+          <text class="mlpan-rebate-day">结算周期 </text>
+          <text class="mlpan-rebate-data">12个月</text>
+        </view>
+        <view class="mplan-btn">
+          <button>下载协议</button>
+          <button>查看返利</button>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

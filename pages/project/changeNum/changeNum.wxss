@@ -1,0 +1,56 @@
+/* pages/project/changeNum/changeNum.wxss */
+.change-mask{
+  background-color:rgba(0, 0, 0, 0.6);
+  width:100%;
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  opacity: 0.6;
+}
+.change-pop{
+  position: fixed;
+  width:80%;
+  top:40%;
+  left: 10%;
+  z-index: 5;
+  background-color: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+}
+.change-title{
+  font-size: 30rpx;
+  color:#333;
+  margin:30rpx 0;
+}
+input{
+  font-size: 30rpx;
+  background-color:#fff;
+  box-shadow: 0rpx 0rpx 2rpx 0rpx #333
+}
+.change-btns{
+  margin-top:30rpx;
+  border-top:1rpx solid #e0e0e0;
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  font-size: 30rpx;
+}
+.change-right-btn{
+  color: #f0753a;
+  padding:25rpx 0;
+  display: inline-block;
+  width:50%;
+  text-align: center;
+  border-left: 1rpx solid #e0e0e0;
+}
+.change-left-btn{
+  padding:25rpx 0;
+ display: inline-block;
+ width:50%;
+ text-align: center;
+ color:#666;
+}

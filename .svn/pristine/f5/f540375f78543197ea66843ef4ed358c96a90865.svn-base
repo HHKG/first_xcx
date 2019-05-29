@@ -1,0 +1,29 @@
+<!--pages/member/update/update.wxml-->
+<view>
+  <view class="update-title">
+    <image class="update-title-img" src="http://api.iqianclub.com/upload/program/images/gold_member_icon.png"></image>
+    <text class="update-title-txt">还需充值{{money}}元成为{{grade}}</text>
+  </view>
+  <view class="update-recharge">
+    <text class="update-recharge-txt">充值金额</text>
+    <view class="update-recharge-input">
+      ￥
+      <input type="number" value="" bindinput='number'></input>
+    </view>
+  </view>
+  <view class="pay-cnt">
+    <view class="pay-cnt-title">支付方式</view>
+    <view class="pay-method-cnt">
+      <radio-group bindchange="checkboxChange">
+        <view class="pay-method">
+          <view class="pay-pay-cnt">
+            <image src="http://api.iqianclub.com/upload/program/images/wechat_icon.png" class="pay-icon"></image>
+            <text class="pay-pay-txt">微信支付</text>
+          </view>
+          <radio color='#f68751' value="" checked="checked"></radio>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+  <button disabled='' bindtap='gorecharge'>确认支付</button>
+</view>

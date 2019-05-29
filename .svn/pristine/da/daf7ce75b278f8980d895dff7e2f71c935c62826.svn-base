@@ -1,0 +1,119 @@
+// pages/index/project/detail/detail.js.js
+var app = getApp();
+var utilMd5 = require('../../../../utils/md5.js');
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    plans:[]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this;
+    console.log(that);
+    var code = options.project;
+     code = 'MZJBQKj3NmPolKOv8qbj';
+    // console.log(code); return;
+    if (code != undefined) {
+      // console.log(111);
+      var time = Date.parse(new Date()) / 1000;
+      var action = 'plan';
+      var pattern=0;
+      var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+      var sign = utilMd5.hexMD5(action + code + pattern + randomstr + time);
+      var data = { pattern: pattern, from: app.from, code: code, time: time, action: action, sign: sign };
+      // wx.request({
+      //   url: app.host + action,
+      //   method: 'OPTIONS',
+      //   data: data,
+      //   dataType: 'json',
+      //   success(data) {
+      //   }
+      // })
+      wx.request({
+        url: app.host + action,
+        method: 'get',
+        data: data,
+        header: { token: 'd6b4af4885094dd3699f3c6fee1ad5260f1338eb386632010674955e676195e7' },
+        dataType: 'json',
+        success(data) {
+          console.log(data);
+          if (data.data.code == 1) {
+            that.setData({
+              plans:data.data.data
+            })
+          }
+
+        }
+      })
+    } else {
+      wx.switchTab({
+        url: '../../index/index',
+      })
+
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+   
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  /*
+  *跳转下订单页面
+   */
+  setorder:function(e){
+      var code=e.target.dataset.code
+      wx.navigateTo({
+        url: 'pay/pay?plan='+code,
+      })
+  }
+})

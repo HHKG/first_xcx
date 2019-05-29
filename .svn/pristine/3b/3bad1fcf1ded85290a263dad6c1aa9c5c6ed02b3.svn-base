@@ -1,0 +1,177 @@
+<!--pages/holiday/roomList/hotalDetail/hotalDetail.wxml-->
+<view>
+  <import src="/pages/template/header/header" />
+  <template is="header"></template>
+  <scroll-view scroll-with-animation="true" scroll-y="true" style='height:{{screenH}}' scroll-into-view="{{module}}">
+    <swiper class="hotal-img" autoplay='true' indicator-dots='true' current='0' circular="true" indicator-active-color='#fff' indicator-color='#999'>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/1.jpg" class="hotal-img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/2.jpg" class="hotal-img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/3.jpg" class="hotal-img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/4.jpg" class="hotal-img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/5.jpg" class="hotal-img"></image>
+      </swiper-item>
+    </swiper>
+    <view class="hotal-h">
+      <view class="hotal-title">
+        半山温泉酒店
+      </view>
+      <view class="hotal-map">
+        <image src="http://api.iqianclub.com/upload/program/images/map_icon.png" class="hotal-map-img"></image>
+        <text class="hotal-map-txt">广东省佛山市高明美的·鹭湖森林度假区（国家5A级旅游景区）内</text>
+      </view>
+    </view>
+    <image bindtap='gotofree' src="http://api.iqianclub.com/upload/program/images/hotel_banner.png" class="hotal-banner"></image>
+    <view style="height:110rpx;background:#fff;">
+    <view class="hotal-cnt {{fixed}}">
+      <view class="hotal-tab" data-H="{{hotalSizeH}}" data-id="0" bindtap='changeTab' data-moudle="{{hotalSize}}">
+        <text class="hotal-tab-txt  {{id==0?'active':''}}">房型</text>
+        <image hidden="{{id==0?false:true}}" src='http://api.iqianclub.com/upload/program/images/tixian_btn.png' class="bottom-line"></image>
+      </view>
+      <view class="hotal-tab" data-H="{{summaryH}}" data-id="1" bindtap='changeTab' data-moudle="{{summary}}">
+        <text class="hotal-tab-txt {{id==1?'active':''}}">酒店概览</text>
+        <image hidden="{{id==1?false:true}}" src='http://api.iqianclub.com/upload/program/images/tixian_btn.png' class="bottom-line"></image>
+      </view>
+      <view class="hotal-tab" data-H="{{assessH}}" data-id="2" bindtap='changeTab' data-moudle="{{assess}}">
+        <text class="hotal-tab-txt {{id==2?'active':''}}">酒店评价</text>
+        <image hidden="{{id==2?false:true}}" src='http://api.iqianclub.com/upload/program/images/tixian_btn.png' class="bottom-line"></image>
+      </view>
+    </view>
+    </view>
+    <view class="hotal-size-list" id="hotalSize">
+      <view class="hotal-size">
+        <view class="hotal-size-top">
+          <image src="http://api.iqianclub.com/upload/program/images/detail_two_bed1.jpg" class="hotal-size-img"></image>
+          <view class="hotal-size-right">
+            <view class="hotal-size-txt">奢华温泉房</view>
+            <view class="hotal-inside">
+              <text class="hotal-size-size">面积：35-46㎡</text>
+              <text class="hotal-size-size">床型：大床/双床</text>
+            </view>
+            <view class="hotal-size-tips">备注：最多2人入住，含双早+私家泡池</view>
+          </view>
+        </view>
+        <view class="scenery-area-price hotal-size-bottom">
+          <view class="scenery-area-comment" bindtap='gotofree'>
+            <image class="dec-img" src='http://api.iqianclub.com/upload/program/images/dec_left.png'></image>
+            <view class="scenery-area-price-btn">
+              参与计划即可每年免费入住
+              <span class="scenery-day">1</span>晚
+              <image class="room-link" src="http://api.iqianclub.com/upload/program/images/link.png"></image>
+            </view>
+            <image class="dec-img" src='http://api.iqianclub.com/upload/program/images/dec_right.png'></image>
+          </view>
+          <view class="room-price-btn">
+            <text class="scenery-area-price-num">￥1400.00 </text>
+            <text class="scenery-area-price-txt">参考价</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="hotal-size">
+        <view class="hotal-size-top">
+          <image src="http://api.iqianclub.com/upload/program/images/detail_two_bed2.jpg" class="hotal-size-img"></image>
+          <view class="hotal-size-right">
+            <view class="hotal-size-txt">皇朝温泉套房 </view>
+            <view class="hotal-inside">
+              <text class="hotal-size-size">面积：无</text>
+              <text class="hotal-size-size">床型：大床</text>
+            </view>
+            <view class="hotal-size-tips">备注：最多入住2人，含双早+私家泡池</view>
+          </view>
+        </view>
+        <view class="scenery-area-price hotal-size-bottom">
+          <view class="scenery-area-comment" bindtap='gotofree'>
+            <image class="dec-img" src='http://api.iqianclub.com/upload/program/images/dec_left.png'></image>
+            <view class="scenery-area-price-btn">
+              参与计划即可每年免费入住
+              <span class="scenery-day">1</span>晚
+              <image class="room-link" src="http://api.iqianclub.com/upload/program/images/link.png"></image>
+            </view>
+            <image class="dec-img" src='http://api.iqianclub.com/upload/program/images/dec_right.png'></image>
+          </view>
+          <view class="room-price-btn">
+            <text class="scenery-area-price-num">￥2800.00 </text>
+            <text class="scenery-area-price-txt">参考价</text>
+          </view>
+        </view>
+      </view>
+      <view class="use-tips">
+        参考价说明：因度假地订房火爆、节假日等因素,订房价格有所波动,最终以专属管家为您订房的信息为准。
+      </view>
+    </view>
+    <!-- banner -->
+    <view class="holiday-banner">
+      <image src='http://api.iqianclub.com/upload/program/images/service_banner.png' class="holiday-banner-img"></image>
+    </view>
+    <!-- 酒店概览 -->
+    <view class="hotal-summary" id="summary">
+      酒店概览
+      <text class="detail_scene_p">
+半山温泉酒店，位于佛山高明美的·鹭湖森林度假区（国家5A级旅游景区）内，以法国安纳希小镇为建筑蓝本，欧陆人文风情的建筑风格完美融入得天独厚的鹭林湖山资源之中。
+           </text>
+      <image class="hotal-summary-img" src="http://api.iqianclub.com/upload/program/images/2.jpg"></image>
+      <image class="hotal-summary-img" src="http://api.iqianclub.com/upload/program/images/3.jpg"></image>
+
+      <text class="detail_scene_p">
+街角的咖啡店、湖景餐厅、各类特色美食、手信店、精品超市遍布其中，一座欧洲小镇就此呈现。安纳希小镇内拥有一大片温泉区，分为船屋温泉、无边温泉、草屋温泉三大主题。温泉区有清水池，清澈见底，水气升腾；加料池，有加玫瑰花的、人参的、当归的等等；还有波波池、鱼疗池、矿盐浴等。
+            </text>
+      <image class="hotal-summary-img" src="http://api.iqianclub.com/upload/program/images/4.jpg"></image>
+      <image class="hotal-summary-img" src="http://api.iqianclub.com/upload/program/images/5.jpg"></image>
+    </view>
+    <!-- 酒店评价 -->
+    <view class="hotal-assess" id="assess">
+      综合热度
+      <view>
+        <image src="http://api.iqianclub.com/upload/program/images/five_star.png" class="scenery-area-star"></image>
+        <text class="hotal-assess-txt">5.0</text>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 底部导航栏 -->
+  <view class="nav">
+    <view class="nav-left">
+      <view class="hotal-nav" bindtap='gontoindex'>
+        <image src='http://api.iqianclub.com/upload/program/images/family_icon.png' class="hotal-nav-img"></image>
+        <text class="hotal-nav-txt">去首页</text>
+      </view>
+      <view class="hotal-nav" bindtap='Pop'>
+        <image src='http://api.iqianclub.com/upload/program/images/steward_icon.png' class="hotal-nav-img"></image>
+        <text class="hotal-nav-txt">咨询管家</text>
+      </view>
+      <view class="hotal-nav">
+        <image src='http://api.iqianclub.com/upload/program/images/zixun_icon.png' class="hotal-nav-img"></image>
+        <text class="hotal-nav-txt">在线客服</text>
+         <contact-button class="contact-btn" type="default-light" size="100" session-from="weapp"></contact-button>
+      </view>
+    </view>
+    <view class="nav-right" bindtap='Pop'>
+      提交订房需求
+    </view>
+  </view>
+  <!-- 弹窗 -->
+  <view class="hotal-mask" hidden='{{hidden}}' bindtap='Pop'></view>
+  <!-- 弹窗内容 -->
+  <view class="hotal-pop" hidden='{{hidden}}'>
+    <image src="http://api.iqianclub.com/upload/program/images/booking_process.png" class="hotal-booking"></image>
+    <text class="hot-line">专家管家订房热线</text>
+    <text class="phone-num">{{phoneNum}}</text>
+    <text class="play-btn" bindtap='makeCall'>立即拨打</text>
+    <!-- <view class="add-weixin">
+      <text class="add-weixin-txt">长按识别二维码</text>
+      <image src="http://api.iqianclub.com/upload/program/images/wx_erweima.jpg" class="erweima"></image>
+      <text class="add-weixin-txt">添加管家微信订房</text>
+    </view> -->
+    <view class="cansale-btn" bindtap='Pop'>
+      取消
+    </view>
+  </view>
+</view>

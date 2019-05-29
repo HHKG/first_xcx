@@ -1,0 +1,26 @@
+/* pages/member/coupomList/coupomList.wxss */
+@import "/pages/member/index.wxss";
+page{
+  background-color:#fff;
+}
+.coupom-body{
+  margin-top:30rpx;
+}
+.member-failure{
+  background-color:#808080;
+    position: absolute;
+  top:30rpx;
+  right:30rpx;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  color:#fff;
+  padding:6rpx 12rpx;
+  border-radius: 30rpx; 
+}
+.member-failure-img{
+  position: absolute;
+  width:104rpx;
+  height:104rpx;
+  right:10rpx;
+  bottom:30rpx;
+}

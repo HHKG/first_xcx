@@ -1,0 +1,112 @@
+<!--pages/holiday/roomList/roomList.wxml-->
+<view class="scenery-body">
+  <!-- banner -->
+  <view class="holiday-banner">
+    <image src='/images/hotel_banner.png' class="holiday-banner-img"></image>
+  </view>
+  <view class="scenery-cnt">
+    <view class="scenery-area">
+      <view class="scenery-area-h">
+        <image src="http://api.iqianclub.com/upload/program/images/plane_photo2.png" class="scenery-area-img"></image>
+        <span class="scenery-area-txt">国内 | 佛山 | 美的鹭湖森林度假区</span>
+      </view>
+      <view class="scenery-area-title">
+        佛山“法国小镇”半山温泉酒店
+      </view>
+      <view class="scenery-area-commentCount">
+        <image src="http://api.iqianclub.com/upload/program/images/five_star.png" class="scenery-area-star"></image>
+        <span class="scenery-area-comment-txt">88 住过 | 12 评论</span>
+      </view>
+      <view class="scenery-area-price">
+        <view class="scenery-area-comment">
+          <image class="dec-img" src='/images/dec_left.png'></image>
+          <view class="scenery-area-price-btn">
+            参与计划即可每年免费入住
+            <span class="scenery-day">1</span>晚
+            <image class="room-link" src="/images/link.png"></image>
+          </view>
+          <image class="dec-img" src='/images/dec_right.png'></image>
+        </view>
+        <view class="room-price-btn">
+          <text class="scenery-area-price-num">￥1400.00 </text>
+          <text class="scenery-area-price-txt">参考价</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="scenery-area">
+      <view class="scenery-area-h">
+        <image src="/images/detail_three_1.jpg" class="scenery-area-img"></image>
+        <span class="scenery-area-txt">国内 | 佛山 | 美的鹭湖森林度假区</span>
+      </view>
+      <view class="scenery-area-title">
+        佛山“法国小镇”安纳希童话酒店
+      </view>
+      <view class="scenery-area-commentCount">
+        <image src="http://api.iqianclub.com/upload/program/images/five_star.png" class="scenery-area-star"></image>
+        <span class="scenery-area-comment-txt">45 住过 | 8 评论</span>
+      </view>
+      <view class="scenery-area-price">
+       <view class="scenery-area-comment">
+          <image class="dec-img" src='/images/dec_left.png'></image>
+          <view class="scenery-area-price-btn">
+            参与计划即可每年免费入住
+            <span class="scenery-day">1</span>晚
+            <image class="room-link" src="/images/link.png"></image>
+          </view>
+          <image class="dec-img" src='/images/dec_right.png'></image>
+        </view>
+        <view class="room-price-btn">
+          <text class="scenery-area-price-num">￥950.00 </text>
+          <text class="scenery-area-price-txt">参考价</text>
+        </view>
+      </view>
+    </view>
+    <view class="scenery-area">
+      <view class="scenery-area-h">
+        <image src="/images/detail_four_3.jpg" class="scenery-area-img"></image>
+        <span class="scenery-area-txt">国内 | 佛山 | 美的鹭湖森林度假区</span>
+      </view>
+      <view class="scenery-area-title">
+        佛山“法国小镇”爱丽丝公寓
+      </view>
+      <view class="scenery-area-commentCount">
+        <image src="http://api.iqianclub.com/upload/program/images/five_star.png" class="scenery-area-star"></image>
+        <span class="scenery-area-comment-txt">64 住过 | 7 评论</span>
+      </view>
+      <view class="scenery-area-price">
+        <view class="scenery-area-comment">
+          <image class="dec-img" src='/images/dec_left.png'></image>
+          <view class="scenery-area-price-btn">
+            参与计划即可每年免费入住
+            <span class="scenery-day">1</span>晚
+            <image class="room-link" src="/images/link.png"></image>
+          </view>
+          <image class="dec-img" src='/images/dec_right.png'></image>
+        </view>
+        <view class="room-price-btn">
+          <text class="scenery-area-price-num">￥688.00 </text>
+          <text class="scenery-area-price-txt">参考价</text>
+        </view>
+      </view>
+    </view>
+    <!-- 提示 -->
+    <view class="use-tips">
+      参考价说明：因度假地订房火爆或节假日等因素，订房价格有所波动，最终以专属管家为您订房的信息为准。
+    </view>
+    <!-- 总部信息 -->
+    <view class="footer">
+      <view class="footer-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/LOGO.png" class="footer-img"></image>
+        <text class="footer-title">虔心荟度假俱乐部</text>
+      </view>
+      <view class="footer-address">
+        地址：中国·广州 珠江新城合景国际金融广场
+      </view>
+      <view class="footer-address">
+        管家热线：
+        <text class="footer-phone" bindtap='callQian'>{{phoneNumber}}</text>
+      </view>
+    </view>
+  </view>
+</view>

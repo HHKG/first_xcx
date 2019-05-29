@@ -1,0 +1,29 @@
+<!--pages/member/consumerGold/consumerGold.wxml-->
+<!-- 收支明细数据时 -->
+<view>
+  <view wx:if='{{pattern==1}}' style="height:76rpx;" >
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  </view>
+  <ul>
+    <block wx:for='{{balance}}' wx:for-item='item'>
+      <li class="con-cnt">
+        <view class="con-cnt-txt1">
+          <text wx:if='{{item.E_Type==1}}' class="con-cnt-balance">返现结算（系统自动）</text>
+          <text wx:if='{{item.E_Type==2}}' class="con-cnt-balance">认购计划支付</text>
+          <text wx:if='{{item.E_Type==3}}' class="con-cnt-balance">现金余额提现</text>
+          <text class="con-cnt-time">{{item.createtime}}</text>
+        </view>
+        <view class="con-cnt-add">
+          <text wx:if='{{item.E_State==1}}'>+</text>
+          <text wx:if='{{item.E_State==2}}'>-</text> {{item.E_Money}}
+        </view>
+      </li>
+    </block>
+  </ul>
+</view>
+<!-- 没有收支明细数据时 -->
+<view wx:if="{{balance.length==0}}" class="con-none">
+  <image class="con-none-icon" src="http://api.iqianclub.com/upload/program/images/jinekongbaiye_photo.png"></image>
+  <text class="con-none-txt">暂无相关记录</text>
+</view>

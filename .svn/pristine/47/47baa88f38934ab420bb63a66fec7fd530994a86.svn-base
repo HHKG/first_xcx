@@ -1,0 +1,27 @@
+<!--pages/member/cash/authentication/withdraw/withdraw.wxml-->
+<view>
+    <import src="/pages/template/header/header" />
+    <template is="header"></template>
+  <view class="wit-title">提现到</view>
+  <view class="wit-h">
+    <image class="wit-bank-icon" src="http://api.iqianclub.com/upload/program/images/card_icon.png"></image>
+    <view class="wit-bank">
+      <text class="wit-bank-name">{{bankname}}</text>
+      <text class="wit-bank-num">{{bankcard}}</text>
+    </view>
+  </view>
+  <view class="wit-cnt">
+    <view class="wit-cnt-h">
+      提现金额
+      <text class="wit-cnt-tips">（必须大于{{lessmoney}}元）</text>
+    </view>
+    <view class="wit-cnt-input">
+      ￥
+      <input type="digit" auto-focus='true' bindinput='cashinput' value=""></input>
+    </view>
+    <view class="wit-cnt-footer">
+    可用余额 {{money}}元
+    </view>
+  </view>
+  <button bindtap='Land'>确认提现</button>
+</view>

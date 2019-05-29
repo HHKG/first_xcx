@@ -1,0 +1,98 @@
+/* pages/member/myInvite/myInvite.wxss */
+
+page {
+  background-color: #fafafa;
+}
+
+.invite-h {
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30rpx;
+  margin-top: 20rpx;
+}
+
+.invite-num {
+  font-size: 24rpx;
+  color: #f68751;
+  line-height: 33rpx;
+}
+
+.touxiang {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 81rpx;
+}
+
+.invite-cnt {
+  width: 630rpx;
+  margin: 20rpx auto 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border-radius: 4rpx;
+}
+
+.invite-cnt-left {
+  display: flex;
+  align-items: center;
+}
+.invite-cnt-txt {
+  margin-left: 10rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+}
+
+.invite-cnt-right {
+  height: 33rpx;
+  font-size: 24rpx;
+  color: #333;
+  line-height: 33rpx;
+}
+
+.invite-unjoin {
+  height: 33rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 33rpx;
+}
+
+.invite-btn {
+  position: fixed;
+  left: 30rpx;
+  bottom: 40rpx;
+  text-align: center;
+  width: 690rpx;
+  height: 98rpx;
+  background: linear-gradient(360deg, rgba(240, 117, 58, 1) 0%, rgba(254, 159, 113, 1) 100%);
+  border-radius: 49rpx;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 98rpx;
+}
+
+.invite-none-img {
+  width: 272rpx;
+  height: 300rpx;
+}
+
+.invite-none-txt {
+  margin-top:30rpx;
+  height: 45rpx;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 45rpx;
+}
+.invite-none{
+  width:750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:178rpx;
+}

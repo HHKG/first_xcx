@@ -1,0 +1,30 @@
+<!--pages/member/consumerGold/consumerGold.wxml-->
+<!-- 收支明细数据时 -->
+<view>
+  <ul>
+    <li class="con-cnt">
+      <view class="con-cnt-txt1">
+        <text class="con-cnt-balance">返现结算（系统自动）</text>
+        <text class="con-cnt-time">2018-10-10</text>
+      </view>
+      <view class="con-cnt-add">
+      <text>+</text>10000
+      </view>
+    </li>
+    <li class="con-cnt">
+      <view class="con-cnt-txt1">
+        <text class="con-cnt-balance">现金余额提现</text>
+        <text class="con-cnt-time">2018-10-10</text>
+      </view>
+      <view class="con-cnt-cut">
+      <text>-</text>10000
+      </view>
+    </li>
+    <!-- </block> -->
+  </ul>
+</view>
+<!-- 没有收支明细数据时 -->
+<view class="con-none" hidden='{{hidden}}'>
+  <image class="con-none-icon" src="http://api.iqianclub.com/upload/program/images/jinekongbaiye_photo.png"></image>
+  <text class="con-none-txt">暂无相关记录</text>
+</view>

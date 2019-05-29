@@ -1,0 +1,176 @@
+<!--pages/holiday/roomList/hotalDetail/hotalDetail.wxml-->
+<view>
+  <import src="/pages/template/header/header" />
+  <template is="header"></template>
+  <scroll-view scroll-with-animation="true" scroll-y="true" style='height:{{screenH}}' scroll-into-view="{{module}}">
+    <swiper class="hotal-img" autoplay='true' indicator-dots='true' current='0' circular="true" indicator-active-color='#fff' indicator-color='#999'>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/detail_six_1.jpg" class="hotal-img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/detail_six_2.jpg" class="hotal-img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/detail_six_3.jpg" class="hotal-img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/detail_six_4.jpg" class="hotal-img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://api.iqianclub.com/upload/program/images/detail_six_5.jpg" class="hotal-img"></image>
+      </swiper-item>
+    </swiper>
+    <view class="hotal-h">
+      <view class="hotal-title">
+        小箱根温泉山庄
+      </view>
+      <view class="hotal-map">
+        <image src="http://api.iqianclub.com/upload/program/images/map_icon.png" class="hotal-map-img"></image>
+        <text class="hotal-map-txt">广东省惠州市龙门南昆山温泉谷永汉镇</text>
+      </view>
+    </view>
+    <image bindtap='gotofree' src="http://api.iqianclub.com/upload/program/images/hotel_banner.png" class="hotal-banner"></image>
+    <view class="hotal-cnt {{fixed}}">
+      <view class="hotal-tab" data-H="{{hotalSizeH}}" data-id="0" bindtap='changeTab' data-moudle="{{hotalSize}}">
+        <text class="hotal-tab-txt  {{id==0?'active':''}}">房型</text>
+        <image hidden="{{id==0?false:true}}" src='http://api.iqianclub.com/upload/program/images/tixian_btn.png' class="bottom-line"></image>
+      </view>
+      <view class="hotal-tab" data-H="{{summaryH}}" data-id="1" bindtap='changeTab' data-moudle="{{summary}}">
+        <text class="hotal-tab-txt {{id==1?'active':''}}">酒店概览</text>
+        <image hidden="{{id==1?false:true}}" src='http://api.iqianclub.com/upload/program/images/tixian_btn.png' class="bottom-line"></image>
+      </view>
+      <view class="hotal-tab" data-H="{{assessH}}" data-id="2" bindtap='changeTab' data-moudle="{{assess}}">
+        <text class="hotal-tab-txt {{id==2?'active':''}}">酒店评价</text>
+        <image hidden="{{id==2?false:true}}" src='http://api.iqianclub.com/upload/program/images/tixian_btn.png' class="bottom-line"></image>
+      </view>
+    </view>
+    <view class="hotal-size-list" id="hotalSize">
+      <view class="hotal-size">
+        <view class="hotal-size-top">
+          <image src="http://api.iqianclub.com/upload/program/images/detail_six_bed1.jpg" class="hotal-size-img"></image>
+          <view class="hotal-size-right">
+            <view class="hotal-size-txt">雅致房</view>
+            <view class="hotal-inside">
+              <text class="hotal-size-size">面积：42㎡</text>
+              <text class="hotal-size-size">床型：1张1.8米床</text>
+            </view>
+            <view class="hotal-size-tips">备注：最多2人入住，含双早+双人无限次温泉门票</view>
+          </view>
+        </view>
+        <view class="scenery-area-price hotal-size-bottom">
+          <view class="scenery-area-comment" bindtap='gotofree'>
+            <image class="dec-img" src='http://api.iqianclub.com/upload/program/images/dec_left.png'></image>
+            <view class="scenery-area-price-btn">
+              参与计划即可每年免费入住
+              <span class="scenery-day">1</span>晚
+              <image class="room-link" src="http://api.iqianclub.com/upload/program/images/link.png"></image>
+            </view>
+            <image class="dec-img" src='http://api.iqianclub.com/upload/program/images/dec_right.png'></image>
+          </view>
+          <view class="room-price-btn">
+            <text class="scenery-area-price-num">￥880.00 </text>
+            <text class="scenery-area-price-txt">参考价</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="hotal-size">
+        <view class="hotal-size-top">
+          <image src="http://api.iqianclub.com/upload/program/images/detail_six_bed2.jpg" class="hotal-size-img"></image>
+          <view class="hotal-size-right">
+            <view class="hotal-size-txt">精致房</view>
+            <view class="hotal-inside">
+              <text class="hotal-size-size">面积：52㎡</text>
+              <text class="hotal-size-size">床型：1张1.8米床</text>
+            </view>
+            <view class="hotal-size-tips">备注：最多2人入住，含双早+双人无限次温泉门票</view>
+          </view>
+        </view>
+        <view class="scenery-area-price hotal-size-bottom">
+          <view class="scenery-area-comment" bindtap='gotofree'>
+            <image class="dec-img" src='http://api.iqianclub.com/upload/program/images/dec_left.png'></image>
+            <view class="scenery-area-price-btn">
+              参与计划即可每年免费入住
+              <span class="scenery-day">1</span>晚
+              <image class="room-link" src="http://api.iqianclub.com/upload/program/images/link.png"></image>
+            </view>
+            <image class="dec-img" src='http://api.iqianclub.com/upload/program/images/dec_right.png'></image>
+          </view>
+          <view class="room-price-btn">
+            <text class="scenery-area-price-num">￥780.00 </text>
+            <text class="scenery-area-price-txt">参考价</text>
+          </view>
+        </view>
+      </view>
+      <view class="use-tips">
+        参考价说明：因度假地订房火爆、节假日等因素。订房价格有所波动。最终以专属管家为您订房的信息为准。
+      </view>
+    </view>
+    <!-- banner -->
+    <view class="holiday-banner">
+      <image src='http://api.iqianclub.com/upload/program/images/service_banner.png' class="holiday-banner-img"></image>
+    </view>
+    <!-- 酒店概览 -->
+    <view class="hotal-summary" id="summary">
+      酒店概览
+      <text class="detail_scene_p">
+小箱根温泉山庄位于广东省惠州市龙门南昆山温泉谷永汉镇内，"小箱根”的温泉常年以60℃-80℃的亘古之温似天赐琼浆般涌出，水质富含48种微量元素，俗称小苏打泉。
+           </text>
+      <image class="hotal-summary-img" src="http://api.iqianclub.com/upload/program/images/detail_six_3.jpg"></image>
+      <image class="hotal-summary-img" src="http://api.iqianclub.com/upload/program/images/youdu4.png"></image>
+
+
+      <text class="detail_scene_p">
+庄园内有56个泡池，分为汉方养生、香薰、动感娱乐、日式风情、浪漫区等五大主题。庄园内还有全华南唯一的裸眼3D泡池，坐泡温泉，看巨幕投影，享帝王体验。此外，庄园内也设有推拿房、麻将房、KTV室等休闲娱乐场所。广东美食少不了，庄园餐厅以粤系菜式为主。早餐是茶楼点单式的设计，让人恍如身处广州茶楼。
+            </text>
+      <image class="hotal-summary-img" src="http://api.iqianclub.com/upload/program/images/youdu5.png"></image>
+      <image class="hotal-summary-img" src="http://api.iqianclub.com/upload/program/images/detail_six_5.jpg"></image>
+    </view>
+    <!-- 酒店评价 -->
+    <view class="hotal-assess" id="assess">
+      综合热度
+      <view>
+        <image src="http://api.iqianclub.com/upload/program/images/five_star.png" class="scenery-area-star"></image>
+        <text class="hotal-assess-txt">5.0</text>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 底部导航栏 -->
+  <view class="nav">
+    <view class="nav-left">
+      <view class="hotal-nav" bindtap='gotonindex'>
+        <image src='http://api.iqianclub.com/upload/program/images/family_icon.png' class="hotal-nav-img"></image>
+        <text class="hotal-nav-txt">去首页</text>
+      </view>
+      <view class="hotal-nav" bindtap='Pop'>
+        <image src='http://api.iqianclub.com/upload/program/images/steward_icon.png' class="hotal-nav-img"></image>
+        <text class="hotal-nav-txt">咨询管家</text>
+      </view>
+      <view class="hotal-nav">
+        <image src='http://api.iqianclub.com/upload/program/images/zixun_icon.png' class="hotal-nav-img"></image>
+        <text class="hotal-nav-txt">在线客服</text>
+         <contact-button class="contact-btn" type="default-light" size="100" session-from="weapp"></contact-button>
+      </view>
+    </view>
+    <view class="nav-right" bindtap='Pop'>
+      提交订房需求
+    </view>
+  </view>
+  <!-- 弹窗 -->
+  <view class="hotal-mask" hidden='{{hidden}}' bindtap='Pop'></view>
+  <!-- 弹窗内容 -->
+  <view class="hotal-pop" hidden='{{hidden}}'>
+    <image src="http://api.iqianclub.com/upload/program/images/booking_process.png" class="hotal-booking"></image>
+    <text class="hot-line">专家管家订房热线</text>
+    <text class="phone-num">{{phoneNum}}</text>
+    <text class="play-btn" bindtap='makeCall'>立即拨打</text>
+    <!-- <view class="add-weixin">
+      <text class="add-weixin-txt">长按识别二维码</text>
+      <image src="http://api.iqianclub.com/upload/program/images/wx_erweima.jpg" class="erweima"></image>
+      <text class="add-weixin-txt">添加管家微信订房</text>
+    </view> -->
+    <view class="cansale-btn" bindtap='Pop'>
+      取消
+    </view>
+  </view>
+</view>

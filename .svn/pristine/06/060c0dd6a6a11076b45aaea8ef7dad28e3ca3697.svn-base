@@ -1,0 +1,290 @@
+<view>
+  <swiper style="height:460rpx;position:relative" circular="true" bindchange='changeDot' current="0" data-dotActive='dotActive' autoplay="true">
+  <block wx:for="{{bannerimg}}"  wx:for-item="item">
+    <swiper-item>
+        <image src="{{item.image}}" class="slide-image"></image>
+    </swiper-item>
+
+    </block>
+    <view class="holiday-dots">
+      <view class="holiday-dot {{className0}}"></view>
+      <view class="holiday-dot {{className1}}"></view>
+      <view class="holiday-dot {{className2}}"></view>
+      <view class="holiday-dot {{className3}}"></view>
+    </view>
+  </swiper>
+  <!-- 不通栏内容区 -->
+  <view class="index-cnt">
+    <!-- 标题 -->
+    <view class="index-join">
+      <image src="http://api.iqianclub.com/upload/program/images/club_title3.png" class="swiper-img"></image>
+    </view>
+    <view class="index-join-cnt">
+      <image src="http://api.iqianclub.com/upload/program//images/club_process_photo.png" class="index-join-cnt-img1"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_huanguan_line .png" class="index-join-cnt-img2"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_key_word_icon.png" class="index-join-cnt-img3"></image>
+    </view>
+    <text class="txt"></text>
+    <view class="index-banner">
+      <image src="http://api.iqianclub.com/upload/program/images/middle_banner_green.png" class="swiper-img"></image>
+    </view>
+    <!-- 标题 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title2.png" class="swiper-img"></image>
+    </view>
+    <view class="index-share-cnt">
+      <image src="http://api.iqianclub.com/upload/program/images/swimming_pool_photo.png" class="index-shareH-img"></image>
+      <text class="index-share-title">四闲山房 | 加入虔心荟，让免费度假成为可能！首期体验会籍，限量1000名！</text>
+      <view class="index-planDetail">
+        <view class="index-planDetail-cnt">
+          <text class="num">1<text class="num-txt">万</text></text>
+          <text class="num-txt">参与费</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">30<text class="num-txt">年</text></text>
+          <text class="num-txt">返现期限</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">8<text class="num-txt">%</text></text>
+          <text class="num-txt">预估每年返利</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">10<text class="num-txt">%</text></text>
+          <text class="num-txt">每年返住房券</text>
+        </view>
+      </view>
+      <!-- 参与计划参数说明 -->
+      <view class="index-planDetail-explain">
+        <view class="index-sanjiao">
+          <view class="index-small-sanjiao"></view>
+        </view>
+        隐匿竹海，静谧清幽，体验四闲之乐。位于江西龙南“虔心小镇”内，依山而建，林中别墅。纯生态度假，纯田园风光，返璞归真，给您最纯粹的享受。
+      </view>
+      <!-- 项目介绍 -->
+      <view class="index-project">
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon1.png" class="index-project-icon"></image>
+          <text class="index-project-txt">项目规模：23栋独立别墅，30间客房 </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon2.png" class="index-project-icon"></image>
+          <text class="index-project-txt">项目优势：客源稳定，入住率高  </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon3.png" class="index-project-icon"></image>
+          <text class="index-project-txt">景区特色：万亩有机茶园，万棵红豆杉伴生环绕 </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon4.png" class="index-project-icon"></image>
+          <text class="index-project-txt">别墅风格：茶旅文化，古风浓郁 </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon5.png" class="index-project-icon"></image>
+          <text class="index-project-txt">别墅景观：半山望茶园，竹海星空 </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon6.png" class="index-project-icon"></image>
+          <text class="index-project-txt">别墅配套：山间茶吧，山泉无边泳池，360︒景观台 </text>
+        </view>
+      </view>
+      <!-- 计划参与进度 -->
+      <view class="index-progress">
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">380</text>
+          <text class="progress-txt">已购人数</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">620</text>
+          <text class="progress-txt">仅剩名额</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">19<text class="progress-num-txt">天</text></text>
+          <text class="progress-txt">剩余时间</text>
+        </view>
+      </view>
+      <!-- 进度条 -->
+      <progress percent="40" stroke-width="6" activeColor="#E1BB5B" />
+      <!-- 加入按钮 -->
+      <view class="index-join-btn">
+        <button class="btn" bindtap='toProject'>立即加入</button>
+      </view>
+    </view>
+    <!-- 加入虔心荟的六大理由 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title1.png" class="swiper-img"></image>
+    </view>
+    <view class="index-reason">
+      <image src="http://api.iqianclub.com/upload/program/images/bg1.png" class="bg-img"></image>
+      <view class="six-reason">
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason1.png" class="reason-img"></image>
+          <text class="reason-title">门槛低</text>
+          <text class="reason-txt">万元入会</text>
+          <text class="reason-txt">专业团队管理</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason2.png" class="reason-img"></image>
+          <text class="reason-title">担保机制</text>
+          <text class="reason-txt">虔心共享方案</text>
+          <text class="reason-txt">完善担保机制</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason3.png" class="reason-img"></image>
+          <text class="reason-title">权益多元化</text>
+          <text class="reason-txt">尊享多重福利</text>
+          <text class="reason-txt">持续现金返利</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason4.png" class="reason-img"></image>
+          <text class="reason-title">客源充足</text>
+          <text class="reason-txt">联合OTA平台</text>
+          <text class="reason-txt">做返利的坚实后盾</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason5.png" class="reason-img"></image>
+          <text class="reason-title">文旅支持</text>
+          <text class="reason-txt">国家政策支持</text>
+          <text class="reason-txt">奠定文旅发展基础</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason6.png" class="reason-img"></image>
+          <text class="reason-title">高端人脉</text>
+          <text class="reason-txt">结识高端人群 </text>
+          <text class="reason-txt">开拓人脉视野</text>
+        </view>
+      </view>
+    </view>
+    <!-- 会员说 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title3.png" class="swiper-img"></image>
+    </view>
+    <view class="index-say-lunbo">
+      <swiper style="height:460rpx;position:relative" circular="true" bindchange='changeDot' current="0" data-dotActive='dotActive' autoplay="true">
+        <swiper-item>
+          <image src='http://api.iqianclub.com/upload/program/images/banner1.png' class="swiper-img"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src='http://api.iqianclub.com/upload/program/images/banner2.png' class="swiper-img"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src='http://api.iqianclub.com/upload/program/images/tai_guo1.png' class="swiper-img"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src='http://api.iqianclub.com/upload/program/images/tai_guo2.png' class="swiper-img"></image>
+        </swiper-item>
+        <view class="holiday-dots">
+          <view class="holiday-dot {{className0}}"></view>
+          <view class="holiday-dot {{className1}}"></view>
+          <view class="holiday-dot {{className2}}"></view>
+          <view class="holiday-dot {{className3}}"></view>
+        </view>
+      </swiper>
+    </view>
+    <!-- 近期分享计划预告 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title4.png" class="swiper-img"></image>
+    </view>
+    <!-- 1 -->
+    <view class="foreshow">
+      <image src="http://api.iqianclub.com/upload/program/images/plan1.png" class="foreshow-img"></image>
+      <text class="foreshow-txt">竹隐山居别墅群</text>
+      <view class="foreshow-footer">
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/position_icon.png" class="foreshow-position"></image>
+          <text>江西赣州</text>
+        </view>
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/time_icon.png" class="foreshow-time"></image>
+          <text>上线时间待公布</text>
+        </view>
+      </view>
+    </view>
+    <!-- 2 -->
+    <view class="foreshow">
+      <image src="http://api.iqianclub.com/upload/program/images/plan2.png" class="foreshow-img"></image>
+      <text class="foreshow-txt">静心湖别墅群</text>
+      <view class="foreshow-footer">
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/position_icon.png" class="foreshow-position"></image>
+          <text>江西赣州</text>
+        </view>
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/time_icon.png" class="foreshow-time"></image>
+          <text>上线时间待公布</text>
+        </view>
+      </view>
+
+    </view>
+    <!-- 3 -->
+    <view class="foreshow">
+      <image src="http://api.iqianclub.com/upload/program/images/plan3.png" class="foreshow-img"></image>
+      <text class="foreshow-txt">万亩有机茶园（珍稀红豆杉伴生）</text>
+      <view class="foreshow-footer">
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/position_icon.png" class="foreshow-position"></image>
+          <text>江西赣州</text>
+        </view>
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/time_icon.png" class="foreshow-time"></image>
+          <text>上线时间待公布</text>
+        </view>
+      </view>
+
+    </view>
+    <!-- 4 -->
+    <view class="foreshow">
+      <image src="http://api.iqianclub.com/upload/program/images/plan4.png" class="foreshow-img"></image>
+      <text class="foreshow-txt">泰国苏梅岛珊瑚湾海边度假别墅群</text>
+      <view class="foreshow-footer">
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/position_icon.png" class="foreshow-position"></image>
+          <text>泰国</text>
+        </view>
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/time_icon.png" class="foreshow-time"></image>
+          <text>上线时间待公布</text>
+        </view>
+      </view>
+
+    </view>
+    <!-- 5 -->
+    <view class="foreshow">
+      <image src="http://api.iqianclub.com/upload/program/images/plan5.png" class="foreshow-img"></image>
+      <text class="foreshow-txt">泰国苏梅岛卡普拉山庄园度假别墅</text>
+      <view class="foreshow-footer">
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/position_icon.png" class="foreshow-position"></image>
+          <text>泰国</text>
+        </view>
+        <view class="foreshow-footer-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/time_icon.png" class="foreshow-time"></image>
+          <text>上线时间待公布</text>
+        </view>
+      </view>
+    </view>
+    <!-- 合作伙伴 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title5.png" class="swiper-img"></image>
+    </view>
+    <view class="partner">
+      <image src="http://api.iqianclub.com/upload/program/images/parner_1.jpg" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_2.png" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_3.png" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_4.png" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_5.png" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_6.png" class="partner-img"></image>
+    </view>
+    <view class="footer">
+      <view class="footer-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/LOGO.png" class="footer-img"></image>
+        <text class="footer-title">虔心荟度假俱乐部</text>
+      </view>
+      <view class="footer-address">
+      地址：中国·广州 珠江新城合景国际金融广场
+      </view>
+      <view class="footer-address">
+      管家热线：<text class="footer-phone">400-990-8830</text>
+      </view>
+    </view>
+  </view>
+</view>

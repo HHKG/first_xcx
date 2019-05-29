@@ -1,0 +1,178 @@
+<!--pages/index/project/index.wxml-->
+<scroll-view scroll-with-animation="{{true}}" scroll-y="true" style='height:{{screenH}}' scroll-into-view="{{module}}">
+  <view class="project">
+    <image src="http://api.iqianclub.com/upload/program/images/swimming_pool_photo.png" class="project-img"></image>
+    <view class="index-share-cnt project-cnt">
+      <text class="index-share-title">四闲山房 | 加入虔心荟，让免费度假成为可能！首期体验会籍，限量1000名！</text>
+      <view class="index-planDetail">
+        <view class="index-planDetail-cnt">
+          <text class="num">1<text class="num-txt">万</text></text>
+          <text class="num-txt">参与费</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">30<text class="num-txt">年</text></text>
+          <text class="num-txt">返现期限</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">8<text class="num-txt">%</text></text>
+          <text class="num-txt">预估每年返利</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">10<text class="num-txt">%</text></text>
+          <text class="num-txt">每年返住房券</text>
+        </view>
+      </view>
+      <!-- 参与计划参数说明 -->
+      <view class="index-planDetail-explain">
+        <view class="index-sanjiao">
+          <view class="index-small-sanjiao"></view>
+        </view>
+        隐匿竹海，静谧清幽，体验四闲之乐。位于江西龙南“虔心小镇”内，依山而建，林中别墅。纯生态度假，纯田园风光，返璞归真，给您最纯粹的享受。
+      </view>
+      <!-- 项目介绍 -->
+      <view class="index-project">
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon1.png" class="index-project-icon"></image>
+          <text class="index-project-txt">项目规模：23栋独立别墅，30间客房 </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon2.png" class="index-project-icon"></image>
+          <text class="index-project-txt">项目优势：客源稳定，入住率高  </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon3.png" class="index-project-icon"></image>
+          <text class="index-project-txt">景区特色：万亩有机茶园，万棵红豆杉伴生环绕 </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon4.png" class="index-project-icon"></image>
+          <text class="index-project-txt">别墅风格：茶旅文化，古风浓郁 </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon5.png" class="index-project-icon"></image>
+          <text class="index-project-txt">别墅景观：半山望茶园，竹海星空 </text>
+        </view>
+        <view class="index-project-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/small_icon6.png" class="index-project-icon"></image>
+          <text class="index-project-txt">别墅配套：山间茶吧，山泉无边泳池，360︒景观台 </text>
+        </view>
+      </view>
+      <!-- 计划参与进度 -->
+      <view class="index-progress">
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">380</text>
+          <text class="progress-txt">已购人数</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">620</text>
+          <text class="progress-txt">仅剩名额</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">19<text class="progress-num-txt">天</text></text>
+          <text class="progress-txt">剩余时间</text>
+        </view>
+      </view>
+      <!-- 进度条 -->
+      <progress percent="40" stroke-width="6" activeColor="#E1BB5B" />
+    </view>
+    <!-- 详情介绍 -->
+    <view class="project-detail {{fixed >= 0 ? '' : 'fixed'}} " id="project-detail">
+      <view>
+        <view class="project-detail-cnt" data-H="{{surveyH}}" data-module='survey' data-id='0' style="color:{{index == 0 ? '#f0753a' : ''}}" bindtap='change'> 概况
+          <image src="http://api.iqianclub.com/upload/program/images/tixian_btn.png" class="project-active {{index==0?'active':''}}"></image>
+        </view>
+      </view>
+      <view>
+        <view class="project-detail-cnt" data-H="{{keyH}}" data-module='key' data-id='1' style="color:{{index == 1 ? '#f0753a' : ''}}" bindtap='change'> 关键信息
+          <image src="http://api.iqianclub.com/upload/program/images/tixian_btn.png" class="project-active {{index==1?'active':''}}"></image>
+        </view>
+      </view>
+      <view>
+        <view class="project-detail-cnt" data-H="{{rebateH}}" data-module='rebate' data-id='2' style="color:{{index == 2 ? '#f0753a' : ''}}" bindtap='change'> 返利方案
+          <image src="http://api.iqianclub.com/upload/program/images/tixian_btn.png" class="project-active {{index==2?'active':''}}"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 概况 -->
+    <!-- id标记锚点 -->
+    <view id="survey" class="survey" data-surveyH="{{surveyTop}}">
+      <!-- 概况内容 -->
+      <text>概况</text>
+    </view>
+    <!-- 关键信息 -->
+    <!-- id标记锚点 -->
+    <view id="key" class="key-news" data-keyH="{{keyTop}}">
+      <view class="key-news-title">关键信息</view>
+      <view class="key-news-cnt">
+        <text class="key-news-txt1">计划名称</text>
+        <text class="key-news-txt2">四闲山房别墅</text>
+      </view>
+      <view class="key-news-cnt">
+        <text class="key-news-txt1">计划情况</text>
+        <text class="key-news-txt2">30年返利期限</text>
+      </view>
+      <view class="key-news-cnt">
+        <text class="key-news-txt1">计划位置</text>
+        <text class="key-news-txt2">中国江西省赣州市</text>
+      </view>
+      <view class="key-news-cnt key-news-txt3">
+        <text class="key-news-txt1">计划特色</text>
+        <text class="key-news-txt2">万元入会做别墅合伙人，专业团队管理，无需担心运营。和全国各地喜欢探索世界，懂得享受生活，爱度假的高端人群做邻居。各大主流OTA平台联合推广，6亿用户触达，让度假别墅不闲置，持续返利。合伙人每年享受免费住房福利，入住优先，享受尊贵会员礼遇。每年现金返利，持续30年，无需为度假消费发愁。</text>
+      </view>
+    </view>
+    <!-- 返利方案 -->
+    <!-- id标记锚点 -->
+    <view id="rebate" class="key-news" data-rebateH="{{rebateTop}}">
+      <view class="key-news-title">返利方案</view>
+      <view class="rebate">
+        <text class="rebate-case-title">四闲山房别墅</text>
+        <view class="index-planDetail rebate-case-data">
+          <view class="index-planDetail-cnt">
+            <text class="num">1<text class="num-txt">万</text></text>
+            <text class="num-txt">参与费</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">30<text class="num-txt">年</text></text>
+            <text class="num-txt">返现期限</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">8<text class="num-txt">%</text></text>
+            <text class="num-txt">预估每年返利</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">10<text class="num-txt">%</text></text>
+            <text class="num-txt">每年返住房券</text>
+          </view>
+        </view>
+        <text class="rebate-case-txt">返利权益：30年内每年享受8%的预估返现，10%住房消费券。 其他权益：会籍福利增值，别墅度假免费住，特色天然农产品优惠购，订度假酒店，全网折上折，指定消费返积分，积分提现或换购商品，会员生日福利，会员尊享大礼包</text>
+        <view class="rebate-case-btn">
+          <text class="rebate-case-gays">268人加入/剩余328人</text>
+          <button>查看详情</button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部导航 -->
+    <view class="nav">
+      <view class="nav-left">
+        <view class="nav-left-cnt" bindtap='toIndex'>
+          <image src="http://api.iqianclub.com/upload/program/images/family_icon.png" class="nav-icon"></image>
+          <text class="nav-left-txt">去首页</text>
+        </view>
+        <view class="nav-left-cnt nav-position">
+          <image src="http://api.iqianclub.com/upload/program/images/zixun_icon.png" class="nav-icon"></image>
+          <text class="nav-left-txt">咨询顾问</text>
+          <contact-button class="contact-btn" type="default-light" size="100" session-from="weapp"></contact-button>
+        </view>
+        <view class="nav-left-cnt">
+          <image src="http://api.iqianclub.com/upload/program/images/jisuanqi_icon.png" class="nav-icon"></image>
+          <text class="nav-left-txt">算一算</text>
+        </view>
+      </view>
+      <view class="nav-right">
+        立即加入
+      </view>
+    </view>
+
+  </view>
+</scroll-view>

@@ -1,0 +1,72 @@
+//app.js
+
+var utilMd5 = require('/utils/md5.js');
+App({
+  from: 'applet',
+  salt: 'obqgbzagsj',
+  host: 'https://wt.wanmey.com/',
+  onLaunch: function () {
+    var host = 'https://wt.wanmey.com/';
+    var from ='applet';
+    var salt ='obqgbzagsj';
+    // 展示本地存储能力
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+    var token=wx.getStorageSync('token');
+   // console.log(token);
+    if(token==''){
+      wx.login({
+        success(res) {
+          // console.log(from);
+          if (res.code) {
+            var time = Date.parse(new Date()) / 1000;
+            var randomstr = utilMd5.hexMD5(from + salt + time);
+            var usign = utilMd5.hexMD5('getcode2Session' + res.code + randomstr + time);
+            wx.request({
+              url: host + 'getcode2Session',
+              method: 'get',
+              dataType: 'json',
+              data: { from: from, action: 'getcode2Session', sign: usign, code: res.code, time: time },
+              success(result) {
+                console.log(result)
+                if (result.data.code == 1) {
+                  if (result.data.new == -1) {
+                    wx.setStorageSync('member', result.data.user);
+                    wx.setStorageSync('token', result.data.user);
+                    console.log('成功')
+                  }
+                }
+              }
+            })
+          }
+        }
+      })
+    }
+
+    // 登录
+   
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              this.globalData.userInfo = res.userInfo
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+            }
+          })
+        }
+      }
+    })
+  },
+  globalData: {
+    userInfo: null
+  }
+})

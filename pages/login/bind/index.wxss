@@ -1,0 +1,77 @@
+/* pages/login/index/index.wxss */
+@import "/pages/member/index.wxss";
+.index-body{
+  width:92%;
+  margin: 0 auto;
+}
+.index-h{
+margin:79rpx 0 15rpx 0;
+ width:210rpx;
+height:59rpx;
+font-size:42rpx;
+font-weight:500;
+color:#333;
+line-height:59rpx;
+}
+.index-input{
+  margin-top:50rpx;
+  padding-bottom: 19rpx;
+border-bottom:1rpx solid #e0e0e0;
+}
+input{
+width:100%;
+height:45rpx;
+font-size:32rpx;
+font-weight:400;
+color:#333333;
+line-height:45rpx;
+}
+button{
+  width: 690rpx;
+  height:102rpx;
+  line-height: 102rpx;
+  margin-top:42rpx;
+  border-radius: 12rpx;
+}
+.index-btn{
+ margin-top:33rpx;
+ display: inline-block;
+}
+.btn1{
+  background-color:#f0753a;
+  color:#fff;
+}
+.btn2{
+  background-color:#fff;
+  color:#f0753a;
+  border:1rpx solid #f0753a;
+}
+.index-position{
+  position: relative;
+}
+.get-code{
+  position: absolute;
+  width:182rpx;
+  height:62rpx;
+  line-height: 62rpx;
+  border-radius: 33rpx;
+  border:1rpx solid #3A8782;
+  color:#3A8782;
+  font-size:28rpx;
+  background:#fff;
+  right:0;
+  bottom:20rpx;
+  z-index: 11
+}
+button::after {
+  border: none;
+}
+.btn1[disabled]{
+  background-color:#fab696!important;
+  color:#fff!important;
+}
+.get-code[disabled]{
+  background-color:#EBEBEB!important;
+  color:#999999!important;
+  border:0rpx;
+}

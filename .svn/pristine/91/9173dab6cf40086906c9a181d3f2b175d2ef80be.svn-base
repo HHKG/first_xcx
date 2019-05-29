@@ -1,0 +1,51 @@
+<!--pages/login/index/registe/data/data.wxml-->
+<view class="data-body">
+    <import src="/pages/template/header/header" />
+    <template is="header"></template>
+  <!-- 头部信息 -->
+  <view class="reg-h">
+    <view class="reg-line1"></view>
+    <view class="reg-line"></view>
+    <view class="reg-img">
+      <view class="reg-img-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/small_check_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">填写手机号</text>
+      </view>
+      <view class="reg-img-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/small_check_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">填写资料</text>
+      </view>
+      <view class="reg-img-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/small_check_gray_icon.png" class="reg-img1"></image>
+        <text class="reg-img-cnt-txt">注册成功</text>
+      </view>
+    </view>
+  </view>
+  <!-- 下拉选择框 -->
+  <view class="select">
+    <block wx:for="{{pop}}" wx:key="">
+      <view class="cal-pop-layout">
+        <text class="cal-pop-txt">{{item.title}}</text>
+        <view class="cal-pop-cnt" data-id="{{item.id}}" bindtap="showList">
+          <text class="cal-pop-cnt-txt">{{item.num}}</text>
+          <image class="cal-pop-img" src="http://api.iqianclub.com/upload/program/images/drop_down_icon.png"></image>
+        </view>
+        <ul wx:if="{{index==hidden ? true : false}}">
+          <li class="{{li==0 ? 'active':''}}" data-index="{{index}}" data-id="0" data-val="{{item.money1}}" bindtap="select">{{item.money1}}</li>
+          <li class="{{li==1 ? 'active':''}}" data-index="{{index}}" data-id="1" data-val="{{item.money2}}" bindtap="select">{{item.money2}}</li>
+          <li class="{{li==2 ? 'active':''}}" data-index="{{index}}" data-id="2" data-val="{{item.money3}}" bindtap="select">{{item.money3}}</li>
+        </ul>
+      </view>
+    </block>
+    <!-- 协议模块 -->
+    <view class="data-agreement">
+      <view class="data-agreement-cnt">
+        <radio value="{{egree}}" bindtap="change" checked='{{checked}}' />
+        <view>我已阅读并且同意<text class="data-agreement-txt" bindtap='gotopop'>《会员注册协议》</text></view>
+      </view>
+      <view class="data-agreement-btn">
+        <button open-type="getUserInfo" bindgetuserinfo='bindGetUserInfo' disabled='{{disabled}}'>确认</button>
+      </view>
+    </view>
+  </view>
+</view>

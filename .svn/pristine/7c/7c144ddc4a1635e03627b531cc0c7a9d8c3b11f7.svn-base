@@ -1,0 +1,106 @@
+<!--pages/member/rebate/rebate.wxml-->
+<!-- 返现 -->
+<view>
+  <view class="rebate-h">
+    <text class="rebate-h-txt {{className}}" data-id="rebate" bindtap="changeTab">返现</text>
+    <text class="rebate-h-txt {{className1}}" data-id="coupom" bindtap="changeTab">返住房券</text>
+  </view>
+  <view hidden='{{!hidden}}'>
+    <view class="rebate-cnt">
+      <view class="rebate-cnt-title">
+        <view class="rebate-cnt-status">
+          <text class="rebate-cnt-num">￥65.00</text>
+          <text class="rebate-cnt-txt">现金</text>
+        </view>
+        <view class="rebate-cnt-status">
+          未结算
+        </view>
+      </view>
+      <view class="rebate-cnt-name">
+        <text class="rebate-case-name">计划简称-方案名</text>
+        <text class="rebate-case-number">(3/360)</text>
+      </view>
+      <view class="rebate-detail">
+        <text class="rebate-detail-txt day">参与费：<text class="rebate-detail-num">100000.00/份</text></text>
+        <text class="rebate-detail-txt">返现率：<text class="rebate-detail-num">6.5‰</text></text>
+      </view>
+      <view class="rebate-detail">
+        <text class="rebate-detail-txt">账单日：<text class="rebate-detail-num">2019/01/08</text></text>
+        <text class="rebate-detail-txt">结算日：<text class="rebate-detail-num">2019/04/08</text></text>
+      </view>
+    </view>
+    <view class="rebate-cnt">
+      <view class="rebate-cnt-title">
+        <view class="rebate-cnt-status">
+          <text class="rebate-cnt-num">￥65.00</text>
+          <text class="rebate-cnt-txt">现金</text>
+        </view>
+        <view class="rebate-cnt-status">
+          未结算
+        </view>
+      </view>
+      <view class="rebate-cnt-name">
+        <text class="rebate-case-name">计划简称-方案名</text>
+        <text class="rebate-case-number">(3/360)</text>
+      </view>
+      <view class="rebate-detail">
+        <text class="rebate-detail-txt day">参与费：<text class="rebate-detail-num">100000.00/份</text></text>
+        <text class="rebate-detail-txt">返现率：<text class="rebate-detail-num">6.5‰</text></text>
+      </view>
+      <view class="rebate-detail">
+        <text class="rebate-detail-txt">账单日：<text class="rebate-detail-num">2019/01/08</text></text>
+        <text class="rebate-detail-txt">结算日：<text class="rebate-detail-num">2019/04/08</text></text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 返住房券 -->
+<view hidden='{{hidden}}'>
+  <view class="rebate-cnt">
+    <view class="rebate-cnt-title">
+      <view class="rebate-cnt-status">
+        <text class="rebate-cnt-num">￥65.00</text>
+        <text class="rebate-cnt-txt">住房券</text>
+      </view>
+      <view class="rebate-cnt-status">
+        未结算
+      </view>
+    </view>
+    <view class="rebate-cnt-name">
+      <text class="rebate-case-name">计划简称-方案名</text>
+      <text class="rebate-case-number">(3/360)</text>
+    </view>
+    <view class="rebate-detail">
+      <text class="rebate-detail-txt day">参与费：<text class="rebate-detail-num">100000.00/份</text></text>
+      <text class="rebate-detail-txt">返现率：<text class="rebate-detail-num">10%</text></text>
+    </view>
+    <view class="rebate-detail">
+      <text class="rebate-detail-txt">账单日：<text class="rebate-detail-num">2019/01/08</text></text>
+      <text class="rebate-detail-txt">结算日：<text class="rebate-detail-num">2019/04/08</text></text>
+    </view>
+  </view>
+
+  <view class="rebate-cnt">
+    <view class="rebate-cnt-title">
+      <view class="rebate-cnt-status">
+        <text class="rebate-cnt-num">￥65.00</text>
+        <text class="rebate-cnt-txt">住房券</text>
+      </view>
+      <view class="rebate-cnt-status">
+        未结算
+      </view>
+    </view>
+    <view class="rebate-cnt-name">
+      <text class="rebate-case-name">计划简称-方案名</text>
+      <text class="rebate-case-number">(3/360)</text>
+    </view>
+    <view class="rebate-detail">
+      <text class="rebate-detail-txt day">参与费：<text class="rebate-detail-num">100000.00/份</text></text>
+      <text class="rebate-detail-txt">每年返住房券：<text class="rebate-detail-num">10%</text></text>
+    </view>
+    <view class="rebate-detail">
+      <text class="rebate-detail-txt">账单日：<text class="rebate-detail-num">2019/01/08</text></text>
+      <text class="rebate-detail-txt">结算日：<text class="rebate-detail-num">2019/04/08</text></text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,89 @@
+/* pages/login/index/registe/data/success/success.wxss */
+@import "/pages/member/index.wxss";
+.success-body{
+  width:92%;
+  margin: 0 auto;
+}
+/* 引用regsite页面的样式 */
+.reg-h{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top:83rpx;
+}
+.reg-h::after{
+ border:1px solid #333;
+}
+.reg-line{
+  width:288.5rpx;
+  border-bottom: 3rpx solid #B3B3B3;
+}
+.reg-line1{
+  width:288.5rpx;
+  border-bottom: 3rpx solid #FF8150;
+}
+.reg-img{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  left: 20rpx;
+  top: -26rpx;
+  width:650rpx;
+}
+.reg-img1{
+  width:50rpx;
+  height:50rpx;
+}
+.reg-img-cnt{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reg-img-cnt-txt{
+  margin-top:10rpx;
+  font-size: 24rpx;
+  color:#333;
+}
+/* 结束 */
+.success-icon{
+  margin-top:212rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.success-icon-img{
+  width:162rpx;
+  height:197rpx;
+}
+.success-icon-txt{
+  color:#333;
+  font-size: 32rpx;
+  line-height: 45rpx;
+}
+.success-icon-txt1{
+  font-size: 40rpx;
+}
+.success-btn{
+  margin-top:76rpx;
+  display: flex;
+  justify-content: space-between;
+}
+button{
+  width:300rpx;
+  height:98rpx;
+  line-height: 98rpx;
+  border-radius:60rpx;
+  font-size: 36rpx;
+}
+button::after{
+  border: none;
+}
+.btn1{
+  background-color:#FF8150;
+  color:#fff;
+}
+.btn2{
+  border:1px solid #FF8150;
+  color: #FF8150;
+  background-color:#fff;
+}

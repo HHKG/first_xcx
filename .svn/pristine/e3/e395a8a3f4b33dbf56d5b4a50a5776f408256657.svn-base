@@ -1,0 +1,127 @@
+/* pages/holiday/roomList/roomList.wxss */
+@import "/pages/index/index.wxss";
+@import "/pages/member/index.wxss";
+page{
+  background-color:#fff;
+}
+.holiday-banner-img {
+  width: 750rpx;
+  height: 150rpx;
+}
+
+.scenery-area-img {
+  height: 518rpx;
+  width: 690rpx;
+  border-radius: 10rpx;
+}
+
+.scenery-area-h {
+  position: relative;
+}
+
+.scenery-area-txt {
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 40rpx;
+}
+
+.scenery-area-title {
+  font-size: 34rpx;
+  color: #333;
+  line-height: 56rpx;
+}
+
+.scenery-area-star {
+  width: 110rpx;
+  height: 20rpx;
+}
+.scenery-area-comment{
+  display: flex;
+  align-items: center;
+}
+.scenery-area-comment-txt {
+  margin-left:10rpx;
+  font-size: 24rpx;
+  color: #333;
+  line-height: 33rrpx;
+}
+
+.scenery-area-price-btn {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 33rpx;
+}
+
+.scenery-area-price-num {
+  font-size: 40rpx;
+  color: rgba(245, 133, 79, 1);
+  line-height: 32rpx;
+}
+
+.scenery-area-price-txt {
+  margin-top:10rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 33rrpx;
+}
+.room-link{
+  width:23rpx;
+  height:23rpx;
+}
+.scenery-cnt {
+  margin: 30rpx;
+}
+
+.use-tips {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 36rpx;
+}
+
+.scenery-area-price {
+  margin:35rpx 0 40rpx 0;
+  display: flex;
+  justify-content: flex-end;
+ align-items: flex-start;
+}
+
+.room-price-btn {
+  margin-left:10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.scenery-area-price-btn {
+  border-top: 1px solid #fde2d5;
+  border-bottom: 1px solid #fde2d5;
+  color: #ea9064;
+  font-size: 24rpx;
+  line-height: 33rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 2rpx 10rpx;
+  background-color: rgb(255, 244, 239);
+}
+.scenery-day{
+  margin:0 10rpx;
+}
+.dec-img{
+  height:40rpx;
+  width:2rpx;
+}
+.partner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.partner-img {
+  margin-bottom: 12rpx;
+  width: 222rpx;
+  height: 108rpx;
+}

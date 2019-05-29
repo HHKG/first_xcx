@@ -1,0 +1,122 @@
+<!--pages/index/project/calculate/calculate.wxml-->
+<view class="cal-page">
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  <!-- 头部信息 -->
+  <view class="cal-h">
+    <image class="cal-h-img" src="http://api.iqianclub.com/upload/program/images/cal_banner_bg.png"></image>
+    <text class="cal-h-title">{{cal_title}}</text>
+  </view>
+  <!-- 返利数据 -->
+  <view class="cal-rebate-scale">
+    <image class="cal-rebate-bgImg" src="http://api.iqianclub.com/upload/program/images/cal_join_project_bg.png"></image>
+    <view class="cal-scale-cnt">
+      <view class="cal-rebate-title">
+        <image class="line-img" src="http://api.iqianclub.com/upload/program/images/cal_join_title_left.png"></image>
+        参与计划
+        <text class="cal-money">{{planCash}}</text>万
+        <image class="line-img" src="http://api.iqianclub.com/upload/program/images/cal_join_title_right.png"></image>
+      </view>
+      <view class="cal-rebate-cnt">
+        <view class="cal-scale">
+          <image class="cal-scale-img" src="http://api.iqianclub.com/upload/program/images/cal_join_icon1.png"></image>
+          <text class="cal-scale-txt">预估每年返利<text class="scale-txt">{{rebate}}</text></text>
+        </view>
+        <view class="cal-scale">
+          <image class="cal-scale-img" src="http://api.iqianclub.com/upload/program/images/cal_join_icon2.png"></image>
+          <text class="cal-scale-txt">固定每年返券<text class="scale-txt">{{fixedScale}}</text></text>
+        </view>
+        <view class="cal-scale">
+          <image class="cal-scale-img" src="http://api.iqianclub.com/upload/program/images/cal_join_icon3.png"></image>
+          <text class="cal-scale-txt">持续<text class="scale-txt">28</text>年</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 年返利数据 -->
+  <view class="cal-detail">
+    <block wx:for="{{year}}" wx:key="">
+      <view class="cal-detail-cnt" animation="{{cartoon==index? animation:''}}">
+        <image class="cal-detail-img" src="http://api.iqianclub.com/upload/program/images/cal_rebate_1_year.png"></image>
+        <view class="cal-rebate-year">
+          <view class="cal-year-cnt-cnt">
+            <text class="cal-year-num">{{item.year}}</text>
+            <text class="cal-year-txt cal-position" decode='true' space='true'>第&nbsp;&nbsp;&nbsp;年</text>
+          </view>
+          <view class="cal-year-cnt">
+            <view class="cal-year-money">{{item.cash}}</view>
+            <image class="cal-rebate-icon1" src="http://api.iqianclub.com/upload/program/images/cal_xianjin_icon.png"></image>
+          </view>
+          <view class="cal-year-operator">
+            <image class="cal-operator1" src="http://api.iqianclub.com/upload/program/images/cal_jia.png"></image>
+          </view>
+          <view class="cal-year-cnt">
+            <view class="cal-year-money">{{item.coupom}}</view>
+            <image class="cal-rebate-icon2" src="http://api.iqianclub.com/upload/program/images/cal_zhufangquan_icon.png"></image>
+          </view>
+          <view class="cal-year-operator">
+            <image class="cal-operator2" src="http://api.iqianclub.com/upload/program/images/cal_deng.png"></image>
+          </view>
+          <view class="cal-year-cnt">
+            <view class="cal-year-money">{{item.sum}}</view>
+            <image class="cal-rebate-icon3" src="http://api.iqianclub.com/upload/program/images/cal_chuqianguan_icon.png"></image>
+          </view>
+        </view>
+          <image wx:if="{{index==4}}" class="cal-Final-profit" src="http://api.iqianclub.com/upload/program/images/cal-jiaobiao.png"></image>
+      </view>
+    </block>
+    <!-- 产生升级模块 -->
+    <view class="cal-update" animation="{{cartoon==5? animation:''}}" wx:if="{{update_model==1?false:true}}">
+      <view class="cal-rebate-title cal-update-title">
+        <image class="line-img" src="http://api.iqianclub.com/upload/program/images/cal_join_title_left.png"></image>
+        会员升级
+        <image class="line-img" src="http://api.iqianclub.com/upload/program/images/cal_join_title_right.png"></image>
+      </view>
+      <view class="cal-update-cnt">
+        <view class="cal-update-cnt-cnt">
+          <image class="current-update-img" src="{{current_gradeImg}}"></image>
+          <view class="cal-current-update">
+            <image class="cal-update-img" src="http://api.iqianclub.com/upload/program/images/cal_member_title.png"></image>
+            <text class="cal-update-txt">{{current_name}}</text>
+          </view>
+        </view>
+        <image class="cal-jiantou" src="http://api.iqianclub.com/upload/program/images/cal_jiantou_right.png"></image>
+        <view class="cal-update-cnt-cnt">
+          <image class="current-update-img" src="{{update_gradeImg}}"></image>
+          <view class="cal-current-update">
+            <image class="cal-update-img" src="http://api.iqianclub.com/upload/program/images/cal_member_title.png"></image>
+            <text class="cal-update-txt">{{update_name}}</text>
+          </view>
+          <image class="cal-bg-img" src="http://api.iqianclub.com/upload/program/images/cal_selected_light.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 弹窗模块 -->
+  <view class="cal-mask" hidden="{{hide}}" bindtap="calculate"></view>
+  <view class="cal-pop" hidden="{{hide}}">
+    <block wx:for="{{pop}}" wx:key="">
+      <view class="cal-pop-layout">
+        <text class="cal-pop-txt">{{item.title}}</text>
+        <view class="cal-pop-cnt" data-id="{{item.id}}" bindtap="showList">
+          <text class="cal-pop-cnt-txt">{{item.num}}</text>
+          <image class="cal-pop-img" src="http://api.iqianclub.com/upload/program/images/drop_down_icon.png"></image>
+        </view>
+        <ul wx:if="{{index==hidden ? true : false}}">
+          <li class="{{li==0 ? 'active':''}}" data-index="{{index}}" data-id="0" data-val="{{item.money1}}" bindtap="select">{{item.money1}}</li>
+          <li class="{{li==1 ? 'active':''}}" data-index="{{index}}" data-id="1" data-val="{{item.money2}}" bindtap="select">{{item.money2}}</li>
+          <li class="{{li==2 ? 'active':''}}" data-index="{{index}}" data-id="2" data-val="{{item.money3}}" bindtap="select">{{item.money3}}</li>
+          <li class="{{li==3 ? 'active':''}}" data-index="{{index}}" data-id="3" data-val="{{item.money4}}" bindtap="select">{{item.money4}}</li>
+        </ul>
+      </view>
+    </block>
+    <!-- 马上测算 -->
+    <view class="cal-calculate" data-cartoon='{{cartoon}}' bindtap="calculate">
+      马上测算
+    </view>
+  </view>
+  <!-- 底部按钮 -->
+  <view class="cal-nav" bindtap="showPop">
+    选择其他方案算一算
+  </view>
+</view>

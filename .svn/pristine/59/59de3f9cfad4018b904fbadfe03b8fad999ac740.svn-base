@@ -1,0 +1,296 @@
+/* pages/index/award/award.wxss */
+@import "/pages/member/index.wxss";
+page {
+  background-color: #136e65;
+}
+
+.award-bg {
+  width: 750rpx;
+  height: 1236rpx;
+}
+
+.award-h {
+  position: relative;
+  width: 750rpx;
+  height: 1236rpx;
+}
+
+.award-h-cnt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.award-invitation-img {
+  margin-top: 132rpx;
+  width: 518rpx;
+  height: 150rpx;
+}
+
+.award-coupom {
+  margin-top:48rpx;
+  width: 690rpx;
+  height: 410rpx;
+  background: linear-gradient(91deg, rgba(222, 250, 243, 1) 0%, rgba(255, 255, 255, 1) 52%, rgba(234, 255, 250, 1) 100%);
+  box-shadow: 0rpx 2rpx 8rpx 0rpx rgba(13, 75, 71, 0.98);
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.award-line {
+  border: 1rpx solid #277d77;
+  width: 670rpx;
+  height: 388rpx;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.award-ticket {
+  margin-top: 28rpx;
+  width: 622rpx;
+  height: 220rpx;
+}
+
+.award-area-txt {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #145651;
+  line-height: 40rpx;
+}
+
+.award-more-txt {
+  margin-top: 20rpx;
+  width: 623rpx;
+  text-align: end;
+  font-size: 28rpx;
+  color: #ff8b54;
+  line-height: 40rpx;
+}
+
+.award-num {
+  margin-top: 55rpx;
+  width: 406rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.award-num-txt {
+  width: 70rpx;
+  height: 92rpx;
+  background: #277d77;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  color: #fff;
+  line-height: 92rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.award-action {
+  margin-top: 27rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 50rpx;
+}
+
+.award-action-time {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #fff;
+  line-height: 33rpx;
+}
+
+.award-coupom-btn {
+  margin-top: 43rpx;
+  width: 450rpx;
+  height: 96rpx;
+  background: linear-gradient(360deg, rgba(240, 117, 58, 1) 0%, rgba(254, 159, 113, 1) 100%);
+  border-radius: 59rpx;
+  color: #fff;
+  line-height: 96rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.award-flow {
+  margin-top: 60rpx;
+  position: relative;
+  width: 630rpx;
+  height: 180rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.share-icon {
+  width: 88rpx;
+  height: 78rpx;
+}
+
+.share-txt {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 33rpx;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-line {
+  position: absolute;
+  top: 68rpx;
+  left: 147rpx;
+  width: 156rpx;
+  border-top: 2rpx solid #88bab6;
+}
+
+.share-right-line {
+  position: absolute;
+  top: 68rpx;
+  right: 135rpx;
+  width: 156rpx;
+  border-top: 2rpx solid #88bab6;
+}
+
+.invite-list {
+  margin-top: 37rpx;
+  width: 650rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx 20rpx;
+}
+
+.invite-list-h {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:20rpx;
+}
+
+.invite-ranking-txt {
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+}
+
+.invite-ranking-tips {
+  height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 40rpx;
+}
+
+.my-invite {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1c988e;
+  line-height: 45rpx;
+}
+
+.invite-ranking-list {
+  position: relative;
+  border-top: 1rpx solid #e0e0e0;
+  height: 138rpx;
+  width: 650rpx;
+}
+
+.first-prize {
+  position: absolute;
+  top:40;
+  left:20rpx;
+  width: 45rpx;
+  height: 55rpx;
+}
+
+.touxiang {
+  margin-left:90rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 81rpx;
+}
+
+.invite-ranking-list {
+  display: flex;
+  align-items: center;
+}
+
+.award-person {
+  display: flex;
+  align-items: center;
+}
+
+.award-person-txt {
+  height:80rpx;
+  margin-left:20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.award-name-txt {
+  height: 28rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 28rpx;
+}
+
+.award-friend-txt {
+  height: 24rpx;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 24rpx;
+}
+.activity-icon{
+  width:424rpx;
+  height:35rpx;
+}
+.award-activity-txt{
+  
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 48rpx;
+}
+.award-footer{
+  margin-top:50rpx;
+  width:690rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.award-footer-txt{
+ padding-top:24rpx;
+ margin-bottom:59rpx;
+}
+.award-nsmr-txt{
+height:40rpx;
+font-size:28rpx;
+color:#333;
+line-height:40rpx;
+}
+.award-sum{
+  position: absolute;
+  top:30rpx;
+  right:0;
+  height:40rpx;
+font-size:26rpx;
+color:#333;
+line-height:40rpx;
+}

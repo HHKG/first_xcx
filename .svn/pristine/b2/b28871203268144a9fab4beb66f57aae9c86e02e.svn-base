@@ -1,0 +1,11 @@
+<template name="header">
+  <view wx:if="{{pattern==1}}" style="height:76rpx;">
+    <view class="member-h-nav nav-position">
+      <view class="member-nav-left">
+        <image src="http://api.iqianclub.com/upload/program/images/warn.png" class="member-warn"></image>
+        <text class="member-nav-txt">模拟模式  </text>
+      </view>
+      <image src="http://api.iqianclub.com/upload/program/images/close_moshi.png" class="member-warn" bindtap='exitpattern'></image>
+    </view>
+  </view>
+</template>

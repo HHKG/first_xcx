@@ -1,0 +1,369 @@
+// pages/index/project/detail/pay/pay.js
+var app = getApp();
+var utilMd5 = require('../../../../utils/md5.js');
+var util = require('../../../../utils/util.js');
+var time = Date.parse(new Date()) / 1000;
+
+var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+Page({
+  
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    pattern: app.globalData.pattern,
+    token:'',
+    value:1,
+    E_Money:'',
+    E_ProjectName: '',
+    E_Title: '',
+    E_Mobile: '',
+    price: '',
+    E_Name: '',
+    plancode: '',
+    paytype:'4',
+    E_Balance: '',
+    E_Consumption:'',
+    code:'',
+    agree:{value:'0',checked:''},
+    checkpaytypes:[
+      ],
+      back:''
+   
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    wx.showLoading({})
+    wx.hideShareMenu()
+    var that = this;
+    var code = options.plan;
+    // code = 'O4DVUzAORWO7ejIohKAD';
+    var token = wx.getStorageSync('token');
+    var url = '/' + that.route + '?plan=' + code
+    var back = encodeURIComponent(url);
+   
+    if (!token ) {
+      token = util.checklogin(back);
+    }
+    // console.log(code); return;`
+    if (code != undefined && token != undefined) {
+      that.setData({
+        pattern: app.globalData.pattern,
+        back:back
+      })
+      // console.log(111);
+      var action = 'car';
+      var sign = utilMd5.hexMD5(action + code + app.globalData.pattern + randomstr + time);
+      var data = { pattern: app.globalData.pattern, from: app.from, code: code, time: time, action: action, sign: sign };
+      wx.request({
+        url: app.host + action,
+        method: 'POST',
+        data: data,
+        header: { token: token },
+        dataType: 'json',
+        success(data) {
+          if (data.data.code == 9201) {
+          //  console.log(that.data.back)
+            util.checklogin(that.data.back);
+          }
+          if (data.data.code == 1) {
+            var paytype=[];
+            var type='4';
+            if(that.data.pattern==0){
+         
+              paytype = [
+                { name: '微信支付', img: 'http://api.iqianclub.com/upload/program/images/wechat_icon.png', value: '4', checked: 'true' },
+                { name: "消费金(" + data.data.wallet.E_Consumption + ")", img: 'http://api.iqianclub.com/upload/program/images/xiaofeijin_icon.png', value: '1' },
+                { name: "余额(" + data.data.wallet.E_Balance + ")", img: 'http://api.iqianclub.com/upload/program/images/yuer_icon.png', value: '2', },
+              ]
+            }else{
+              type = '1';
+              paytype = [
+                { name: "消费金(" + data.data.wallet.E_Consumption + ")", img: 'http://api.iqianclub.com/upload/program/images/xiaofeijin_icon.png', value: '1', checked: 'true'},
+                { name: "余额(" + data.data.wallet.E_Balance + ")", img: 'http://api.iqianclub.com/upload/program/images/yuer_icon.png', value: '2', },
+              ]
+            }
+            that.setData({
+              token:token,
+              E_Money: data.data.plan.E_Money,
+              code: data.data.plan.E_Code,
+              E_ProjectName: data.data.plan.E_ProjectName,
+              E_Title: data.data.plan.E_Title,
+              E_Mobile: data.data.member.E_Mobile,
+              price: data.data.plan.E_Money,
+              E_Name: data.data.member.E_Name,
+              plancode: data.data.plan.plancode,
+              E_Balance: data.data.wallet.E_Balance,
+              E_Consumption: data.data.wallet.E_Consumption,
+              checkpaytypes: paytype,
+              paytype: type
+            })
+          }
+      //  console.log(that.data);
+        }
+      })
+      wx.hideLoading()
+    } else {
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
+
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+   // getCurrentPages()[getCurrentPages().length - 1].onLoad({ plan: this.data.code })
+    if (wx.getStorageSync('token')) {
+      var raction = 'record';
+      var road = 'pay'
+      var rsign = utilMd5.hexMD5(raction + randomstr + road + time);
+      wx.request({
+        url: app.host + raction,
+        method: 'post',
+        dataType: 'json',
+        header: { token: wx.getStorageSync('token') },
+        data: { from: app.from, time: time, road: road, action: raction, sign: rsign },
+        success: function (res) {
+        }
+      })
+    }
+   
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+  ,
+  /**
+   * 改变购买份数
+   */
+  changeNum:function(e){
+    console.log(e);
+  //  var that=this;
+    var id = e.currentTarget.dataset.id;
+    var i = this.data.value;
+    // if (id=="add" && i<4){
+    if (id == "add") {
+      i+=1;
+      var money = that.data.price*i;
+      that.setData({
+        value:i,
+        E_Money: money
+       })
+    }
+    if(id=="cut" && i>1){
+      i-=1;
+      var money = that.data.price * i;
+      that.setData({
+        value:i,
+        E_Money: money
+      })
+    }
+  },
+  checkboxChange:function(e){
+    var that=this;
+    var paytypes = that.data.checkpaytypes;
+    var type = e.detail.value;
+    if (type == 2) {
+      if (that.data.E_Balance == undefined || that.data.E_Money > that.data.E_Balance){
+          wx.showToast({
+            title:"余额不足"
+          })
+          that.setData({
+            checkpaytypes: paytypes
+          })
+        return;
+      }
+    }
+    if (type == 1) {
+  
+      if (that.data.E_Consumption == undefined ||(that.data.E_Money > that.data.E_Consumption)) {
+        wx.showToast({
+          title: "消费金不足"
+        })
+        that.setData({
+          checkpaytypes: paytypes
+        })
+        return;
+      }
+    }
+    that.setData({
+      paytype: type
+    })
+  },
+  agreecheck:function(e){
+    var that=this;
+   
+    var value = e.detail.value;
+   // console.log(value);
+    if(value==0){
+      that.setData({
+        agree: { value: '1', checked:'true'}
+      })
+    }
+  },
+  payoder:function(){
+    var that=this;
+    // console.log(that.data);
+    // var agree = that.data.agree.value;
+    var agree =1
+    // console.log(agree);
+    // if(agree!=1){
+    //   wx.showToast({
+    //     title:'请勾选协议'
+    //   })
+    //  return;
+    // }
+    var number =that.data.value;
+    var code = that.data.code;
+    var price = that.data.price;
+    var paytype = that.data.paytype;
+    var pattern=0;
+    var caction = 'createplanorder';
+    var psign = utilMd5.hexMD5(caction + agree + code + number + app.globalData.pattern + paytype + price + randomstr + time);
+
+    var datas = { pattern: app.globalData.pattern, from: app.from, agree: agree, num: number, paytype: paytype, code: code, price: price, time: time, action: caction, sign: psign };
+    // console.log($('.money').val( ));return;
+    wx.request({
+      url: app.host + caction,
+      type: 'POST',
+      dataType: 'json',
+      header: { token: that.data.token},
+      data: datas,
+      success: function (data) {
+          //  console.log(data);return;
+        if (data.data.code == 1) {
+          if (paytype == 4) {
+            var info = data.data.info;
+            info.success = function (res) {
+              //  console.log(res) 
+              if (res.errMsg =='requestPayment:ok'){
+                var saction = 'getpaystate';
+                var ssign = utilMd5.hexMD5(saction + randomstr + app.globalData.pattern + data.data.sn + time);
+                var datas = { pattern: app.globalData.pattern, from: app.from, time: time, action: saction, sn: data.sn, sign: ssign };
+               wx.request({
+                  url: app.host+saction,
+                  type: 'POST',
+                  dataType: 'json',
+                 header: { token: that.data.token },
+                  data: datas,
+                  success: function (datas) {
+                    if (datas.code = 1) {
+                      wx.showToast({
+                        title: data.data.msg
+                      })
+                      wx.navigateTo({
+                        url: 'success/success?sn=' + data.data.sn
+                      })
+                    } else {
+                      wx.showToast({
+                        title: data.data.msg
+                      })
+                    }
+                  }
+                })
+              }};
+            info.fail = function (res) { console.log(res) };
+          //  console.log(info);
+            wx.requestPayment(info)
+          }
+          else {
+            wx.showModal({
+              title:'提示',
+              content:'确认支付',
+              success(res){
+                if (res.confirm){
+                  var aaction = 'confirmpay';
+                  var asign = utilMd5.hexMD5(aaction + app.globalData.pattern + paytype + randomstr + data.data.sn + time);
+                //  console.log(asign);
+                  wx.request({
+                    url: app.host + aaction,
+                    type: 'POST',
+                    dataType: 'json',
+                    header: { token: that.data.token },
+                    data: { pattern: app.globalData.pattern, from: app.from, time: time, action: aaction, paytype: paytype, sn: data.data.sn, sign: asign },
+                    success: function (data) {
+                   //   console.log(data);
+                      if (data.data.code == 1) {
+                          wx.showToast({
+                            title:data.data.msg
+                          })
+                          wx.navigateTo({
+                            url:'success/success?sn='+data.data.sn
+                          })
+                      } else {
+                        wx.showToast({
+                          title: data.data.msg
+                        })
+                      }
+                    }
+                  })
+                }
+                // else if(res.cancel){
+                //   wx.showToast({
+                //     title:'支付失败'
+                //   })
+                // }
+
+            
+              }
+            })
+          }
+        } else {
+          wx.showToast({
+            title: data.data.msg
+          })
+
+        }
+      }
+    })
+  },
+  exitpattern: function () {
+ 
+    util.exitpattern('tuichu');
+  }
+})

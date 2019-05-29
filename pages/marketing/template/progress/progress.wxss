@@ -1,0 +1,50 @@
+/* pages/template/progress/progress.wxss */
+.form-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 200rpx;
+  background: #1b5d59;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.form-title-layout {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.form-progress {
+  border-radius: 100rpx;
+  overflow: hidden;
+}
+.form-percent{
+  color:#F5CE87;
+  font-size: 28rpx;
+}
+
+.form-progress-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66rpx;
+  height: 41rpx;
+  background: rgba(27, 78, 81, 1);
+  color: #fff;
+  font-size: 20rpx;
+}
+
+.form-sanjiao {
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid rgba(27, 78, 81, 1);
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+}
+.form-prompt {
+  width: 66rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left:63%;
+}

@@ -1,0 +1,182 @@
+// pages/index/project/detail/pay/success/success.js
+var app = getApp();
+var utilMd5 = require('../../../../../utils/md5.js');
+var time = Date.parse(new Date()) / 1000;
+var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    pattern: app.globalData.pattern,
+    E_ProjectName:'',
+    E_Title: '',
+    E_OrderPrice: '',
+    paytype: '',
+    E_BillDay: '',
+    E_CouponTime: '',
+    sn:'',
+    close:'none'
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    wx.hideShareMenu()
+    var that = this;
+      var sn=options.sn;
+    var token = wx.getStorageSync('token');
+    if (token == '' || token == undefined) {
+      var url = '/' + that.route + '?sn=' + sn
+      var back = encodeURIComponent(url);
+      token = util.checklogin(back);
+      // console.log(back);
+      // wx.redirectTo({
+      //   url: '/pages/login/index?back=' + back + '',
+      // })
+      // return;
+    }
+      if(sn!=undefined){
+        that.setData({
+          pattern: app.globalData.pattern,
+          sn:sn
+        })
+        var action = 'getpaystate';
+        var sign = utilMd5.hexMD5(action + app.globalData.pattern + randomstr + sn + time);
+        var datas = { pattern: app.globalData.pattern, from: app.from, sn: sn, time: time, action: action, sign: sign };
+        wx.request({
+          url: app.host + action,
+          type: 'POST',
+          dataType: 'json',
+          header: { token: token},
+          data: datas,
+          success: function (data) {
+            console.log(data);
+            if (data.data.code == 1) {
+              var ptype=''
+               
+              if (data.data.data.E_PayChannel == 1) {
+                ptype='消费金';
+              } else if (data.data.data.E_PayChannel == 2){
+                ptype='余额';
+              } else if (data.data.data.E_PayChannel == 3 || data.data.data.E_PayChannel == 4){
+                ptype='微信支付';
+               }
+               var close=''
+              console.log(data.data.data.first)
+              if (data.data.data.first!=1){
+                close = 'none';
+              }
+              that.setData({
+                pattern: wx.getStorageSync('pattern'),
+                E_ProjectName: data.data.data.E_ProjectName,
+                E_Title: data.data.data.E_PlanName,
+                E_OrderPrice: data.data.data.E_OrderPrice,
+                paytype: ptype,
+                E_BillDay: data.data.data.E_BillDay,
+                E_CouponTime: data.data.data.E_CouponTime,
+                close: close
+              })
+            } else {
+              wx.showToast({
+                title: data.data.msg,
+              })
+              wx.switchTab({
+                url: '/pages/index/index',
+              });
+            
+            }
+
+          }
+        })
+      }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    getCurrentPages()[getCurrentPages().length - 1].onLoad({ sn: this.data.sn })
+    if (wx.getStorageSync('token')) {
+      var raction = 'record';
+      var road = 'paysuccess'
+      var rsign = utilMd5.hexMD5(raction + randomstr + road + time);
+      wx.request({
+        url: app.host + raction,
+        method: 'post',
+        dataType: 'json',
+        header: { token: wx.getStorageSync('token') },
+        data: { from: app.from, time: time, road: road, action: raction, sign: rsign },
+        success: function (res) {
+        }
+      })
+    }
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  myorder:function(){
+    wx.navigateTo({
+      url: '/pages/member/order/order',
+    })
+  },
+  member:function(){
+    wx.reLaunch({
+      url: '/pages/member/index',
+    })
+  },
+  exitpattern: function () {
+    util.exitpattern('tuichu');
+  },
+  /**
+   * 关闭弹窗
+   */
+  closepop:function(){
+     var none='none';
+     this.setData({
+       close:none
+     })
+  }
+})

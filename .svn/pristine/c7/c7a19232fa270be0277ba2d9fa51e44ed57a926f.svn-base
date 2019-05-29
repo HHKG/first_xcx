@@ -1,0 +1,92 @@
+/* pages/index/project/detail/pay/success/success.wxss */
+
+page {
+  background-color: #fafafa;
+}
+
+.success-img {
+  width: 318rpx;
+  height: 156rpx;
+}
+
+.success-h {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success {
+  background-color: #fff;
+  padding-bottom: 60rpx;
+}
+
+.success-h-txt {
+  margin-top:16rpx;
+  font-size: 36rpx;
+  color: #333;
+  line-height: 50rpx;
+}
+.success-cnt{
+  margin-top:60rpx;
+  padding:0rpx 70rpx;
+  font-size: 26rpx;
+  line-height: 37rpx;
+}
+.success-cnt-layout{
+  display: flex;
+  justify-content: space-between;
+  margin-top:20rpx;
+}
+.success-plan-txt{
+  color:#666;
+}
+.success-plan-case{
+  color:#333;
+}
+.success-btns{
+  display: flex;
+  justify-content: space-between;
+  margin:89rpx 30rpx 0rpx 30rpx;
+}
+button{
+  width:320rpx;
+  height:90rpx;
+  margin:0;
+  padding:0;
+  font-size:36rpx;
+  line-height: 90rpx;
+}
+.btn1{
+background:rgba(255,255,255,1);
+border-radius:12rpx;
+border:2rpx solid #F68751;
+color:#F68751;
+}
+.btn2{
+background-color:#F68751;
+color:#fff;
+}
+.success-tips-img{
+  width:32rpx;
+  height:32rpx;
+}
+.success-tips-txt{
+  margin-left:20rpx;
+font-size:28rpx;
+color:#333;
+line-height:40rpx;
+height:40rpx;
+}
+.success-tips-cnt-txt{
+  margin-top:17rpx;
+font-size:26rpx;
+color:#666;
+line-height:50rpx;
+}
+.success-bottom{
+  margin:40rpx 30rpx;
+}
+.success-tips{
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,37 @@
+<!--pages/member/myInvite/myInvite.wxml-->
+<view>
+
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  <!-- 有邀请数据 -->
+
+  <view>
+    <view wx:if='{{count!=0}}'>
+      <view class="invite-h">
+        共
+        <text class="invite-num">{{count}}</text>位
+      </view>
+      <block wx:for='{{invites}}' wx:fpr-item='item'>
+        <view class="invite-cnt">
+          <view class="invite-cnt-left">
+            <image src='{{item.E_HeadImg}}' class="touxiang"></image>
+            <text class="invite-cnt-txt">{{item.E_Name}}</text>
+          </view>
+          <view class="invite-cnt-right">{{item.join}}</view>
+        </view>
+        
+      </block>
+    </view>
+
+    <!-- 没有邀请数据 -->
+    <view  wx:if='{{count==0}}'>
+      <view class="invite-none">
+        <image src="http://api.iqianclub.com/upload/program/images/zhanweitu.png" class="invite-none-img"></image>
+        <text class="invite-none-txt">暂无好友参与活动，快快邀请好友哦~~</text>
+      </view>
+    </view>
+    <button class="invite-btn" open-type='share'>
+      立即邀请好友领500元住房券
+    </button>
+  </view>
+  </view>

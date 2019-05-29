@@ -1,0 +1,25 @@
+<view class="login-cnt">
+    <import src="/pages/template/header/header" />
+    <template is="header"></template>
+  <image src="http://api.iqianclub.com/upload/program/images/login_bg.png" class="login-bg-img" style="height:{{height}}rpx"></image>
+  <view class="index-body">
+    <image src="http://api.iqianclub.com/upload/program/images/chan_logo.png" class="login-logo-img"></image>
+    <view class="index-h">
+      手机注册
+    </view>
+    <view class="index-input">
+      <input placeholder-class="placeholder" type='number' maxlength="11" bindinput='getPhoneNum' name='phone_num' value='' value="{{phoneNum}}" placeholder='请输入手机号'></input>
+    </view>
+    <view class="index-input index-position">
+      <input placeholder-class="placeholder" id="phone" type='number' name='code' bindinput='inputCode' data-codeValue='{{codeNum}}' data-phoneValue='{{phoneNum}}' value='' code-value='{{codeNum}}' maxlength="4" placeholder='请输入验证码'></input>
+      <!-- 获取验证码按钮 -->
+      <button class="get-code" bindtap="getCode" disabled='{{get_disabled}}' data-pnoneNum="{{phoneNum}}">{{time}}</button>
+    </view>
+    <view class="index-btn">
+ 
+      <button class="btn1" bindtap='gotoregister'>注册</button>
+    
+    </view>
+  
+  </view>
+</view>

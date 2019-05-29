@@ -1,0 +1,175 @@
+// pages/member/cash/authentication/withdraw/withdraw.js
+var app = getApp();
+var utilMd5 = require('../../../../../utils/md5.js');
+var util = require('../../../../../utils/util.js');
+var pattern=0;
+var time = Date.parse(new Date()) / 1000;
+var randomstr = utilMd5.hexMD5(app.from + app.salt + time);
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    bankname:'',
+    bankcard: '',
+    lessmoney: app.lesswithdraw,
+    money: '',
+    username: '',
+    getmoney:0,
+    token: '',
+    back: ''
+  },
+  cashinput:function(e){
+      console.log(e);
+    this.setData({ getmoney: e.detail.value})
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
+    var that = this;
+    var back = options.back;
+    var token = wx.getStorageSync('token');
+    that.setData({
+      back: decodeURIComponent(back),
+      token: token
+    })
+  
+    if (token == undefined || token == '') {
+      token = util.checklogin(back);
+      that.setData({
+        token: token
+      })
+      return;
+    }
+    var action = 'getwithdrawal';
+    var sign = utilMd5.hexMD5(action + pattern + randomstr + time);
+    var data = { pattern: pattern, from: app.from, time: time,action: action, sign: sign };
+    wx.request({
+      url: app.host + action,
+      method: 'POST',
+      data: data,
+      header: { token: wx.getStorageSync('token') },
+      dataType: 'json',
+      success(data) {
+        if (data.data.code == 1) {
+          that.setData({
+            bankname: data.data.data.E_BankName,
+            bankcard: data.data.data.E_Card,
+            money: data.data.data.E_Balance,
+            username: data.data.data.E_UserName
+          })
+        } else {
+          wx.showToast({
+            title: data.data.msg,
+          })
+        }
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  Land:function(){
+    var that=this;
+    var hasmoney = that.data.money;
+    var bank = that.data.bankname;
+    var cardno = that.data.bankcard;
+    var money = that.data.getmoney;
+    var user = that.data.username;
+    var lessmoney = that.data.lessmoney
+    console.log(money);
+    console.log(parseFloat(money,2));
+    console.log(hasmoney);
+    if (lessmoney > parseFloat(money)) {
+      //   mui.toast('提现不能少于50元'); return;
+      wx.showToast({
+        title: '提现不能少于' + lessmoney + '元',
+      });
+      return;
+    }
+    if (parseFloat(money) > hasmoney) {
+      wx.showToast({
+        title: '余额不足',
+      });
+      return;
+     // mui.toast('余额不足'); return;
+    }
+ 
+    var action = 'insertwithdrawal';
+    var sign = utilMd5.hexMD5(action + bank + cardno + money+ pattern + randomstr + time+user);
+    var data = { money: money, cardno: cardno, bank: bank, user: user, pattern: pattern, from: app.from, time: time, action: action, sign: sign };
+    wx.request({
+      url: app.host + action,
+      method: 'POST',
+      data: data,
+      header: { token: wx.getStorageSync('token') },
+      dataType: 'json',
+      success(data) {
+        if (data.data.code == 1) {
+        wx.showToast({
+          title: '提交成功',
+        })
+          var member = wx.getStorageSync('member');
+          member.Balance = member.Balance - money;
+          wx.setStorageSync('member', member)
+        wx.redirectTo({
+          url: '/pages/member/cash/cash',
+        })
+        } else {
+          wx.showToast({
+            title: data.data.msg,
+          })
+        }
+      }
+    })
+  }
+})

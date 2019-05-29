@@ -1,0 +1,23 @@
+<!--pages/member/cash/binding/binding.wxml-->
+<view>
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  <view class="aut-title">温馨提示：请认真核对与填写银行卡信息，避免带来的不必要损失，否则后果自负。</view>
+  <view class="aut-h">
+    <view class="aut-cnt">
+      <text class="aut-cnt-txt">姓名</text>
+      <input class="aut-cnt-input" type="text" value=""  disabled='true' placeholder='{{bankname}}'></input>
+      <view class="aut-line"></view>
+    </view>
+    <view class="aut-cnt">
+      <text class="aut-cnt-txt">银行卡号</text>
+      <input class="aut-cnt-input" type="number" value="" bindinput='cardinput' placeholder='请输入您的银行卡号'></input>
+      <view class="aut-line"></view>
+    </view>
+    <view class="aut-cnt">
+      <text class="aut-cnt-txt">开户银行</text>
+      <input class="aut-cnt-input" type="text" value="" bindinput='nameinput' placeholder='请输入银行名称'></input>
+    </view>
+  </view>
+  <button disabled="{{disabled}}" bindtap='Land'>确认</button>
+</view>

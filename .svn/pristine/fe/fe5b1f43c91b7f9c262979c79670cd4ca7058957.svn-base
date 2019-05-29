@@ -1,0 +1,131 @@
+<view>
+  <!--海报部分内容 -->
+  <view class="lachine-poster">
+    <image class="lachine-poster-bg" src="/images/la_bg.jpg"></image>
+    <view class="lachine-poster-position">
+      <image class="lachine-logo" src="/images/la_logo.png"></image>
+      <view class="lachine-poster-cnt">
+        <image class="lachine-poster-title" src="/images/la_main_title.png"></image>
+        <button class="lachine-regieter-btn" bindtap='gotoRegister'>立即注册</button>
+        <view class="lachine-poster-text1">重新定义度假，既能返现消费，又能免费度假</view>
+        <view class="lachine-poster-text2">模拟金仅供会员模拟参与分享计划，快速体验分享计划收益、会员权益等</view>
+      </view>
+    </view>
+  </view>
+  <!-- 加入虔心荟俱乐部 -->
+  <view class="lachine-join">
+    <image class="lachine-join-title" src="/images/la_title1.png"></image>
+    <view class="lachine-join-plan">
+      <image class="lachine-paln-title" src="/images/la_subhead_title.png"></image>
+      <view class="lachine-paln-cnt">
+        <image class="lachine-paln-icon" src="/images/la_save_pig_icon.png"></image>
+        <view class="lachine-paln-txt">每年预估
+          <text class="lachine-protrude">8%</text> 的现金返利，持续
+          <text class="lachine-protrude">28年</text>
+        </view>
+      </view>
+      <view class="lachine-paln-cnt">
+        <image class="lachine-paln-icon" src="/images/la_ticket_icon.png"></image>
+        <view class="lachine-paln-txt">每年
+          <text class="lachine-protrude">10%</text>的全球通用住房券，持续
+          <text class="lachine-protrude">28年</text>年住房券直接抵扣别墅酒店费用</view>
+      </view>
+      <view class="lachine-paln-cnt">
+        <image class="lachine-paln-icon" src="/images/la_rebate_icon.png"></image>
+        <view class="lachine-paln-txt">累积返利价值至少
+          <text class="lachine-protrude">50000元</text> 起</view>
+      </view>
+    </view>
+    <view class="lachine-scene">
+      <image class="lachine-scene-img" src="/images/la_scene_photo.jpg"></image>
+      <view class="lachine-scene-cnt">
+        <view class="lachine-scene-line">
+          <view class="lachine-scene-txt">
+            <text class="lachine-scene-name">别墅规模：</text>
+            <text class="lachine-name-txt">23栋独立别墅，30间客房</text>
+          </view>
+          <view class="lachine-scene-txt">
+            <text class="lachine-scene-name">独特优势：</text>
+            <text class="lachine-name-txt">坐落国家4A景区内，客源稳定，入住率高</text>
+          </view>
+          <view class="lachine-scene-txt">
+            <text class="lachine-scene-name">别墅风格：</text>
+            <text class="lachine-name-txt">茶旅文化，古风浓郁，山泉无边泳池 360°景观台</text>
+          </view>
+          <view class="lachine-scene-txt">
+            <text class="lachine-scene-name">别墅景观：</text>
+            <text class="lachine-name-txt">半山望茶园，竹海星空，万亩有机茶园万棵红豆杉半山环绕</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 可享受的尊贵特权 -->
+  <view class="lachine-hasquanyi">
+    <image class="lachine-title2" src="/images/la_title2.png"></image>
+    <view class="lachine-quanyi">
+      <view class="lachine-quanyi-layout">
+        <image class="lachine-quanyi-icon" src="/images/la_quanyi1.png"></image>
+        <view class="lachine-quanyi-cnt">
+          <view class="lachine-quanyi-title">购买虔心分享计划权益</view>
+          <view class="lachine-quanyi-txt">虔心分享计划权益只对会员开放，非会员不能购买。</view>
+        </view>
+      </view>
+      <view class="lachine-quanyi-layout">
+        <image class="lachine-quanyi-icon" src="/images/la_quanyi2.png"></image>
+        <view class="lachine-quanyi-cnt">
+          <view class="lachine-quanyi-title">订房折扣</view>
+          <view class="lachine-quanyi-txt"><text>订购虔心荟合作的度假酒店，享受会员专属折扣。</text> <text>虔心荟保障专属折扣比主流订房平台价格低。</text> <text>会员级别越高，享受折扣越多。</text></view>
+        </view>
+      </view>
+      <view class="lachine-quanyi-layout">
+        <image class="lachine-quanyi-icon" src="/images/la_quanyi6.png"></image>
+        <view class="lachine-quanyi-cnt">
+          <view class="lachine-quanyi-title">商城购物折扣</view>
+          <view class="lachine-quanyi-txt"><text>在虔心荟商城购物，可享受购物折扣。</text> <text>会员级别越高，享受折扣越多。</text></view>
+        </view>
+      </view>
+      <view class="lachine-quanyi-layout">
+        <image class="lachine-quanyi-icon" src="/images/la_quanyi3.png"></image>
+        <view class="lachine-quanyi-cnt">
+          <view class="lachine-quanyi-title">订房优先</view>
+          <view class="lachine-quanyi-txt">会员通过虔心荟贵宾通道能优先预订虔心荟合作度假酒店。</view>
+        </view>
+      </view>
+      <view class="lachine-quanyi-layout">
+        <image class="lachine-quanyi-icon" src="/images/la_quanyi4.png"></image>
+        <view class="lachine-quanyi-cnt">
+          <view class="lachine-quanyi-title">生日关怀</view>
+          <view class="lachine-quanyi-txt"><text>会员生日当月，将获得生日礼物。</text> <text>生日当天入住，免费升级房间。</text></view>
+        </view>
+      </view>
+      <view class="lachine-quanyi-layout">
+        <image class="lachine-quanyi-icon" src="/images/la_quanyi5.png"></image>
+        <view class="lachine-quanyi-cnt">
+          <view class="lachine-quanyi-title">会员大礼包</view>
+          <view class="lachine-quanyi-txt">虔心分享计划权益只对会员开放，非会员不能购买。</view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <button class="lachline-join-btn">立即免费入会</button>
+  <!--底部信息 -->
+<view class="footer">
+      <view class="footer-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/logo.png?4454554" class="footer-img"></image>
+        <text class="footer-title">虔心荟度假俱乐部</text>
+      </view>
+      <view class="footer-address">
+        地址：中国·广州 珠江新城合景国际金融广场
+      </view>
+      <view class="footer-address">
+        顾问热线：
+        <text class="footer-phone" bindtap='callQian'>{{phonenum}}</text>
+      </view>
+       <view class="version">
+          v{{version}}
+      </view>
+    </view>
+</view>

@@ -1,0 +1,41 @@
+/* pages/index/project/detail/detail.js.wxss */
+@import "/pages/project/project.wxss";
+@import "/pages/member/index.wxss";
+.detail-body{
+  width:100%;
+}
+.arrow-icon {
+  width: 13rpx;
+  height: 20rpx;
+}
+
+.detail-txt {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #333;
+  line-height: 40rpx;
+}
+
+.detail-title {
+  margin: 0 auto;
+  width: 630rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20rpx 0rpx;
+}
+.detail-h{
+font-size:28rpx;
+color:#666;
+line-height:40rpx;
+margin-left:30rpx;
+}
+.detail-cnt{
+  width:100%;
+  border-bottom:1rpx solid #E0E0E0;
+  background-color:#fff;
+}
+.detail-case{
+  margin-bottom:40rpx;
+}

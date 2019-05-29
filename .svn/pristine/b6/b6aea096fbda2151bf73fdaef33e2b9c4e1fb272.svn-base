@@ -1,0 +1,199 @@
+<!--pages/index/project/index.wxml-->
+<view binhandletouchmove="handletouchmove">
+  <import src="/pages/template/header/header" />
+  <template is="header" data='{{pattern}}'></template>
+  <scroll-view  scroll-with-animation="{{true}}" bindscroll="scroll" scroll-y="true" style='height:{{screenH}}' scroll-into-view="{{module}}">
+    <view class="project-h">
+      <image src="{{E_HeaderImg}}" class="project-img"></image>
+      <view class="project-xuanfu" bindtap='toAward'>
+        <image src="http://api.iqianclub.com/upload/program/images/small_ticket.png" class="small-ticket"></image>
+        <view class="xuanfu-txt">
+          <view>邀请好友领
+            <text class="xuanfu-num">500</text>住房券</view>
+        </view>
+      </view>
+    </view>
+    <view class="index-share-cnt project-cnt">
+      <text class="index-share-title">{{project_name}}</text>
+      <view class="index-planDetail">
+        <view class="index-planDetail-cnt">
+          <text class="num">{{E_Money}}<text class="num-txt">元</text></text>
+          <text class="num-txt">参与费</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">{{E_Cycle}}<text class="num-txt" >年</text></text>
+          <text class="num-txt">持续返利</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">{{E_Scale}}%<text class="num-txt" >每年</text></text>
+          <text class="num-txt">预估返现</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="num">{{E_Coupon}}%<text class="num-txt" >每年</text></text>
+          <text class="num-txt">返住房券</text>
+        </view>
+      </view>
+      <!-- 三角 -->
+      <!-- <view class="index-sanjiao">
+    <view>1212</view>
+      </view> -->
+      <!-- 参与计划参数说明 -->
+      <view class="index-planDetail-explain">
+        <!-- <view class="project-sanjiao"></view>
+      <view class="project-small-sanjiao"></view> -->
+        <view class="project-duihuakuang">
+          <image src="http://api.iqianclub.com/upload/program/images/duihuakuang.png" class="project-duihuakuang-img"></image>
+        </view>
+        {{E_Digest}}
+      </view>
+      <!-- 项目介绍 -->
+      <view class="index-project">
+        <block wx:for="{{tag}}" wx:for-item='item' wx:key="">
+          <view class="index-project-cnt">
+            <image src="{{item.Img}}" class="index-project-icon"></image>
+            <text class="index-project-txt">{{item.E_TagName}}：{{item.E_Tag}} </text>
+          </view>
+        </block>
+      </view>
+      <!-- 计划参与进度 -->
+      <view class="index-progress">
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">{{Purchased}}</text>
+          <text class="progress-txt">已购人数</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">{{Surplus}}</text>
+          <text class="progress-txt">仅剩名额</text>
+        </view>
+        <view class="index-planDetail-cnt">
+          <text class="progress-num">{{lastday}}<text class="progress-num-txt">天</text></text>
+          <text class="progress-txt">剩余时间</text>
+        </view>
+      </view>
+      <!-- 进度条 -->
+      <progress percent="{{proportion}}" stroke-width="6" activeColor="#E1BB5B" />
+    </view>
+    <!-- 详情介绍 -->
+    <view class="project-cnt-tab">
+      <view class="project-detail {{fixed? '' : 'fixed'}} " id="project-detail">
+        <view class="project-detail-cnt" data-H="{{surveyH}}" data-module='survey' data-id='0' style="color:{{index == 0 ? '#f0753a' : ''}}" bindtap='change'> 概况
+          <image src="http://api.iqianclub.com/upload/program/images/tixian_btn.png" class="project-active {{index==0?'active':''}}"></image>
+        </view>
+        <view class="project-detail-cnt" data-H="{{keyH}}" data-module='key' data-id='1' style="color:{{index == 1 ? '#f0753a' : ''}}" bindtap='change'> 关键信息
+          <image src="http://api.iqianclub.com/upload/program/images/tixian_btn.png" class="project-active {{index==1?'active':''}}"></image>
+        </view>
+        <view class="project-detail-cnt" data-H="{{rebateH}}" data-module='rebate' data-id='2' style="color:{{index == 2 ? '#f0753a' : ''}}" bindtap='change'> 返利方案
+          <image src="http://api.iqianclub.com/upload/program/images/tixian_btn.png" class="project-active {{index==2?'active':''}}"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 概况 -->
+    <!-- id标记锚点 -->
+    <view id="survey" class="survey" data-surveyH="{{surveyTop}}">
+      <!-- 概况内容 -->
+      <import src="../../wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+    <!-- 关键信息 -->
+    <!-- id标记锚点 -->
+    <view id="key" class="key-news" data-keyH="{{keyTop}}">
+      <view class="key-news-title">关键信息</view>
+      <view class="key-news-cnt">
+        <text class="key-news-txt1">计划名称</text>
+        <text class="key-news-txt2">{{E_Abbreviation}}</text>
+      </view>
+      <view class="key-news-cnt">
+        <text class="key-news-txt1">计划情况</text>
+        <text class="key-news-txt2">{{E_Situation}}</text>
+      </view>
+      <view class="key-news-cnt">
+        <text class="key-news-txt1">计划位置</text>
+        <text class="key-news-txt2">{{E_Address}}</text>
+      </view>
+      <view class="key-news-cnt">
+        <text class="key-news-txt1">计划特色</text>
+        <text class="key-news-txt2">{{E_Characteristic}}</text>
+      </view>
+    </view>
+    <!-- 返利方案 -->
+    <!-- id标记锚点 -->
+    <view id="rebate" class="key-news" data-rebateH="{{rebateTop}}">
+      <view class="key-news-title">返利方案</view>
+      <view class="rebate">
+        <text class="rebate-case-title">{{E_Title}}</text>
+        <view class="index-planDetail rebate-case-data">
+          <view class="index-planDetail-cnt">
+            <text class="num">{{E_Money}}<text class="num-txt">元</text></text>
+            <text class="num-txt">参与费</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{E_Cycle}}<text class="num-txt" >年</text></text>
+            <text class="num-txt">持续返利</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{E_Scale}}%<text class="num-txt" >每年</text></text>
+            <text class="num-txt">预估返现</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{E_Coupon}}%<text class="num-txt" >每年</text></text>
+            <text class="num-txt">返住房券</text>
+          </view>
+        </view>
+        <view class="key-news-cnt">
+          <text class="key-news-txt1">返利权益</text>
+          <text class="key-news-txt2">{{E_ScaleShow}}</text>
+        </view>
+        <view class="key-news-cnt">
+          <text class="key-news-txt1">其他权益</text>
+          <text class="key-news-txt2">{{plan_intro}}</text>
+        </view>
+        <!-- <text class="rebate-case-txt">{{plan_intro}}</text> -->
+        <view class="rebate-case-btn">
+          <text class="rebate-case-gays">{{Purchased}}人加入/剩余{{Surplus}}人</text>
+          <button data-code='{{E_Code}}' bindtap="toplan">查看更多方案</button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 底部导航 -->
+  <view class="nav">
+    <view class="nav-left">
+      <view class="nav-left-cnt" bindtap="totoindex" wx:if="{{page==1}}">
+        <image src="http://api.iqianclub.com/upload/program/images/family_icon.png" class="nav-icon"></image>
+        <text class="nav-left-txt">去首页</text>
+      </view>
+      <view class="nav-left-cnt" bindtap="toCalculate">
+        <image src="http://api.iqianclub.com/upload/program/images/jisuanqi_icon.png" class="nav-icon"></image>
+        <text class="nav-left-txt">返利测算</text>
+      </view>
+      <view class="nav-left-cnt" bindtap='Pop'>
+        <image src="http://api.iqianclub.com/upload/program/images/steward_icon.png" class="nav-icon"></image>
+        <text class="nav-left-txt">顾问热线</text>
+      </view>
+      <view class="nav-left-cnt project-nav-position">
+        <image src="http://api.iqianclub.com/upload/program/images/zixun_icon.png" class="nav-icon"></image>
+        <text class="nav-left-txt">在线顾问</text>
+        <contact-button class="contact-btn" type="default-light" size="100" session-from="weapp"></contact-button>
+      </view>
+    </view>
+    <view class="nav-right" data-code='{{E_Code}}' bindtap="toplan">
+      立即加入
+    </view>
+  </view>
+<!-- 弹窗 -->
+  <view class="hotal-mask" hidden='{{hidden}}' bindtap='Pop'></view>
+  <!-- 弹窗内容 -->
+  <view class="hotal-pop" hidden='{{hidden}}'>
+    <image src="http://api.iqianclub.com/upload/program/images/flow.png" class="hotal-booking"></image>
+    <text class="hot-line">专家管家订房热线</text>
+    <text class="phone-num">{{phoneNumber}}</text>
+    <text class="play-btn" bindtap='makeCall'>立即拨打</text>
+       <view class="add-weixin" bindtap='getwxnum'>
+      <text class="add-weixin-txt">或添加管家微信订房</text>
+      <text class="add-weixin-txt">QCS138138(点击复制)</text>
+    </view>
+    <view class="cansale-btn" bindtap='Pop'>
+      取消
+    </view>
+  </view>
+</view>

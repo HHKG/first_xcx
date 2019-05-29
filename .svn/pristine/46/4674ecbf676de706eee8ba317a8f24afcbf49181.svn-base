@@ -1,0 +1,201 @@
+<view>
+  <view  style="height:76rpx;" >
+    <import src="/pages/template/header/header" />
+    <template is="header" data='{{pattern}}'></template>
+  </view>
+  <swiper style="height:460rpx;" indicator-active-color="#f5854f"  indicator-color="#fff" indicator-dots="true" circular="true"  bindchange='changeDot'  data-dotActive='dotActive' autoplay="true">
+    <block wx:for="{{bannerimg}}" wx:for-item="item" wx:key="">
+      <swiper-item>
+        <image src="{{item.image}}" class="slide-image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 不通栏内容区 -->
+  <view class="index-cnt">
+     <!-- 广告图 -->
+     <image src="http://api.iqianclub.com/upload/program/images/invitation_banner.png" class="invitation-img" bindtap='toAward'></image>
+         <!-- 标题 -->
+    <view class="index-join">
+      <image src="http://api.iqianclub.com/upload/program/images/club_title3.png" class="swiper-img"></image>
+    </view>
+    <view class="index-join-cnt">
+      <image src="http://api.iqianclub.com/upload/program//images/club_process_photo.png" class="index-join-cnt-img1"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_huanguan_line .png" class="index-join-cnt-img2"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/club_key_word_icon.png" class="index-join-cnt-img3"></image>
+    </view>
+    <text class="txt"></text>
+      <!-- banner -->
+    <view class="index-banner">
+      <image src="http://api.iqianclub.com/upload/program/images/middle_banner_green.png" class="swiper-img"></image>
+    </view>
+    <!-- 标题 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title2.png" class="swiper-img"></image>
+    </view>
+    <block wx:for="{{projects}}" wx:for-item="item" wx:key="">
+      <view class="index-share-cnt">
+        <image src="{{item.E_HeaderImg}}" class="index-shareH-img" data-code='{{item.E_Code}}' bindtap='toProject'></image>
+        <text class="index-share-title">{{item.E_Name}}</text>
+        <view class="index-planDetail">
+          <view class="index-planDetail-cnt">
+            <text class="num">{{item.E_Money}}<text class="num-txt">元</text></text>
+            <text class="num-txt">参与费</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{item.E_Cycle}}<text class="num-txt">年</text></text>
+            <text class="num-txt">返现期限</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{item.E_Scale}}%<text class="num-txt">每年</text></text>
+            <text class="num-txt">预估返利</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{item.E_Coupon}}%<text class="num-txt">每年</text></text>
+            <text class="num-txt">返住房券</text>
+          </view>
+        </view>
+        <!-- 参与计划参数说明 -->
+        <view class="index-planDetail-explain">
+          <view class="index-sanjiao">
+            <view class="index-small-sanjiao"></view>
+          </view>
+          {{item.E_Digest}}
+        </view>
+        <!-- 项目介绍 -->
+        <view class="index-project">
+          <block wx:for='{{item.tags}}' wx:for-item="item1" wx:key="">
+            <view class="index-project-cnt">
+              <image src="{{item1.Img}}" class="index-project-icon"></image>
+              <text class="index-project-txt">{{item1.E_TagName}}：{{item1.E_Tag}} </text>
+            </view>
+          </block>
+        </view>
+        <!-- 计划参与进度 -->
+        <view class="index-progress">
+          <view class="index-planDetail-cnt">
+            <text class="progress-num">{{item.Purchased}}</text>
+            <text class="progress-txt">已购人数</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="progress-num">{{item.Surplus}}</text>
+            <text class="progress-txt">仅剩名额</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="progress-num">{{item.lastday}}<text class="progress-num-txt">天</text></text>
+            <text class="progress-txt">剩余时间</text>
+          </view>
+        </view>
+        <!-- 进度条 -->
+        <progress percent="{{item.proportion}}" stroke-width="6" activeColor="#E1BB5B" />
+        <!-- 加入按钮 -->
+        <view class="index-join-btn">
+          <button class="btn" data-code='{{item.E_Code}}' bindtap='toProject'>立即加入</button>
+        </view>
+      </view>
+    </block>
+    <!-- 加入虔心荟的六大理由 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title1.png" class="swiper-img"></image>
+    </view>
+    <view class="index-reason">
+      <image src="http://api.iqianclub.com/upload/program/images/bg1.png" class="bg-img"></image>
+      <view class="six-reason">
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason1.png" class="reason-img"></image>
+          <text class="reason-title">门槛低</text>
+          <text class="reason-txt">万元入会</text>
+          <text class="reason-txt">专业团队管理</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason2.png" class="reason-img"></image>
+          <text class="reason-title">担保机制</text>
+          <text class="reason-txt">虔心共享方案</text>
+          <text class="reason-txt">完善担保机制</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason3.png" class="reason-img"></image>
+          <text class="reason-title">权益多元化</text>
+          <text class="reason-txt">尊享多重福利</text>
+          <text class="reason-txt">持续现金返利</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason4.png" class="reason-img"></image>
+          <text class="reason-title">客源充足</text>
+          <text class="reason-txt">联合OTA平台</text>
+          <text class="reason-txt">做返利的坚实后盾</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason5.png" class="reason-img"></image>
+          <text class="reason-title">文旅支持</text>
+          <text class="reason-txt">国家政策支持</text>
+          <text class="reason-txt">奠定文旅发展基础</text>
+        </view>
+        <view class="reason">
+          <image src="http://api.iqianclub.com/upload/program/images/reason6.png" class="reason-img"></image>
+          <text class="reason-title">高端人脉</text>
+          <text class="reason-txt">结识高端人群 </text>
+          <text class="reason-txt">开拓人脉视野</text>
+        </view>
+      </view>
+    </view>
+    <!-- 会员说 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title3.png" class="swiper-img"></image>
+    </view>
+    <view class="index-say-lunbo">
+      <swiper style="height:460rpx;position:relative" indicator-active-color="#f5854f"  indicator-color="#fff" indicator-dots="true" circular="true" bindchange='changeDot' current="0" data-dotActive='dotActive' autoplay="true">
+        <block wx:for="{{mshowimg}}" wx:for-item="item" wx:key="">
+          <swiper-item>
+            <image src="{{item.image}}" class="slide-image"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 近期分享计划预告 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title4.png" class="swiper-img"></image>
+    </view>
+    <!-- 1 -->
+    <block wx:for="{{others}}" wx:for-item="item" wx:key="">
+      <view class="foreshow">
+        <image src="{{item.img}}" class="foreshow-img"></image>
+        <text class="foreshow-txt">{{item.E_Abbreviation}}</text>
+        <view class="foreshow-footer">
+          <view class="foreshow-footer-cnt">
+            <image src="http://api.iqianclub.com/upload/program/images/position_icon.png" class="foreshow-position"></image>
+            <text>{{item.E_Region}}</text>
+          </view>
+          <view class="foreshow-footer-cnt">
+            <image src="http://api.iqianclub.com/upload/program/images/time_icon.png" class="foreshow-time"></image>
+            <text>{{item.E_StatusInfo}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- 合作伙伴 -->
+    <view class="index-share">
+      <image src="http://api.iqianclub.com/upload/program/images/title5.png" class="swiper-img"></image>
+    </view>
+    <view class="partner">
+      <image src="http://api.iqianclub.com/upload/program/images/parner_1.jpg" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_2.png" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_3.png" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_4.png" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_5.png" class="partner-img"></image>
+      <image src="http://api.iqianclub.com/upload/program/images/parner_6.png" class="partner-img"></image>
+    </view>
+    <view class="footer">
+      <view class="footer-cnt">
+        <image src="http://api.iqianclub.com/upload/program/images/logo.png?4454554" class="footer-img"></image>
+        <text class="footer-title">虔心荟度假俱乐部</text>
+      </view>
+      <view class="footer-address">
+        地址：中国·广州 珠江新城合景国际金融广场
+      </view>
+      <view class="footer-address">
+        顾问热线：
+        <text class="footer-phone" bindtap='callQian'>{{phonenum}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+<!--pages/member/rebate/rebate.wxml-->
+<!-- 返现 -->
+<view>
+  <import src="/pages/template/header/header" />
+  <template is="header" data='{{pattern}}'></template>
+  <view class="rebate-h">
+    <text class="rebate-h-txt {{plan}}" data-type='plan' bindtap='gotorebate'>返现</text>
+    <text class="rebate-h-txt {{coupon}}" data-type='coupon' bindtap='gotorebate'>返住房券</text>
+  </view>
+  <block wx:if="{{plan}}" wx:for='{{bills}}' wx:for-item="item" wx:key="">
+    <view class="rebate-cnt">
+      <view class="rebate-cnt-title">
+        <view class="rebate-cnt-status">
+          <text class="rebate-cnt-num">￥{{item.E_BillPrice}}</text>
+          <text class="rebate-cnt-txt">现金</text>
+        </view>
+        <view wx:if='{{item.E_State==1}}' class="rebate-cnt-status"> 未结算</view>
+        <view wx:if='{{item.E_State!=1}}' class="rebate-cnt-status"> 已结算</view>
+      </view>
+      <view class="rebate-cnt-name">
+        <text class="rebate-case-name">{{item.E_ProjectName}}-{{item.E_PlanName}}</text>
+        <text class="rebate-case-number">({{item.E_Periids}}/{{item.E_SumPeriods}})</text>
+      </view>
+      <view class="rebate-detail">
+        <text class="rebate-detail-txt day">参与费：<text class="rebate-detail-num">{{item.E_PlanPrice}}/份</text></text>
+        <text class="rebate-detail-txt">返现率：<text class="rebate-detail-num">{{item.E_Scale}}‰</text></text>
+      </view>
+      <view class="rebate-detail">
+        <text class="rebate-detail-txt">账单日：<text class="rebate-detail-num">{{item.E_BillDate}}-{{item.E_BillDay}}</text></text>
+        <text class="rebate-detail-txt">结算日：<text class="rebate-detail-num">{{item.E_SettlementDate}}-{{item.E_SettlementDay}}</text></text>
+      </view>
+    </view>
+  </block>
+  <!-- 返住房券 -->
+  <block wx:if="{{coupon}}" wx:for='{{coupons}}' wx:for-item="item" wx:key="">
+    <view class="rebate-cnt">
+      <view class="rebate-cnt-title">
+        <view class="rebate-cnt-status">
+          <text class="rebate-cnt-num">￥{{item.E_Money}}</text>
+          <text class="rebate-cnt-txt">住房券</text>
+        </view>
+        <view class="rebate-cnt-status">
+          已结算
+        </view>
+      </view>
+      <view class="rebate-cnt-name">
+        <text class="rebate-case-name">{{item.E_ProjectName}}-{{item.E_PlanName}}</text>
+        <text class="rebate-case-number">({{item.E_Periods}}/{{item.E_SumPeriods}})</text>
+      </view>
+      <view class="rebate-detail">
+        <text class="rebate-detail-txt day">参与费：<text class="rebate-detail-num">{{item.E_PlanPrice}}/份</text></text>
+        <text class="rebate-detail-txt">每年返住房券：<text class="rebate-detail-num">{{item.E_Scale}}%</text></text>
+      </view>
+      <view class="rebate-detail">
+        <text class="rebate-detail-txt">账单日：<text class="rebate-detail-num">{{item.E_CouponTime}}</text></text>
+        <text class="rebate-detail-txt">结算日：<text class="rebate-detail-num">{{item.E_CouponTime}}</text></text>
+      </view>
+    </view>
+  </block>
+  <!-- 没数据状态 -->
+  <view  hidden='{{billhidden}}'>
+    <view class="rebate-none">
+      <image class="rebate-none-img" src="http://api.iqianclub.com/upload/program/images/jinekongbaiye_photo.png"></image>
+      <text class="rebate-none-txt">暂无相关记录</text>
+    </view>
+    <button bindtap='gotoproject'>立即参与分享计划</button>
+  </view>
+  <view  hidden='{{couponhidden}}'>
+    <view class="rebate-none">
+      <image class="rebate-none-img" src="http://api.iqianclub.com/upload/program/images/jinekongbaiye_photo.png"></image>
+      <text class="rebate-none-txt">暂无相关记录</text>
+    </view>
+    <button>立即参与分享计划</button>
+  </view>
+</view>
