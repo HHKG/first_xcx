@@ -44,6 +44,8 @@ Page({
           }
         }
       })
+    
+  
   },
 
   /**
@@ -118,9 +120,7 @@ Page({
    * 进入模拟模式
    */
   loginImitate:function(e){
-    var that = this;
-    // 获取缓存
-    var moni_guide = wx.getStorageSync('guide_val');
+    var that=this;
     that.setData({
       disabled: false
     })
@@ -141,6 +141,7 @@ Page({
       wx.showLoading()
     var action='pattern';
     var pattern=1
+  
     var sign = utilMd5.hexMD5(action + pattern + randomstr + time);
     wx.request({
       url: app.host+action,
@@ -172,35 +173,10 @@ Page({
                 })
               }
               else if (res.cancel) {
-                // getApp().globalData.content=content;
-                if (moni_guide==2) {
-                  var pages=getCurrentPages();
-                  console.log(pages.length, pages.length - 1, pages.length-2);
-                  if(pages.length>=2){
-                     var beforePage=pages[pages.length-2];
-                     var currentPage=pages[pages.length-1];
-                    beforePage.moniGuide(1);
-                     wx.navigateBack({
-                       delta:1
-                     })
-                  }
-                } else {
-                  // 存储第一次引导数据
-                  wx.setStorage({
-                    key: "guide_val",
-                    data: '2' //需要存储的数据
+                getApp().globalData.content=content;
+                  wx.reLaunch({
+                    url: '/pages/member/index',
                   })
-                  var pages = getCurrentPages();
-                  console.log(pages.length, pages.length - 1, pages.length - 2);
-                  if (pages.length >= 2) {
-                    var beforePage = pages[pages.length - 2];
-                    var currentPage = pages[pages.length - 1];
-                    beforePage.moniGuide(2);
-                    wx.navigateBack({
-                      delta: 1
-                    })
-                  }
-                }
               }
             }
           })

@@ -46,7 +46,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.changeData();
     var that=this;
     // console.log(options);
     // var project = options.project;
@@ -59,7 +58,7 @@ Page({
     
     this.setData({
       pattern: app.globalData.pattern,
-      // sum: app.globalData.sum,
+      sum: app.globalData.sum,
       p_m: app.globalData.p_m,
       p_y: app.globalData.p_y,
       p_r_c: app.globalData.p_r_c,
@@ -93,9 +92,9 @@ Page({
       method: 'get',
       data: data,
       dataType: 'json',
-      header: {
-        token: token
-      },
+      // header: {
+      //   token: token
+      // },
       success(data) {
         if (data.data.code == 1) {
           console.log(data);
@@ -360,7 +359,7 @@ Page({
    * 更改分数
    */
   changeNum: function() {
-    console.log(this.data.sum);
+    
     this.showPop();
     // getApp().globalData.pproject = this.data.project;
     // getApp().globalData.plan = this.data.plan;
@@ -377,11 +376,8 @@ Page({
   /**
    * 返回当前页并刷新
    */
-  changeData: function (number) {
-   if(number){
-     this.setData({
-       sum: number
-     })
-   }
+  changeData: function () {
+    var options = {}
+    this.onShow(options);//最好是只写需要刷新的区域的代码，onload也可，效率低，有点low
   },
 })

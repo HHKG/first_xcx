@@ -1,0 +1,11 @@
+<!--pages/project/changeNum/changeNum.wxml-->
+<view class='change-mask'>
+  <view class="change-pop">
+    <text class="change-title">更改方案份数</text>
+    <input bindinput='getSum' type='number' value="{{sum}}" placeholder='填写份数'></input>
+    <view class="change-btns">
+      <text class="change-left-btn" bindtap='tocansel'>取消</text>
+      <text class="change-right-btn" bindtap='tocalculate'>马上测算</text>
+    </view>
+  </view>
+</view>

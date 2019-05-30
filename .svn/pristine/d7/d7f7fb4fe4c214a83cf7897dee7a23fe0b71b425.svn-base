@@ -1,0 +1,63 @@
+<view class="detail-body">
+  <import src="/pages/template/header/header" />
+  <template is="header" data='{{pattern}}'></template>
+  <view class="detail-cnt">
+    <view class="detail-h">加入返利计划流程</view>
+    <view class="detail-title">
+      <text class="detail-txt">选择方案</text>
+      <image src="http://api.iqianclub.com/upload/program/images/right_arrow_icon.png" class="arrow-icon"></image>
+      <text class="detail-txt">支付费用</text>
+      <image src="http://api.iqianclub.com/upload/program/images/right_arrow_icon.png" class="arrow-icon"></image>
+      <text class="detail-txt">签订合同</text>
+      <image src="http://api.iqianclub.com/upload/program/images/right_arrow_icon.png" class="arrow-icon"></image>
+      <text class="detail-txt">坐享返利</text>
+    </view>
+  </view>
+  <block wx:for='{{plans}}' wx:for-item="item">
+
+    <view id="rebate" class="key-news detail-case detail-news" data-rebateH="{{rebateTop}} ">
+      <view class="key-news-title">
+        <view>{{item.E_ProjectName}}·{{item.E_Title}}</view>
+        <view>
+          <view class="project-cal" data-money='{{item.money}}' data-year='{{item.E_Cycle}}' data-rebateMoney='{{item.E_Scale}}' data-rebateCoupom='{{item.E_Coupon}}' data-title="{{item.E_Title}}" data-name='{{plans[0].E_ProjectName}}' data-project='{{item.E_ProjectCode}}' data-id='{{item.E_Code}}' bindtap="toCalculate">
+            <image class="project-cal-icon" src='/new-img/youhua_calculator_icon.png'></image>
+            <text class="project-cal-txt">测算此方案</text>
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="index-planDetail rebate-case-data">
+          <view class="index-planDetail-cnt">
+            <text class="num">{{item.money}}<text class="num-txt">元</text></text>
+            <text class="num-txt">参与费</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{item.E_Cycle}}<text class="num-txt" >年</text></text>
+            <text class="num-txt">持续返利</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{item.E_Scale}}%<text class="num-txt" >每年</text></text>
+            <text class="num-txt">预估返现</text>
+          </view>
+          <view class="index-planDetail-cnt">
+            <text class="num">{{item.E_Coupon}}%<text class="num-txt">每年</text></text>
+            <text class="num-txt">返住房券</text>
+          </view>
+        </view>
+        <view class="key-news-cnt key-news-txt3">
+          <text class="key-news-txt1">返利权益</text>
+          <text class="key-news-txt2">{{item.E_ScaleShow}}</text>
+        </view>
+        <view class="key-news-cnt key-news-txt3">
+          <text class="key-news-txt1">其他权益</text>
+          <text class="key-news-txt2">{{item.E_Introduction}}</text>
+        </view>
+        <!-- <text class="rebate-case-txt">{{item.E_Introduction}}</text> -->
+        <view class="rebate-case-btn">
+          <text class="rebate-case-gays">{{item.Purchased}}人加入/剩余{{item.Surplus}}人</text>
+          <button data-code='{{item.E_Code}}' bindtap='setorder'>立即加入</button>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

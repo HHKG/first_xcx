@@ -1,0 +1,34 @@
+<!--pages/project/cases/cases.wxml-->
+<view>
+  <view class="cases-title">{{plans[0].E_ProjectName}}</view>
+  <view>
+    <view class="cases-chioce">计划方案选择</view>
+    <block wx:for="{{plans}}">
+      <view>
+        <view class="cases-case-name {{id==item.E_Code?'cases-name-color':''}}">{{item.E_Title}}</view>
+        <view class="cases-planDetail {{id==item.E_Code ? 'cases-active':''}}" data-money='{{item.money}}' data-year='{{item.E_Cycle}}' data-rebateMoney='{{item.E_Scale}}' data-rebateCoupom='{{item.E_Coupon}}' data-title="{{item.E_Title}}" data-name='{{plans[0].E_ProjectName}}' data-id='{{item.E_Code}}' data-project='{{item.E_ProjectCode}}' bindtap='select'>
+          <view class="cases-planDetail-cnt">
+            <text class="num">{{item.money}}<text class="num-txt">元</text></text>
+            <text class="num-txt">参与费</text>
+          </view>
+          <view class="cases-planDetail-cnt">
+            <text class="num">{{item.E_Cycle}}<text class="num-txt" >年</text></text>
+            <text class="num-txt">持续返利</text>
+          </view>
+          <view class="cases-planDetail-cnt">
+            <text class="num">{{item.E_Scale}}%<text class="num-txt" >每年</text></text>
+            <text class="num-txt">预估返现</text>
+          </view>
+          <view class="cases-planDetail-cnt">
+            <text class="num">{{item.E_Coupon}}%<text class="num-txt" >每年</text></text>
+            <text class="num-txt">返住房券</text>
+          </view>
+          <image wx:if="{{id==item.E_Code}}" class="cases-select-icon" src='/new-img/youhua_right_corner_mark.png'></image>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="cases-nav" bindtap='tocalculate'>
+    开始测算
+  </view>
+</view>

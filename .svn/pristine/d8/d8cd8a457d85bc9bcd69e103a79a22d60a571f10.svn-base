@@ -1,0 +1,33 @@
+<!--pages/holiday/free/free.wxml-->
+<view>
+  <import src="/pages/template/header/header" />
+  <template is="header"></template>
+  <!-- <view class="free-plan">
+    <image src='http://api.iqianclub.com/upload/program/images/cost_holiday_title.png' class="free-plan-img1"></image>
+    <image src='http://api.iqianclub.com/upload/program/images/cost_holiday_flow.png' class="free-plan-img2"></image>
+  </view>
+  <view class="holiday-plan">
+    <image src='http://api.iqianclub.com/upload/program/images/free_holiday2.png' class="free-plan-img1"></image>
+    <image src='http://api.iqianclub.com/upload/program/images/free_holiday_flow.png' class="holiday-plan-img2"></image>
+    <image src='http://api.iqianclub.com/upload/program/images/free_holiday_flow2.png' class="holiday-plan-img3"></image>
+    <image src='http://api.iqianclub.com/upload/program/images/free_holiday_map.png' class="holiday-plan-img4"></image>
+    <view class="free-share" bindtap='pop'>什么是分享计划？
+      <image class="holiday-link" src='http://api.iqianclub.com/upload/program/images/link_icon_gray.png'></image>
+    </view>
+    <view class="free-cnt">
+      <text class="free-cnt-txt">免费度假,迈向旅享人</text>
+      <text class="free-cnt-txt">收获快乐与财富</text>
+    </view>
+  </view> -->
+  <!-- <view class="join-nav" bindtap='toProject'>
+    立即参与分享计划
+  </view> -->
+  <!-- 弹窗 -->
+  <view class="free-mask" hidden='{{hidden}}' bindtap='pop'></view>
+  <view class="free-pop" hidden='{{hidden}}'>
+    <view class="free-pop-h">什么是分享计划</view>
+    <view class="free-pop-txt"> 虔心分享计划是虔心荟特别策划的会员专属权益，即通过甄选全球优质别墅/酒店，与之建立联盟合作关系，赋予会员独一无二的消费特权。 会员可通过参与计划成为别墅/酒店合伙人，与别墅/酒店分利润，最大限度地实现会籍保值、升值、长赢。 </view>
+    <view class="free-pop-txt">目的就是让您用最少的支出，收获最多的快乐与财富！</view>
+    <view class="ensure" bindtap='pop'>确定</view>
+  </view>
+</view>

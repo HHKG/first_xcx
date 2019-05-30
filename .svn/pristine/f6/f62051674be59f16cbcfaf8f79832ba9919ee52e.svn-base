@@ -36,26 +36,25 @@ Page({
     back: '',
     rebate_detail: 1,
     myincode: '',
-    id: '',
-    moni_guide: ''
+    id:''
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var moni_guide = this.data.moni_guide;
-    if (moni_guide == 2) {
-      this.setData({
-        id: 1,
-        hidden: false,
-        moni_guide:1
-      })
-      wx.pageScrollTo({
-        scrollTop: 170,
-      })
-
-    }
+   var content = getApp().globalData.content;
+    if (content.length>0){
+   this.setData({
+     id:1,
+     hidden:false
+   })
+   wx.pageScrollTo({
+     scrollTop: 170,
+   })
+      getApp().globalData.content='';
+  }
     wx.showLoading()
     var that = this;
     var token = wx.getStorageSync('token');
@@ -110,7 +109,7 @@ Page({
             that.setData({
               E_HeadImg: data.data.info.E_HeadImg,
               name: name,
-
+             
               grade: grade,
               E_IsInvestor: data.data.info.E_IsInvestor,
               E_Mobile: data.data.info.E_Mobile,
@@ -126,6 +125,7 @@ Page({
               bank: data.data.info.bank,
               rebate_detail: 0
             })
+            // console.log(that.data)
           } else {
             that.setData({
               rebate_detail: 1
@@ -192,30 +192,31 @@ Page({
   /**
    * 下一步
    */
-  clickNext: function(e) {
-    var id = e.currentTarget.dataset.id;
-    if (id == 2) {
+  clickNext:function(e){
+    var id=e.currentTarget.dataset.id;
+    if(id==2){
       wx.pageScrollTo({
         scrollTop: 0,
       })
     }
-    if (id == 3) {
+    if(id==3){
       wx.pageScrollTo({
         scrollTop: 400,
       })
     }
-    if (id == 6) {
+    if(id==6){
       this.setData({
-        hidden: true
+        hidden:true
       })
       wx.navigateTo({
         url: '/pages/project/project?project=MZJBQKj3NmPolKOv8qbj',
       })
     }
-    this.setData({
-      id: id
-    })
-  },
+   this.setData({
+     id:id
+   })
+  }
+,
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -522,15 +523,6 @@ Page({
 
         }
       }
-    })
-  },
-  /**
-   * 判断是否出现过模拟模式引导
-   */
-  moniGuide: function(val) {
-    console.log(val);
-    this.setData({
-      moni_guide: val
     })
   }
 })

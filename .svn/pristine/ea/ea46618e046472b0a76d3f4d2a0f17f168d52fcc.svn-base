@@ -124,7 +124,7 @@
   <!-- 弹窗模块 -->
   <view class="cal-mask" hidden="{{hide}}" bindtap="calculate"></view>
   <view class="change-num-pop">
-
+   
   </view>
   <view class="cal-pop" hidden="{{hide}}">
     <block wx:for="{{pop}}" wx:key="">

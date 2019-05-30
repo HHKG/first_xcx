@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/marketing/join_marketing/join_marketing",
     "pages/index/index",
     "pages/project/project",
     "pages/project/cases/cases",
@@ -9,7 +8,7 @@
     "pages/project/changeNum/changeNum",
     "pages/project/calculate/calculate",
     "pages/lachine/index",
-   
+    "pages/marketing/join_marketing/join_marketing",
     "pages/member/cash/binding/binding",
     "pages/member/cash/authentication/authentication",
     "pages/login/index",
